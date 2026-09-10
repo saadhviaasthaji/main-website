@@ -1,163 +1,21 @@
-:root {
-  /* Color Palette matching reference */
-  --color-primary: #000000;      /* Black for buttons and headings */
-  --color-accent: #1D5493;       /* Blue used in 'MOTIVATION BY...' */
-  
-  --color-bg: #F8F9FA;           /* Light gray/off-white background */
-  --color-bg-alt: #FFFFFF;       /* Pure white for cards */
-  
-  --color-text: #000000;         /* Pure black */
-  --color-text-light: #555555;   /* Dark gray for paragraphs */
-  
-  --color-white: #FFFFFF;
-  
-  /* Typography */
-  --font-heading: 'Inter', sans-serif; /* Reference uses bold sans-serif for headings */
-  --font-body: 'Inter', sans-serif;
-  --font-signature: 'Playfair Display', serif; /* Or a cursive font if available, using Playfair for now */
-  
-  /* Spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 4rem;
-  --spacing-xl: 6rem;
-  
-  /* Borders */
-  --border-radius: 0px; /* Reference has sharp square corners */
-  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-gray-700;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-[#2D3748];
+  }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-body);
-  background-color: var(--color-bg);
-  color: var(--color-text-light);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-text);
-  margin-bottom: var(--spacing-sm);
-  letter-spacing: -0.5px;
-}
-
-p {
-  margin-bottom: var(--spacing-sm);
-}
-
-a {
-  color: var(--color-text);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-/* Utilities */
-.container {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-.section {
-  padding: var(--spacing-xl) 0;
-}
-
-.section-bg-alt {
-  background-color: var(--color-bg-alt);
-}
-
-/* Reference Style Black Button with White Dot */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background-color: var(--color-primary);
-  color: var(--color-white) !important;
-  padding: 0.8rem 1.5rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary::after {
-  content: '';
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background-color: var(--color-white);
-  border-radius: 50%;
-}
-
-.btn-primary:hover {
-  background-color: #333333;
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background-color: transparent;
-  color: var(--color-primary) !important;
-  padding: 0.8rem 1.5rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border: 1px solid var(--color-primary);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-outline:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white) !important;
-}
-
-/* Label text like 'BIO' or 'MOTIVATION BY...' */
-.label-text {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--color-text-light);
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.label-text.blue {
-  color: var(--color-accent);
-  font-weight: 700;
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
-
-
-
-/* Animations */
-.fade-in {
-  animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+@layer components {
+  .btn-primary {
+    @apply bg-[#4FA8D8] text-white px-6 py-3 rounded-full font-sans font-medium hover:bg-[#2D3748] transition-colors duration-300 inline-block text-center;
+  }
+  .btn-outline {
+    @apply border border-[#4FA8D8] text-[#4FA8D8] px-6 py-3 rounded-full font-sans font-medium hover:bg-[#4FA8D8] hover:text-white transition-colors duration-300 inline-block text-center;
+  }
 }

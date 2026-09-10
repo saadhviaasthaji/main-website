@@ -1,51 +1,69 @@
 import React from 'react';
-import '../../styles/Page.css';
+import Reveal from '../../components/ui/Reveal';
+import Kicker from '../../components/ui/Kicker';
+import { leadershipData } from '../../data/leadership';
+import { Link } from 'react-router-dom';
 
 const Founder = () => {
+  const person = leadershipData.founder;
+
   return (
-    <div className="page fade-in">
-      <header className="page-header">
-        <div className="container">
-          <span className="label-text blue">LEADERSHIP</span>
-          <h1 className="page-title">Founder</h1>
-          <p className="page-subtitle">The visionary behind Aastha Sevabhavi Sanstha.</p>
+    <div className="pt-24 bg-white min-h-screen pb-20">
+      <header className="py-20 text-center bg-brand-lightgrey mb-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <Kicker>Leadership</Kicker>
+          <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">Meet the {person.designation}</h1>
         </div>
       </header>
 
-      <section className="page-content">
-        <div className="container">
-          
-          <div className="profile-header">
-            <div className="profile-image">
-              {/* Client to provide high-quality photo */}
-            </div>
-            <div className="profile-info">
-              <h2>[Founder Name]</h2>
-              <span className="label-text">FOUNDER & CHIEF PATRON</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+          <div className="w-full md:w-2/5 h-96 md:h-auto shrink-0 relative">
+            <img src={person.photo} alt={person.name} className="w-full h-full object-cover" />
+          </div>
+          <div className="p-8 md:p-12 w-full flex flex-col">
+            <Reveal>
+              <span className="text-sm uppercase tracking-[2px] font-bold text-[#4FA8D8] mb-2 block">
+                {person.designation}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-serif text-brand-charcoal mb-6">{person.name}</h2>
               
-              <div style={{marginTop: '2rem'}}>
-                <h3>Background & Journey</h3>
-                <p>
-                  [Client Content Required] Detailed biography of the founder, their educational background, and their motivation for establishing the organization.
-                </p>
+              <div className="prose prose-lg font-sans text-gray-600 mb-8 max-w-none">
+                <p className="font-semibold text-brand-charcoal mb-4">{person.intro}</p>
+                <p className="mb-4">{person.background}</p>
                 
-                <h3>Role in the Sanstha</h3>
-                <p>
-                  As the Founder, they provide the guiding vision and spiritual framework for all the charitable activities. Their leadership ensures that every initiative stays true to the core values of compassion and selflessness.
-                </p>
-                
-                <h3>Achievements</h3>
-                <ul>
-                  <li>Established the Roti Bank initiative.</li>
-                  <li>Guided the expansion of community service across multiple districts.</li>
-                  <li>[Client to add specific achievements]</li>
+                <h3 className="font-serif text-2xl text-brand-charcoal mt-8 mb-4">Details</h3>
+                <ul className="space-y-3 list-none p-0 m-0">
+                  <li><strong className="text-brand-charcoal font-semibold block">Occupation:</strong> {person.occupation}</li>
+                  <li><strong className="text-brand-charcoal font-semibold block">Education:</strong> {person.education}</li>
+                  <li><strong className="text-brand-charcoal font-semibold block">Role in Sanstha:</strong> {person.role}</li>
+                  <li><strong className="text-brand-charcoal font-semibold block">Journey:</strong> {person.journey}</li>
+                </ul>
+
+                <h3 className="font-serif text-2xl text-brand-charcoal mt-8 mb-4">Key Achievements</h3>
+                <ul className="list-disc pl-5">
+                  {person.achievements.map((item, idx) => (
+                    <li key={idx} className="mb-2">{item}</li>
+                  ))}
                 </ul>
               </div>
-            </div>
+
+              <div className="pt-6 border-t border-gray-100 mt-8 flex flex-wrap gap-4 items-center justify-between">
+                <div className="flex gap-4">
+                  {Object.entries(person.socialLinks).map(([platform, link]) => (
+                    <a key={platform} href={link} className="text-[#4FA8D8] hover:text-brand-charcoal transition-colors font-medium capitalize">
+                      {platform}
+                    </a>
+                  ))}
+                </div>
+                <a href={`mailto:${person.contact}`} className="btn-primary">
+                  Contact
+                </a>
+              </div>
+            </Reveal>
           </div>
-          
         </div>
-      </section>
+      </div>
     </div>
   );
 };

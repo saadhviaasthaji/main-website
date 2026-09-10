@@ -1,74 +1,59 @@
 import React from 'react';
-import '../styles/Page.css';
+import AlternatingContentBlock from '../components/ui/AlternatingContentBlock';
+import SocialMediaBar from '../components/home/SocialMediaBar';
 
 const About = () => {
   return (
-    <div className="page fade-in">
-      <header className="page-header">
-        <div className="container">
-          <h1 className="page-title">Meet Saadhvi Aastha</h1>
-          <p className="page-subtitle">A spiritual journey rooted in devotion and a mission to serve humanity.</p>
+    <div className="page fade-in pt-24 bg-white">
+      <header className="py-20 text-center bg-brand-lightgrey mb-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">About Saadhvi Aastha Ji</h1>
+          <p className="text-gray-600 font-sans text-lg">A life dedicated to spiritual awakening, devotion, and selfless service.</p>
         </div>
       </header>
 
-      <section className="page-content">
-        <div className="container">
-          
-          <div className="profile-header">
-            <div className="profile-image">
-              {/* Client to provide high-quality photo */}
-            </div>
-            <div className="profile-info">
-              <span className="label-text blue">BIOGRAPHY</span>
-              <h2>A Life of Devotion</h2>
-              <p>
-                Saadhvi Aastha is a renowned spiritual orator, author, motivational speaker, and devotional artist.
-                From a very young age, she demonstrated an extraordinary inclination towards spirituality, ancient scriptures, and values.
-              </p>
-              <p>
-                Her journey is not just about preaching; it is about living a life deeply rooted in the Sanatan Dharma and sharing that wisdom with the modern world. Through her heartfelt kathavachans and inspirational messages, she simplifies complex spiritual truths into actionable life lessons.
-              </p>
-            </div>
-          </div>
+      <AlternatingContentBlock
+        kicker="Biography"
+        title="A Life of Devotion"
+        content={<>
+          <p className="mb-4">
+            Saadhvi Aastha is a renowned spiritual orator, author, motivational speaker, and devotional artist.
+            From a very young age, she demonstrated an extraordinary inclination towards spirituality, ancient scriptures, and values.
+          </p>
+          <p>
+            Her journey is not just about preaching; it is about living a life deeply rooted in the Sanatan Dharma and sharing that wisdom with the modern world. Through her heartfelt kathavachans and inspirational messages, she simplifies complex spiritual truths into actionable life lessons.
+          </p>
+        </>}
+        imageRight={false}
+      />
 
-          <div className="content-block">
-            <span className="label-text">EDUCATION</span>
-            <h2>The Gurukul Journey</h2>
-            <p>
-              Embracing the traditional Vedic education system, Saadhvi Aastha spent her formative years in a Gurukul. 
-              This rigorous and deeply spiritual environment shaped her understanding of the scriptures, Sanskrit literature, and the core philosophies of life.
-            </p>
-            <ul>
-              <li>Immersed in Vedic Studies from an early age.</li>
-              <li>Deep understanding of the Bhagavad Gita and Ramayana.</li>
-              <li>Trained in classical bhajans and spiritual discourse.</li>
-            </ul>
-          </div>
+      <AlternatingContentBlock
+        kicker="Education"
+        title="The Gurukul Journey"
+        content="Embracing the traditional Vedic education system, Saadhvi Aastha spent her formative years in a Gurukul. This rigorous and deeply spiritual environment shaped her understanding of the scriptures, Sanskrit literature, and the core philosophies of life."
+        bullets={[
+          "Immersed in Vedic Studies from an early age.",
+          "Deep understanding of the Bhagavad Gita and Ramayana.",
+          "Trained in classical bhajans and spiritual discourse."
+        ]}
+        imageRight={true}
+      />
 
-          <div className="content-block">
-            <span className="label-text">MISSION</span>
-            <h2>Purpose and Mission</h2>
-            <p>
-              Her mission extends beyond the spiritual podium. Believing that true devotion reflects in service to mankind, she established the Aastha Sevabhavi Sanstha. Her motivation is to uplift the underprivileged, provide education, and ensure that basic human needs are met with dignity and compassion.
-            </p>
-            <p>
-              "Devotion without compassion is incomplete. To serve the creation is to serve the Creator."
-            </p>
-          </div>
+      <AlternatingContentBlock
+        kicker="Mission"
+        title="Purpose and Mission"
+        content={<>
+          <p className="mb-4">
+            Her mission extends beyond the spiritual podium. Believing that true devotion reflects in service to mankind, she established the Aastha Sevabhavi Sanstha. Her motivation is to uplift the underprivileged, provide education, and ensure that basic human needs are met with dignity and compassion.
+          </p>
+          <p className="italic font-serif text-brand-blue">
+            "Devotion without compassion is incomplete. To serve the creation is to serve the Creator."
+          </p>
+        </>}
+        imageRight={false}
+      />
 
-          <div className="content-block">
-            <span className="label-text">MILESTONES</span>
-            <h2>Achievements</h2>
-            <ul>
-              <li>Over 10,000+ live spiritual sessions delivered across the globe.</li>
-              <li>A thriving community of 12M+ followers across social platforms.</li>
-              <li>Founder of the Roti Bank initiative, feeding thousands daily.</li>
-              <li>Recognized as a leading young spiritual voice in modern India.</li>
-            </ul>
-          </div>
-          
-        </div>
-      </section>
+      <SocialMediaBar />
     </div>
   );
 };
