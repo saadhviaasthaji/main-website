@@ -24,6 +24,8 @@ const Footer = () => {
           <Link to="/about">About Journey</Link>
           <Link to="/booking">Invite for Katha</Link>
           <Link to="/contact">Contact Us</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-conditions">Terms & Conditions</Link>
         </div>
 
         <div className="footer-links">

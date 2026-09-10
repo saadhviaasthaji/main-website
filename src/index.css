@@ -1,41 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-
 :root {
-  /* Aurora & Spiritual Palette */
-  --aurora-1: #FFE5D9; /* Soft Peach */
-  --aurora-2: #FFDAB9; /* Light Saffron */
-  --aurora-3: #FFF0E5; /* Serene White */
-  --aurora-4: #FFCBA4; /* Warm Gold */
+  /* Color Palette matching reference */
+  --color-primary: #000000;      /* Black for buttons and headings */
+  --color-accent: #1D5493;       /* Blue used in 'MOTIVATION BY...' */
   
-  --color-primary: #E67E22;      /* Deep Saffron for accents */
-  --color-primary-light: #F39C12;
-  --color-primary-dark: #D35400;
+  --color-bg: #F8F9FA;           /* Light gray/off-white background */
+  --color-bg-alt: #FFFFFF;       /* Pure white for cards */
   
-  --color-bg: #FAFAFA;           /* Clean minimalist white */
-  --color-bg-alt: rgba(255, 255, 255, 0.4);
-  
-  --color-text: #333333;         /* Soft Charcoal */
-  --color-text-light: #666666;
+  --color-text: #000000;         /* Pure black */
+  --color-text-light: #555555;   /* Dark gray for paragraphs */
   
   --color-white: #FFFFFF;
   
   /* Typography */
-  --font-heading: 'Playfair Display', serif;
+  --font-heading: 'Inter', sans-serif; /* Reference uses bold sans-serif for headings */
   --font-body: 'Inter', sans-serif;
+  --font-signature: 'Playfair Display', serif; /* Or a cursive font if available, using Playfair for now */
   
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
-  --spacing-xl: 8rem;
+  --spacing-xl: 6rem;
   
-  /* Borders & Glass */
-  --border-radius: 12px;
-  --border-radius-lg: 24px;
-  --box-shadow: 0 8px 32px 0 rgba(230, 126, 34, 0.1);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+  /* Borders */
+  --border-radius: 0px; /* Reference has sharp square corners */
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -47,113 +37,84 @@
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
-  color: var(--color-text);
+  color: var(--color-text-light);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* Global Aurora Background */
-body::before {
-  content: "";
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 50% 50%, var(--aurora-1) 0%, transparent 40%),
-              radial-gradient(circle at 80% 20%, var(--aurora-2) 0%, transparent 30%),
-              radial-gradient(circle at 20% 80%, var(--aurora-4) 0%, transparent 40%);
-  filter: blur(80px);
-  z-index: -1;
-  animation: auroraFlow 20s ease-in-out infinite alternate;
-  opacity: 0.6;
-}
-
-@keyframes auroraFlow {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(5%, 5%) scale(1.05); }
-  100% { transform: translate(-5%, -5%) scale(0.95); }
-}
-
-.glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: var(--glass-border);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--box-shadow);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
-  margin-bottom: var(--spacing-sm);
   color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.5px;
 }
-
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
 
 p {
   margin-bottom: var(--spacing-sm);
-  color: var(--color-text-light);
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-text);
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--color-primary-dark);
+  transition: all 0.3s ease;
 }
 
 /* Utilities */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
 
 .section {
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-xl) 0;
 }
 
 .section-bg-alt {
   background-color: var(--color-bg-alt);
 }
 
+/* Reference Style Black Button with White Dot */
 .btn-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background-color: var(--color-primary);
   color: var(--color-white) !important;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius);
-  font-weight: 500;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-white);
+  border-radius: 50%;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-dark);
-  transform: translateY(-2px);
+  background-color: #333333;
 }
 
 .btn-outline {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background-color: transparent;
   color: var(--color-primary) !important;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius);
-  font-weight: 500;
-  border: 2px solid var(--color-primary);
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-primary);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -162,6 +123,34 @@ a:hover {
   background-color: var(--color-primary);
   color: var(--color-white) !important;
 }
+
+/* Label text like 'BIO' or 'MOTIVATION BY...' */
+.label-text {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.label-text.blue {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
 
 /* Animations */
 .fade-in {
