@@ -37,7 +37,7 @@ const LeadershipCard = ({ person, onClick }) => {
       
       <motion.div layoutId={`details-${person.id}`} className="p-6 bg-white text-center">
         <h3 className="font-serif text-2xl text-brand-charcoal mb-1">{person.name}</h3>
-        <span className="text-xs uppercase tracking-[2px] font-bold text-[#4FA8D8]">
+        <span className="text-xs uppercase tracking-[2px] font-bold text-[#000000]">
           {person.designation}
         </span>
       </motion.div>
@@ -82,7 +82,7 @@ const ExpandedProfile = ({ person, onClose }) => {
         </motion.div>
 
         <motion.div layoutId={`details-${person.id}`} className="p-8 md:p-12 w-full flex flex-col">
-          <span className="text-sm uppercase tracking-[2px] font-bold text-[#4FA8D8] mb-2 block">
+          <span className="text-sm uppercase tracking-[2px] font-bold text-[#000000] mb-2 block">
             {person.designation}
           </span>
           <h2 className="text-3xl md:text-5xl font-serif text-brand-charcoal mb-6">{person.name}</h2>
@@ -97,7 +97,7 @@ const ExpandedProfile = ({ person, onClose }) => {
           <div className="mt-auto pt-8 border-t border-gray-100 flex items-center justify-between">
             <Link 
               to={`/sanstha/${person.id}`} 
-              className="text-[#4FA8D8] font-bold hover:text-brand-charcoal transition-colors flex items-center gap-2"
+              className="text-[#000000] font-bold hover:text-brand-charcoal transition-colors flex items-center gap-2"
               onClick={onClose}
             >
               View Full Page &rarr;

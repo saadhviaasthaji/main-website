@@ -8,12 +8,12 @@ export default {
     extend: {
       colors: {
         brand: {
-          blue: '#4FA8D8',
-          darkblue: '#2c739c',
+          blue: '#000000',
+          darkblue: '#e6e6e9',
           white: '#FFFFFF',
-          lightgrey: '#F4F6F8',
-          charcoal: '#2D3748',
-          textlight: '#4A5568'
+          lightgrey: '#f4f4f6',
+          charcoal: '#000000',
+          textlight: '#e6e6e9'
         }
       },
       fontFamily: {

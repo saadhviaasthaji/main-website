@@ -22,7 +22,7 @@ const President = () => {
           </div>
           <div className="p-8 md:p-12 w-full flex flex-col">
             <Reveal>
-              <span className="text-sm uppercase tracking-[2px] font-bold text-[#4FA8D8] mb-2 block">
+              <span className="text-sm uppercase tracking-[2px] font-bold text-[#000000] mb-2 block">
                 {person.designation}
               </span>
               <h2 className="text-3xl md:text-5xl font-serif text-brand-charcoal mb-6">{person.name}</h2>
@@ -50,7 +50,7 @@ const President = () => {
               <div className="pt-6 border-t border-gray-100 mt-8 flex flex-wrap gap-4 items-center justify-between">
                 <div className="flex gap-4">
                   {Object.entries(person.socialLinks).map(([platform, link]) => (
-                    <a key={platform} href={link} className="text-[#4FA8D8] hover:text-brand-charcoal transition-colors font-medium capitalize">
+                    <a key={platform} href={link} className="text-[#000000] hover:text-brand-charcoal transition-colors font-medium capitalize">
                       {platform}
                     </a>
                   ))}

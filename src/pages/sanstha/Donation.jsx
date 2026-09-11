@@ -74,7 +74,7 @@ const Donation = () => {
 
                 <button 
                   onClick={handleOnlinePayment}
-                  className="btn-primary w-full shadow-[0_4px_14px_0_rgba(79,168,216,0.39)] hover:shadow-[0_6px_20px_rgba(79,168,216,0.23)] hover:-translate-y-1 transition-all"
+                  className="btn-primary w-full shadow-[0_4px_14px_0_rgba(0,0,0,0.39)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.23)] hover:-translate-y-1 transition-all"
                 >
                   Pay via Online Gateway
                 </button>

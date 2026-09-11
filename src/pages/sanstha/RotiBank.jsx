@@ -54,7 +54,7 @@ const RotiBank = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center mb-12">
-              <span className="text-sm uppercase tracking-[2px] font-bold text-[#4FA8D8] mb-2 block">Gallery</span>
+              <span className="text-sm uppercase tracking-[2px] font-bold text-[#000000] mb-2 block">Gallery</span>
               <h2 className="text-3xl md:text-5xl font-serif text-brand-charcoal">Images from Our Work</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -87,7 +87,7 @@ const RotiBank = () => {
             <h2 className="text-3xl md:text-5xl font-serif mb-8">Watch Us in Action</h2>
             <div className="aspect-video bg-black rounded-2xl relative flex items-center justify-center overflow-hidden shadow-2xl border-4 border-gray-800 cursor-pointer group">
               <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?q=80&w=1200&auto=format&fit=crop" alt="Video Thumbnail" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" />
-              <div className="relative z-10 w-20 h-20 bg-[#4FA8D8] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(79,168,216,0.6)] group-hover:scale-110 transition-transform">
+              <div className="relative z-10 w-20 h-20 bg-[#000000] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,0,0,0.6)] group-hover:scale-110 transition-transform">
                 <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[24px] border-l-white border-b-[12px] border-b-transparent ml-2"></div>
               </div>
             </div>

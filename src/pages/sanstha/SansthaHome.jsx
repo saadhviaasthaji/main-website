@@ -52,7 +52,7 @@ const SansthaHome = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center mb-16">
           <Reveal>
-            <span className="text-sm uppercase tracking-widest text-[#4FA8D8] font-bold mb-4 block">Leadership</span>
+            <span className="text-sm uppercase tracking-widest text-[#000000] font-bold mb-4 block">Leadership</span>
             <h2 className="text-3xl md:text-5xl font-serif text-brand-charcoal mb-4">Meet the Visionaries</h2>
             <p className="text-gray-600 font-sans text-lg max-w-2xl mx-auto">
               Guiding our mission with devotion, experience, and a commitment to serving humanity.

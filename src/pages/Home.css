@@ -213,9 +213,9 @@
   background-color: #eee;
 }
 
-.bg-placeholder-1 { background-color: #FAD7A1; }
-.bg-placeholder-2 { background-color: #E9C46A; }
-.bg-placeholder-3 { background-color: #1D5493; } /* Using blue for contrast like ref */
+.bg-placeholder-1 { background-color: #E0E0E0; }
+.bg-placeholder-2 { background-color: #CCCCCC; }
+.bg-placeholder-3 { background-color: #333333; } /* Changed to grey */
 
 .card-content {
   padding: var(--spacing-md);

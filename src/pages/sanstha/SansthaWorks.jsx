@@ -29,7 +29,7 @@ const SansthaWorks = () => {
               <div className="w-full md:w-1/2">
                 <div className="aspect-video bg-gray-200 rounded-xl relative flex items-center justify-center mb-6 overflow-hidden">
                   <div className="absolute inset-0 bg-black/40"></div>
-                  <div className="relative z-10 w-16 h-16 bg-[#4FA8D8] rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:scale-110 transition-transform">
+                  <div className="relative z-10 w-16 h-16 bg-[#000000] rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:scale-110 transition-transform">
                     <div className="w-0 h-0 border-t-8 border-t-transparent border-l-[16px] border-l-white border-b-8 border-b-transparent ml-1"></div>
                   </div>
                 </div>
@@ -40,7 +40,7 @@ const SansthaWorks = () => {
               </div>
               
               <div className="w-full md:w-1/2">
-                <span className="text-sm uppercase tracking-[2px] font-bold text-[#4FA8D8] mb-4 block">Spotlight Initiative</span>
+                <span className="text-sm uppercase tracking-[2px] font-bold text-[#000000] mb-4 block">Spotlight Initiative</span>
                 <h2 className="text-3xl md:text-4xl font-serif text-brand-charcoal mb-6">The Roti Bank</h2>
                 <p className="text-gray-600 font-sans mb-4">
                   Our flagship initiative objective is simple: Eradicate hunger. We collect surplus freshly-cooked food and prepare fresh meals in our central kitchens to feed over 5,000 individuals daily.

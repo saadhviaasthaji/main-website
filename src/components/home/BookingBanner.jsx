@@ -6,7 +6,7 @@ const BookingBanner = () => {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Decorative Pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 10% 20%, #4FA8D8 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 10% 20%, #000000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         <Reveal>
@@ -17,7 +17,7 @@ const BookingBanner = () => {
             <p className="text-lg md:text-xl font-sans mb-10 opacity-90 max-w-2xl mx-auto leading-relaxed">
               Bring the profound teachings and peaceful aura of Saadhvi Aastha Ji to your community, organization, or special event.
             </p>
-            <Link to="/booking" className="inline-block bg-white text-brand-blue font-bold font-sans py-4 px-10 rounded-full shadow-lg hover:bg-brand-charcoal hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+            <Link to="/booking" className="inline-block bg-white text-brand-blue font-bold font-sans py-4 px-10 rounded-none shadow-lg hover:bg-brand-charcoal hover:text-white transition-all duration-300 transform hover:-translate-y-1">
               Book Now
             </Link>
           </div>

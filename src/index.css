@@ -13,9 +13,9 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-[#4FA8D8] text-white px-6 py-3 rounded-full font-sans font-medium hover:bg-[#2D3748] transition-colors duration-300 inline-block text-center;
+    @apply bg-[#000000] text-white px-6 py-3 rounded-none font-sans font-medium hover:bg-[#2D3748] transition-colors duration-300 inline-block text-center;
   }
   .btn-outline {
-    @apply border border-[#4FA8D8] text-[#4FA8D8] px-6 py-3 rounded-full font-sans font-medium hover:bg-[#4FA8D8] hover:text-white transition-colors duration-300 inline-block text-center;
+    @apply border border-[#000000] text-[#000000] px-6 py-3 rounded-none font-sans font-medium hover:bg-[#000000] hover:text-white transition-colors duration-300 inline-block text-center;
   }
 }
