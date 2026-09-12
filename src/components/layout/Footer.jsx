@@ -4,7 +4,7 @@ import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#f4f4f6] text-black pt-20 pb-8 border-t border-gray-200">
+    <footer className="bg-transparent text-black pt-20 pb-8 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           
@@ -32,28 +32,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Col 2: Newsletter & Social */}
+          {/* Col 2: Social */}
           <div className="lg:col-span-4">
-            <h3 className="text-lg font-bold font-serif mb-4 text-black">Stay Updated With Our Latest News</h3>
-            
-            <form className="mb-4">
-              <div className="flex border border-gray-300 bg-white">
-                <input 
-                  type="email" 
-                  placeholder="Your mail address" 
-                  className="w-full px-4 py-2 text-sm text-gray-700 focus:outline-none"
-                  required
-                />
-                <button type="submit" className="bg-black text-white px-6 py-2 text-xs font-bold hover:bg-gray-800 transition-colors whitespace-nowrap">
-                  Submit <span>+</span>
-                </button>
-              </div>
-              
-              <label className="flex items-center gap-2 mt-4 cursor-pointer">
-                <input type="checkbox" className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black" required />
-                <span className="text-xs text-gray-600">Hereby, I agree to the Terms and Conditions</span>
-              </label>
-            </form>
 
             <div className="flex items-center gap-4 mt-8">
               <span className="text-xs text-gray-500">Social Media :</span>
@@ -99,7 +79,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-300 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Saadhvi Aastha Ji Ventures. Powered by <span className="font-semibold text-gray-700">Incfrog</span></p>
+          <p>&copy; {new Date().getFullYear()} Saadhvi Aastha Ji Ventures. Powered by <span className="font-semibold text-gray-700">PM Talents</span></p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link to="/privacy-policy" className="hover:text-black transition-colors">Privacy Policy</Link>
             <span>|</span>

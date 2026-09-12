@@ -12,7 +12,7 @@ const SocialMediaBar = () => {
   ];
 
   return (
-    <section className="py-20 bg-brand-lightgrey">
+    <section className="py-20 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <Reveal>
           <Kicker>Connect</Kicker>

@@ -12,13 +12,13 @@ const AlternatingContentBlock = ({
   bullets = null
 }) => {
   return (
-    <section className="py-16 md:py-24 bg-white border-b border-gray-50 last:border-0">
+    <section className="py-16 md:py-24 bg-transparent border-b border-gray-50 last:border-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex flex-col ${imageRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 lg:gap-20`}>
           
           {/* Image Side */}
           <div className="w-full md:w-1/2">
-            <Reveal>
+            <Reveal direction={imageRight ? "right" : "left"}>
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-brand-lightgrey flex items-center justify-center">
                   {imageSrc ? (
@@ -37,7 +37,7 @@ const AlternatingContentBlock = ({
 
           {/* Text Side */}
           <div className="w-full md:w-1/2">
-            <Reveal delay={0.2}>
+            <Reveal delay={0.2} direction={imageRight ? "left" : "right"}>
               {kicker && <Kicker>{kicker}</Kicker>}
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6 leading-tight">
                 {title}

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Reveal from '../ui/Reveal';
-import Kicker from '../ui/Kicker';
-import { useLanguage } from '../../context/LanguageContext';
-import { getTranslation } from '../../data/translations';
+import Reveal from '../../ui/Reveal';
+import Kicker from '../../ui/Kicker';
+import { useLanguage } from '../../../context/LanguageContext';
+import { getTranslation } from '../../../data/translations';
 
-const BioSection = () => {
+const SansthaIntroSection = () => {
   const { language } = useLanguage();
   return (
     <section className="py-24 bg-transparent relative overflow-hidden">
@@ -16,9 +16,9 @@ const BioSection = () => {
           <div className="w-full lg:w-[45%] order-2 lg:order-1 z-10 mt-8 lg:mt-0 relative">
             <Reveal direction="left">
               <div className="lg:pr-10 relative z-10">
-                <Kicker className="mb-4">BIO</Kicker>
+                <Kicker className="mb-4">ABOUT</Kicker>
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-extrabold mb-6 text-brand-charcoal leading-tight">
-                  {getTranslation(language, 'home', 'heroTitle')}
+                  {getTranslation(language, 'sanstha', 'heroTitle')}
                 </h2>
                 
                 <img 
@@ -28,10 +28,10 @@ const BioSection = () => {
                 />
 
                 <p className="text-gray-600 mb-10 leading-relaxed font-sans text-base md:text-lg">
-                  {getTranslation(language, 'home', 'introText')}
+                  {getTranslation(language, 'sanstha', 'introText')}
                 </p>
                 
-                <Link to="/about" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-gray-800 transition-all hover:scale-105 rounded-full shadow-lg hover:shadow-xl">
+                <Link to="/sanstha/about" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-gray-800 transition-all hover:scale-105 rounded-full shadow-lg hover:shadow-xl">
                   {getTranslation(language, 'common', 'readMore')}
                   <span className="text-xl">→</span>
                 </Link>
@@ -45,15 +45,15 @@ const BioSection = () => {
               <div className="w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative group ml-auto">
                 {/* Placeholder Image container */}
                 <div className="absolute inset-0 bg-gray-200 flex items-center justify-center text-gray-400 transition-transform duration-1000 group-hover:scale-105">
-                  <span className="font-serif text-2xl border border-gray-400 px-6 py-3 rounded-full">Portrait Image</span>
+                  <img src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=800&auto=format&fit=crop" alt="Sanstha Seva" className="w-full h-full object-cover" />
                 </div>
                 
                 {/* Gradient overlay at bottom */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12 opacity-90 transition-opacity duration-500">
                   <div className="border-l-4 border-white pl-6">
                     <ul className="text-white/95 text-sm md:text-base space-y-3 font-medium">
-                      <li>✨ 25 years of service to mankind.</li>
-                      <li>✨ A motivational guide who inspires people to embrace peace, values, and meaningful living.</li>
+                      <li>✨ Serving humanity through education and food distribution.</li>
+                      <li>✨ Building a community rooted in compassion and care.</li>
                     </ul>
                   </div>
                 </div>
@@ -67,4 +67,4 @@ const BioSection = () => {
   );
 };
 
-export default BioSection;
+export default SansthaIntroSection;

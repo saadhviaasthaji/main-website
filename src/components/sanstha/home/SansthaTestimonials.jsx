@@ -4,25 +4,25 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import Reveal from '../ui/Reveal';
-import Kicker from '../ui/Kicker';
+import Reveal from '../../ui/Reveal';
+import Kicker from '../../ui/Kicker';
 
-const Testimonials = () => {
+const SansthaTestimonials = () => {
   const swiperRef = useRef(null);
 
   const testimonials = [
     {
       id: 1,
-      name: "Riya S. (Bengaluru)",
-      role: "SOFTWARE PROFESSIONAL",
-      text: "Her words have been my anchor through some of my toughest days. In a world that constantly tells you to be perfect, she taught me that it's okay to pause, to feel, and to heal. Her bhajans bring a peace I've never found elsewhere. She is not just a spiritual speaker—she is a companion for the soul.",
+      name: "Suresh (Mumbai)",
+      role: "BENEFICIARY",
+      text: "The Roti Bank has been a lifeline for me and my family during tough times. To receive a freshly cooked meal when you have nothing is a true blessing from God.",
       rating: 5
     },
     {
       id: 2,
-      name: "Amit Khurana (Delhi)",
-      role: "ENTREPRENEUR",
-      text: "I've followed her for years, but her Divine Concert was an experience beyond words. The way she blends ancient bhajans with modern music—yet keeps the devotion intact—is pure magic. She doesn't preach from a distance; she sits with you in your struggles and lifts you with grace. Her work is a blessing for this generation.",
+      name: "Pooja Mehta (Volunteer)",
+      role: "COMMUNITY VOLUNTEER",
+      text: "Serving with Aastha Sevabhavi Sanstha has changed my perspective on life. The smiles we see when distributing food are the most rewarding part of my week.",
       rating: 5
     }
   ];
@@ -34,9 +34,9 @@ const Testimonials = () => {
         {/* Header & Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
           <Reveal>
-            <Kicker className="mb-2">WHAT THEY SAY</Kicker>
+            <Kicker className="mb-2">IMPACT STORIES</Kicker>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-charcoal">
-              Stories From Our Followers
+              Voices from the Community
             </h2>
           </Reveal>
           
@@ -104,4 +104,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default SansthaTestimonials;

@@ -4,7 +4,7 @@ import Kicker from '../components/ui/Kicker';
 
 const Query = () => {
   return (
-    <div className="pt-24 bg-brand-lightgrey min-h-screen pb-20">
+    <div className="pt-24 bg-transparent min-h-screen pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <Reveal>
           <div className="text-center mb-12">

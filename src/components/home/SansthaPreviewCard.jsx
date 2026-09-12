@@ -5,7 +5,7 @@ import Kicker from '../ui/Kicker';
 
 const SansthaPreviewCard = () => {
   return (
-    <section className="py-20 bg-brand-lightgrey">
+    <section className="py-20 bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">

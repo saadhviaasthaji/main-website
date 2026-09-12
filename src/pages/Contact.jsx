@@ -4,13 +4,25 @@ import Kicker from '../components/ui/Kicker';
 
 const Contact = () => {
   return (
-    <div className="pt-24 bg-brand-lightgrey min-h-screen pb-20">
+    <div className="pt-24 bg-transparent min-h-screen pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <Reveal>
           <div className="text-center mb-12">
             <Kicker>Get in Touch</Kicker>
             <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">Contact Us</h1>
-            <p className="text-gray-600 font-sans text-lg">We would love to hear from you. Please fill out the form below.</p>
+            <p className="text-gray-600 font-sans text-lg mb-6">We would love to hear from you. Please fill out the form below or contact us directly.</p>
+            
+            <div className="flex flex-col md:flex-row justify-center gap-6 text-sm text-gray-700 font-sans mb-12">
+              <div className="bg-white px-6 py-3 rounded-full shadow-sm">
+                <span className="font-bold">Email:</span> saadhviaasthaji@gmail.com
+              </div>
+              <div className="bg-white px-6 py-3 rounded-full shadow-sm">
+                <span className="font-bold">Phone:</span> 8591902050
+              </div>
+              <div className="bg-white px-6 py-3 rounded-full shadow-sm">
+                <span className="font-bold">Coordinator:</span> Pratik Mishra
+              </div>
+            </div>
           </div>
           
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">

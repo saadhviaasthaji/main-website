@@ -1,57 +1,93 @@
 import React from 'react';
-import AlternatingContentBlock from '../components/ui/AlternatingContentBlock';
+import Reveal from '../components/ui/Reveal';
 import SocialMediaBar from '../components/home/SocialMediaBar';
+import { useLanguage } from '../context/LanguageContext';
+import { getTranslation } from '../data/translations';
 
 const About = () => {
+  const { language } = useLanguage();
+
   return (
-    <div className="page fade-in pt-24 bg-white">
-      <header className="py-20 text-center bg-brand-lightgrey mb-12">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">About Saadhvi Aastha Ji</h1>
-          <p className="text-gray-600 font-sans text-lg">A life dedicated to spiritual awakening, devotion, and selfless service.</p>
+    <div className="page fade-in pt-24 md:pt-32 bg-transparent min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        
+        {/* Section 1: Biography */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-24">
+          <Reveal>
+            <div className="pt-4">
+              <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-gray-500 mb-4 block">
+                BIO
+              </span>
+              <h1 className="text-4xl md:text-6xl font-serif font-bold text-brand-charcoal mb-8">
+                {getTranslation(language, 'home', 'heroTitle')}
+              </h1>
+              
+              <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
+                <p className="mb-6">{getTranslation(language, 'about', 'bioText1')}</p>
+                <p className="mb-6">{getTranslation(language, 'about', 'bioText2')}</p>
+                <p>{getTranslation(language, 'about', 'bioText3')}</p>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <div className="w-full aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden shadow-2xl relative">
+              <img 
+                src="https://images.unsplash.com/photo-1601662528567-526cd06f6582?q=80&w=1200&auto=format&fit=crop" 
+                alt="Saadhvi Aastha Ji Landscape" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-center justify-center">
+                <h2 className="text-5xl md:text-7xl font-ephesis text-white drop-shadow-lg opacity-80">
+                  {getTranslation(language, 'home', 'heroTitle')}
+                </h2>
+              </div>
+            </div>
+          </Reveal>
         </div>
-      </header>
 
-      <AlternatingContentBlock
-        kicker="Biography"
-        title="A Life of Devotion"
-        content={<>
-          <p className="mb-4">
-            Saadhvi Aastha is a renowned spiritual orator, author, motivational speaker, and devotional artist.
-            From a very young age, she demonstrated an extraordinary inclination towards spirituality, ancient scriptures, and values.
-          </p>
-          <p>
-            Her journey is not just about preaching; it is about living a life deeply rooted in the Sanatan Dharma and sharing that wisdom with the modern world. Through her heartfelt kathavachans and inspirational messages, she simplifies complex spiritual truths into actionable life lessons.
-          </p>
-        </>}
-        imageRight={false}
-      />
+        {/* Section 2: Purpose, Vision & Recognition */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <Reveal delay={0.1}>
+            <div className="w-full aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=1000&auto=format&fit=crop" 
+                alt="Saadhvi Aastha Ji Portrait" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </Reveal>
 
-      <AlternatingContentBlock
-        kicker="Education"
-        title="The Gurukul Journey"
-        content="Embracing the traditional Vedic education system, Saadhvi Aastha spent her formative years in a Gurukul. This rigorous and deeply spiritual environment shaped her understanding of the scriptures, Sanskrit literature, and the core philosophies of life."
-        bullets={[
-          "Immersed in Vedic Studies from an early age.",
-          "Deep understanding of the Bhagavad Gita and Ramayana.",
-          "Trained in classical bhajans and spiritual discourse."
-        ]}
-        imageRight={true}
-      />
+          <Reveal delay={0.3}>
+            <div className="pt-4 lg:pt-10">
+              {/* Purpose & Vision */}
+              <div className="mb-16">
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6">
+                  Her Purpose & Vision
+                </h2>
+                <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
+                  <p className="mb-6">{getTranslation(language, 'about', 'missionText')}</p>
+                  <p className="mb-6">{getTranslation(language, 'about', 'bioText4')}</p>
+                  <p>{getTranslation(language, 'about', 'bioText5')}</p>
+                </div>
+              </div>
 
-      <AlternatingContentBlock
-        kicker="Mission"
-        title="Purpose and Mission"
-        content={<>
-          <p className="mb-4">
-            Her mission extends beyond the spiritual podium. Believing that true devotion reflects in service to mankind, she established the Aastha Sevabhavi Sanstha. Her motivation is to uplift the underprivileged, provide education, and ensure that basic human needs are met with dignity and compassion.
-          </p>
-          <p className="italic font-serif text-brand-blue">
-            "Devotion without compassion is incomplete. To serve the creation is to serve the Creator."
-          </p>
-        </>}
-        imageRight={false}
-      />
+              {/* Recognition & Honours */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6">
+                  Recognition & Honours
+                </h2>
+                <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
+                  <p className="mb-6">{getTranslation(language, 'about', 'motivationText')}</p>
+                  <p className="mb-6">{getTranslation(language, 'about', 'bioText6')}</p>
+                  <p>{getTranslation(language, 'about', 'bioText7')}</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+      </div>
 
       <SocialMediaBar />
     </div>

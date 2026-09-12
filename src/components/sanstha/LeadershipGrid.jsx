@@ -126,7 +126,7 @@ const LeadershipGrid = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-4xl mx-auto px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-4xl mx-auto px-4 mb-16">
         {leaders.map(person => (
           <LeadershipCard 
             key={person.id} 
@@ -135,6 +135,25 @@ const LeadershipGrid = () => {
           />
         ))}
       </div>
+
+      {leadershipData.members && leadershipData.members.length > 0 && (
+        <div className="max-w-5xl mx-auto px-4 mt-16">
+          <h3 className="text-3xl font-serif text-brand-charcoal text-center mb-10 border-b border-gray-200 pb-4">Our Core Team</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {leadershipData.members.map((member, idx) => (
+              <div key={idx} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow text-center">
+                <div className="aspect-[4/3] w-full">
+                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-4 border-t border-gray-100">
+                  <h4 className="font-serif text-lg text-brand-charcoal mb-1">{member.name}</h4>
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">{member.designation}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <AnimatePresence>
         {selectedId && (

@@ -1,10 +1,14 @@
 import React from 'react';
 import AlternatingContentBlock from '../../components/ui/AlternatingContentBlock';
 import Reveal from '../../components/ui/Reveal';
+import { useLanguage } from '../../context/LanguageContext';
+import { getTranslation } from '../../data/translations';
 
 const RotiBank = () => {
+  const { language } = useLanguage();
+
   return (
-    <div className="pt-24 bg-white min-h-screen pb-20">
+    <div className="pt-24 bg-transparent min-h-screen pb-20">
       <header className="py-20 text-center bg-brand-lightgrey mb-12">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">The Roti Bank</h1>
@@ -12,39 +16,54 @@ const RotiBank = () => {
         </div>
       </header>
 
-      {/* 1. Introduction */}
+      {/* 1. What is Roti Bank? */}
       <AlternatingContentBlock
-        kicker="Introduction"
-        title="Nourishing the Soul by Feeding the Body"
-        content="The Roti Bank is Aastha Sevabhavi Sanstha's flagship initiative. We believe that spiritual growth is deeply connected to physical well-being, and it begins with ensuring that basic human needs, like food, are met with dignity and compassion."
+        kicker="Initiative"
+        title={getTranslation(language, 'sanstha', 'rotiBankTitle')}
+        content={<>
+          <p className="mb-4">{getTranslation(language, 'sanstha', 'rotiBankDesc1')}</p>
+          <p>{getTranslation(language, 'sanstha', 'rotiBankDesc2')}</p>
+        </>}
         imageRight={false}
       />
 
-      {/* 2. The Problem */}
+      {/* 2. Objective */}
       <AlternatingContentBlock
-        kicker="The Problem"
-        title="The Hunger Crisis"
-        content="Despite significant economic growth, thousands of people in our city go to bed hungry every night. Food waste in urban areas stands in stark contrast to the acute malnourishment faced by street dwellers and slum children."
+        kicker="The Goal"
+        title={getTranslation(language, 'sanstha', 'rotiBankObjTitle')}
+        content={<>
+          <p className="mb-4">{getTranslation(language, 'sanstha', 'rotiBankObj1')}</p>
+          <p>{getTranslation(language, 'sanstha', 'rotiBankObj2')}</p>
+        </>}
         imageRight={true}
       />
 
-      {/* 3. Our Initiative */}
+      {/* 3. How We Help */}
       <AlternatingContentBlock
-        kicker="Initiative"
-        title="Bridging the Gap"
-        content="The Roti Bank acts as a bridge. We actively collect surplus, freshly cooked food from households, weddings, and restaurants, while also operating our own central kitchens to prepare fresh, nutritious meals daily."
+        kicker="Action"
+        title="How the Initiative Works"
+        content="Collection → Responsible Handling → Distribution → Service"
+        bullets={[
+          "Surplus or leftover food from events and other suitable sources is identified.",
+          "The available food is collected for distribution.",
+          "The food is taken to identified areas and people who are in need.",
+          "Distribution is carried out as a direct service activity.",
+          "The initiative focuses on ensuring that available food reaches people rather than going to waste."
+        ]}
         imageRight={false}
       />
 
-      {/* 4. How We Help */}
+      {/* 4. Who Benefits */}
       <AlternatingContentBlock
-        kicker="Action"
-        title="How the Bank Operates"
-        content="Our massive network of dedicated volunteers and logistics team swing into action every afternoon and evening."
+        kicker="Beneficiaries"
+        title="Who Benefits"
+        content="Roti Bank primarily serves people who are facing hunger and difficult living conditions. The Sanstha also carries out service visits to orphanages and other places where support is required."
         bullets={[
-          "Collection vans gather surplus food",
-          "Central kitchens cook fresh supplemental meals",
-          "Volunteers distribute meals across 15+ fixed locations"
+          "Homeless and underprivileged individuals",
+          "Elderly and vulnerable mothers",
+          "People living without adequate food support",
+          "Children and families in need",
+          "Other vulnerable sections of society"
         ]}
         imageRight={true}
       />
@@ -71,29 +90,9 @@ const RotiBank = () => {
       <AlternatingContentBlock
         kicker="Results"
         title="Our Impact"
-        content="What started as a small effort has blossomed into a movement. We are proud of the tangible impact we have made, but the work is far from over."
-        bullets={[
-          "5,000+ meals distributed daily",
-          "Zero food waste policy implemented",
-          "500+ active registered volunteers"
-        ]}
+        content="Roti Bank represents a simple yet meaningful approach to community service — reducing food wastage while taking available food to people who need it. For Aastha Sevabhavi Sanstha, the initiative is not merely about food distribution; it reflects the organization's larger belief that basic necessities should reach people with dignity and compassion."
         imageRight={false}
       />
-
-      {/* 7. Video Showcase */}
-      <section className="py-20 bg-brand-charcoal text-white text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <Reveal>
-            <h2 className="text-3xl md:text-5xl font-serif mb-8">Watch Us in Action</h2>
-            <div className="aspect-video bg-black rounded-2xl relative flex items-center justify-center overflow-hidden shadow-2xl border-4 border-gray-800 cursor-pointer group">
-              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?q=80&w=1200&auto=format&fit=crop" alt="Video Thumbnail" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" />
-              <div className="relative z-10 w-20 h-20 bg-[#000000] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,0,0,0.6)] group-hover:scale-110 transition-transform">
-                <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[24px] border-l-white border-b-[12px] border-b-transparent ml-2"></div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </div>
   );
 };

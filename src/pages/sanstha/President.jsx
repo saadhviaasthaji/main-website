@@ -7,7 +7,7 @@ const President = () => {
   const person = leadershipData.president;
 
   return (
-    <div className="pt-24 bg-white min-h-screen pb-20">
+    <div className="pt-24 bg-transparent min-h-screen pb-20">
       <header className="py-20 text-center bg-brand-lightgrey mb-12">
         <div className="max-w-4xl mx-auto px-4">
           <Kicker>Leadership</Kicker>

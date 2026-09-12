@@ -1,12 +1,16 @@
 import React from 'react';
 import AlternatingContentBlock from '../../components/ui/AlternatingContentBlock';
+import { useLanguage } from '../../context/LanguageContext';
+import { getTranslation } from '../../data/translations';
 
 const SansthaAbout = () => {
+  const { language } = useLanguage();
+
   return (
-    <div className="pt-24 bg-white min-h-screen pb-20">
+    <div className="pt-24 bg-transparent min-h-screen pb-20">
       <header className="py-20 text-center bg-brand-lightgrey mb-12">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">About Aastha Sevabhavi Sanstha</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">Aastha Sevabhavi Sanstha</h1>
           <p className="text-gray-600 font-sans text-lg">Understanding our roots, vision, and the driving force behind our initiatives.</p>
         </div>
       </header>
@@ -15,87 +19,104 @@ const SansthaAbout = () => {
       <AlternatingContentBlock
         kicker="Introduction"
         title="Who We Are"
-        content="Aastha Sevabhavi Sanstha is a registered non-profit organization committed to bringing tangible, positive change to society. We operate at the intersection of spiritual wisdom and active social service."
+        content={<>
+          <p className="mb-4">{getTranslation(language, 'sanstha', 'aboutIntro')}</p>
+          <p className="mb-4">{getTranslation(language, 'sanstha', 'aboutText1')}</p>
+          <p>{getTranslation(language, 'sanstha', 'aboutText2')}</p>
+        </>}
         imageRight={false}
       />
 
-      {/* 2. Establishment details */}
-      <AlternatingContentBlock
-        kicker="Establishment"
-        title="Our Genesis"
-        content="The Sanstha was born from a simple yet profound realization during one of Saadhvi Aastha Ji's kathas: that while spiritual nourishment is essential, physical nourishment and basic human dignity must come first. We started small, feeding a few individuals outside temples, and rapidly grew."
-        imageRight={true}
-      />
-
-      {/* 3. Registration information */}
+      {/* 2. Registration information */}
       <AlternatingContentBlock
         kicker="Legal"
         title="Registration Information"
         content="We operate with full transparency and are legally registered under the relevant authorities to accept and distribute donations."
         bullets={[
-          "Registration Number: [Placeholder Reg No.]",
-          "Tax Exemption: Registered under 80G",
-          "FCRA Status: [Placeholder Status]"
+          "Establishment: September 2017",
+          "Registration Number: F/40324/Thane/Mumbai",
+          "Entity Type: Society Registration Certificate under the Societies Registration Act, 1860"
         ]}
-        imageRight={false}
-      />
-
-      {/* 4. Mission */}
-      <AlternatingContentBlock
-        kicker="Mission"
-        title="Our Mission"
-        content="To operate sustainable initiatives like the Roti Bank, establish free educational centers for underprivileged children, and create a strong community of volunteers dedicated to selfless service (Seva)."
         imageRight={true}
       />
 
-      {/* 5. Vision */}
+      {/* 3. Mission */}
       <AlternatingContentBlock
-        kicker="Vision"
-        title="Our Vision"
-        content="A society where basic necessities like food and education are accessible to all, irrespective of cast, creed, or economic background."
+        kicker="Mission"
+        title={getTranslation(language, 'sanstha', 'missionTitle')}
+        content={getTranslation(language, 'sanstha', 'missionText')}
         imageRight={false}
       />
 
-      {/* 6. Core values */}
+      {/* 4. Vision */}
+      <AlternatingContentBlock
+        kicker="Vision"
+        title={getTranslation(language, 'sanstha', 'visionTitle')}
+        content={getTranslation(language, 'sanstha', 'visionText')}
+        imageRight={true}
+      />
+
+      {/* 5. Core values */}
       <AlternatingContentBlock
         kicker="Principles"
         title="Core Values"
         content="Everything we do is guided by our fundamental beliefs in compassion, integrity, and selfless action."
         bullets={[
-          "Seva (Selfless Service)",
-          "Karuna (Compassion)",
-          "Dharma (Righteousness)"
+          "Humanity & Compassion — Serving people with empathy and care.",
+          "Service as Dharma — Believing that serving humanity is a fundamental responsibility.",
+          "Dignity & Respect — Treating every individual with dignity.",
+          "Care for the Elderly — Giving special attention to elderly and vulnerable mothers.",
+          "Support for the Needy — Reaching essential resources to people who need them most.",
+          "Commitment to Seva — Continuing service with dedication and sincerity."
         ]}
-        imageRight={true}
+        imageRight={false}
       />
 
-      {/* 7. Social objectives */}
+      {/* 6. Social objectives */}
       <AlternatingContentBlock
         kicker="Objectives"
         title="Social Objectives"
-        content="Our primary focus areas are eradicating hunger through the Roti Bank, empowering the youth through free education, and providing necessary healthcare to remote rural areas."
-        imageRight={false}
-      />
-
-      {/* 8. Journey of the organization */}
-      <AlternatingContentBlock
-        kicker="History"
-        title="Our Journey"
-        content="From distributing 50 meals a day from a single location to establishing a city-wide network of volunteers distributing over 5,000 meals daily, our journey has been fueled by the incredible generosity of our community."
+        content="The Sanstha works towards providing holistic support to vulnerable sections of society."
+        bullets={[
+          "Providing food and essential necessities to people facing hardship.",
+          "Supporting elderly and vulnerable mothers.",
+          "Providing assistance to orphanages and children in need.",
+          "Distributing clothing, ration, school kits and other essential materials.",
+          "Promoting responsible distribution of surplus food through the Roti Bank.",
+          "Establishing Anath Ashram, Vriddha Ashram and Gaushala in Kashi, Ayodhya, and Mathura."
+        ]}
         imageRight={true}
       />
 
-      {/* 9. Major achievements */}
+      {/* 7. Journey of the organization */}
+      <AlternatingContentBlock
+        kicker="History"
+        title={getTranslation(language, 'sanstha', 'journeyTitle')}
+        content={<>
+          <p className="mb-4">{getTranslation(language, 'sanstha', 'journeyText1')}</p>
+          <p className="mb-4">{getTranslation(language, 'sanstha', 'journeyText2')}</p>
+          <p className="mb-4">{getTranslation(language, 'sanstha', 'journeyText3')}</p>
+          <p className="mb-4">{getTranslation(language, 'sanstha', 'journeyText4')}</p>
+          <p className="mb-4">{getTranslation(language, 'sanstha', 'journeyText5')}</p>
+          <p className="font-semibold">{getTranslation(language, 'sanstha', 'journeyText6')}</p>
+        </>}
+        imageRight={false}
+      />
+
+      {/* 8. Major achievements */}
       <AlternatingContentBlock
         kicker="Milestones"
         title="Major Achievements"
-        content="We measure our success not in numbers, but in the smiles of the individuals we serve. However, some key milestones define our growth:"
+        content="Our continuous efforts have led to significant milestones in our journey of serving humanity."
         bullets={[
-          "Over 1 Million Meals Served",
-          "10 Free Educational Centers Opened",
-          "Awarded Best NGO by [Placeholder]"
+          "15+ years of the Founder’s social-service journey.",
+          "Formal organizational registration and establishment of the Sanstha.",
+          "Development of the Roti Bank initiative to address food insecurity.",
+          "Continued food, ration and clothing distribution activities.",
+          "Regular service visits to orphanages and other needy communities.",
+          "Extension of assistance towards persons with disabilities."
         ]}
-        imageRight={false}
+        imageRight={true}
       />
     </div>
   );

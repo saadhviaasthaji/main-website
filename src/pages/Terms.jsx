@@ -3,7 +3,7 @@ import Reveal from '../components/ui/Reveal';
 
 const Terms = () => {
   return (
-    <div className="pt-32 pb-20 bg-white min-h-screen">
+    <div className="pt-32 pb-20 bg-transparent min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <h1 className="text-4xl font-serif text-brand-charcoal mb-8">Terms of Service</h1>

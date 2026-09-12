@@ -2,24 +2,62 @@ import React from 'react';
 import Reveal from '../ui/Reveal';
 
 const DevotionalQuote = () => {
-  return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      {/* Subtle Background Icon/Image placeholder */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
-        <svg className="w-96 h-96 text-brand-blue" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-        </svg>
-      </div>
+  const quotes = [
+    {
+      id: 1,
+      name: "Saadhvi Aastha Ji",
+      text: "वास्तव में इंसान ठाकुर जी के व्याकुल हो ऐसा नहीं हो सकता। ठाकुर जी व्याकुल होते है तब वह इंसान व्याकुल होता है अन्यथा इंसान में सामर्थ्य नहीं है।"
+    },
+    {
+      id: 2,
+      name: "Saadhvi Aastha Ji",
+      text: "भजन प्रदर्शन का विषय नहीं है। प्रदर्शन में हरी का दर्शन संभव नहीं है, अगर हरि दर्शन करना हो तो भजन का प्रदर्शन न करे।"
+    },
+    {
+      id: 3,
+      name: "Saadhvi Aastha Ji",
+      text: "क्षमा करने वाला सबसे बड़ा होता है। द्रौपदी ने अपने पाँच पुत्रों की हत्या करने वाले अश्वत्थामा को क्षमा कर दिया। क्षमा दान बहुत बड़ा दान है।"
+    }
+  ];
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+  return (
+    <section className="py-24 bg-transparent relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal>
-          <div className="w-16 h-1 bg-brand-blue mx-auto mb-8 rounded-full"></div>
-          <h2 className="text-2xl md:text-4xl font-serif font-medium text-brand-charcoal leading-relaxed italic mb-8">
-            "[Placeholder for a short inspirational or devotional quote/message communicating Saadhvi Aastha's core philosophy.]"
-          </h2>
-          <p className="font-sans text-brand-blue font-bold tracking-widest uppercase text-sm">
-            Bhakti & Spiritual Identity
-          </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-charcoal">
+              Saadhvi Aastha Ji Quotes
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {quotes.map((quote) => (
+              <div 
+                key={quote.id} 
+                className="bg-[#2A3337] rounded-lg p-8 relative flex flex-col justify-between shadow-xl transform transition-transform hover:-translate-y-2"
+                style={{ borderRadius: '12px 12px 24px 12px' }}
+              >
+                {/* Top Quote Icon */}
+                <div className="absolute top-4 left-4 text-[#8C989C] opacity-50 text-6xl font-serif leading-none">
+                  “
+                </div>
+                
+                <div className="mt-8 z-10 relative">
+                  <h3 className="text-white font-bold text-lg md:text-xl mb-4 font-sans border-b border-gray-600 pb-2 inline-block">
+                    {quote.name}
+                  </h3>
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed font-sans mt-2">
+                    {quote.text}
+                  </p>
+                </div>
+                
+                {/* Bottom Quote Icon */}
+                <div className="absolute bottom-[-10px] right-6 text-[#8C989C] opacity-50 text-8xl font-serif leading-none">
+                  ”
+                </div>
+              </div>
+            ))}
+          </div>
         </Reveal>
       </div>
     </section>

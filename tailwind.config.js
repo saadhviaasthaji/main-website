@@ -20,7 +20,9 @@ export default {
         serif: ['"Playfair Display"', 'serif'],
         sans: ['"Inter"', 'sans-serif'],
         script: ['"Great Vibes"', 'cursive'],
-        scriptalt: ['"Dancing Script"', 'cursive']
+        scriptalt: ['"Dancing Script"', 'cursive'],
+        ephesis: ['"Ephesis"', 'cursive'],
+        kalam: ['"Kalam"', 'cursive']
       },
     },
   },

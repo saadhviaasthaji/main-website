@@ -5,24 +5,24 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
-import Reveal from '../ui/Reveal';
-import { useLanguage } from '../../context/LanguageContext';
-import { getTranslation } from '../../data/translations';
+import Reveal from '../../ui/Reveal';
+import { useLanguage } from '../../../context/LanguageContext';
+import { getTranslation } from '../../../data/translations';
 
-const HeroSlider = () => {
+const SansthaHeroSlider = () => {
   const { language } = useLanguage();
   const slides = [
     {
       id: 1,
-      kicker: getTranslation(language, 'home', 'heroSubtitle').toUpperCase(),
-      title: getTranslation(language, 'home', 'heroTitle'),
-      description: getTranslation(language, 'home', 'heroTagline')
+      kicker: "WELCOME TO",
+      title: "Aastha Sevabhavi Sanstha",
+      description: "Where devotion transforms into service."
     },
     {
       id: 2,
-      kicker: "DEVOTION",
-      title: getTranslation(language, 'home', 'heroTitle'),
-      description: getTranslation(language, 'home', 'heroQuote')
+      kicker: "SEVA",
+      title: "Service to Humanity",
+      description: "Eradicating hunger, one meal at a time."
     }
   ];
 
@@ -48,16 +48,12 @@ const HeroSlider = () => {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            {/* Full Slide Background Image */}
             <div className="absolute inset-0 w-full h-full">
-              {/* Placeholder Image - swap URL for actual images */}
-              <img src={`https://picsum.photos/seed/${slide.id}/1920/1080`} alt="Slide background" className="w-full h-full object-cover" />
-              {/* Subtle Gradient Overlay to ensure text readability on the right */}
+              <img src={`https://picsum.photos/seed/${slide.id + 10}/1920/1080`} alt="Slide background" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white/90"></div>
             </div>
 
             <div className="w-full h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center md:items-end text-center md:text-right relative z-10 pt-24 pb-12 md:pb-0">
-              {/* Content Box (takes up roughly half the screen on desktop) */}
               <div className="w-full md:w-[60%] flex flex-col items-center md:items-end">
                 <Reveal>
                   <span className="text-sm md:text-base font-bold tracking-widest uppercase text-brand-charcoal mb-4 block">
@@ -85,7 +81,7 @@ const HeroSlider = () => {
           height: 40px;
           display: flex;
           align-items: center;
-          justify-center;
+          justify-content: center;
         }
         .custom-swiper .swiper-button-next:after,
         .custom-swiper .swiper-button-prev:after {
@@ -97,4 +93,4 @@ const HeroSlider = () => {
   );
 };
 
-export default HeroSlider;
+export default SansthaHeroSlider;
