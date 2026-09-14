@@ -13,7 +13,7 @@ const AlternatingContentBlock = ({
 }) => {
   return (
     <section className="py-16 md:py-24 bg-transparent border-b border-gray-50 last:border-0">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className={`flex flex-col ${imageRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 lg:gap-20`}>
           
           {/* Image Side */}

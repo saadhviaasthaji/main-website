@@ -7,22 +7,22 @@ import 'swiper/css/effect-fade';
 
 import Reveal from '../ui/Reveal';
 import { useLanguage } from '../../context/LanguageContext';
-import { getTranslation } from '../../data/translations';
+import AnimatedText from '../ui/AnimatedText';
 
 const HeroSlider = () => {
   const { language } = useLanguage();
   const slides = [
     {
       id: 1,
-      kicker: getTranslation(language, 'home', 'heroSubtitle').toUpperCase(),
-      title: getTranslation(language, 'home', 'heroTitle'),
-      description: getTranslation(language, 'home', 'heroTagline')
+      kicker: <AnimatedText section="home" tKey="heroSubtitle" uppercase />,
+      title: <AnimatedText section="home" tKey="heroTitle" />,
+      description: <AnimatedText section="home" tKey="heroTagline" />
     },
     {
       id: 2,
       kicker: "DEVOTION",
-      title: getTranslation(language, 'home', 'heroTitle'),
-      description: getTranslation(language, 'home', 'heroQuote')
+      title: <AnimatedText section="home" tKey="heroTitle" />,
+      description: <AnimatedText section="home" tKey="heroQuote" />
     }
   ];
 

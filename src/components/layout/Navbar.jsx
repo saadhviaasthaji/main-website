@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../context/LanguageContext';
-import { getTranslation } from '../../data/translations';
+import AnimatedText from '../ui/AnimatedText';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,11 +60,11 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: getTranslation(language, 'nav', 'home'), path: '/' },
-    { name: getTranslation(language, 'nav', 'about'), path: '/about' },
-    { name: getTranslation(language, 'nav', 'events'), path: '/events' },
-    { name: getTranslation(language, 'nav', 'booking'), path: '/booking' },
-    { name: getTranslation(language, 'nav', 'contact'), path: '/contact' }
+    { name: <AnimatedText section="nav" tKey="home" />, path: '/' },
+    { name: <AnimatedText section="nav" tKey="about" />, path: '/about' },
+    { name: <AnimatedText section="nav" tKey="events" />, path: '/events' },
+    { name: <AnimatedText section="nav" tKey="booking" />, path: '/booking' },
+    { name: <AnimatedText section="nav" tKey="contact" />, path: '/contact' }
   ];
 
   const isHomePage = location.pathname === '/';
@@ -111,7 +111,7 @@ const Navbar = () => {
               </button>
               <div className="hidden md:block">
                 <Link to="/sanstha" className={`px-6 py-2.5 font-semibold rounded-none transition-all hover:scale-105 transform border ${!useDarkText ? 'bg-transparent text-white border-white hover:bg-white hover:text-black' : 'bg-brand-charcoal text-white border-brand-charcoal hover:bg-black'}`}>
-                  {getTranslation(language, 'nav', 'sansthaWorks')}
+                  {<AnimatedText section="nav" tKey="sansthaWorks" />}
                 </Link>
               </div>
               
@@ -158,7 +158,7 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)} 
                   className="w-full text-center py-4 text-lg font-bold bg-white text-brand-charcoal rounded-none shadow-lg hover:shadow-xl transition-all hover:scale-105 transform"
                 >
-                  {getTranslation(language, 'nav', 'sansthaWorks')}
+                  {<AnimatedText section="nav" tKey="sansthaWorks" />}
                 </Link>
               </div>
             </div>

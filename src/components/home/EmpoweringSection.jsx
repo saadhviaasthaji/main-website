@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Reveal from '../ui/Reveal';
 import Kicker from '../ui/Kicker';
 import { useLanguage } from '../../context/LanguageContext';
-import { getTranslation } from '../../data/translations';
+import AnimatedText from '../ui/AnimatedText';
 
 const EmpoweringSection = () => {
   const { language } = useLanguage();
@@ -14,9 +14,9 @@ const EmpoweringSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <Reveal>
-            <Kicker className="mb-2">{getTranslation(language, 'empowering', 'kicker')}</Kicker>
+            <Kicker className="mb-2">{<AnimatedText section="empowering" tKey="kicker" />}</Kicker>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-charcoal">
-              {getTranslation(language, 'empowering', 'title')}
+              {<AnimatedText section="empowering" tKey="title" />}
             </h2>
           </Reveal>
         </div>
@@ -31,12 +31,12 @@ const EmpoweringSection = () => {
                 <span className="text-gray-500 font-serif">Katha Image</span>
               </div>
               <div className="bg-white p-6">
-                <h3 className="text-2xl font-serif font-bold text-brand-charcoal mb-4">{getTranslation(language, 'empowering', 'kathaTitle')}</h3>
+                <h3 className="text-2xl font-serif font-bold text-brand-charcoal mb-4">{<AnimatedText section="empowering" tKey="kathaTitle" />}</h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  {getTranslation(language, 'empowering', 'kathaDesc')}
+                  {<AnimatedText section="empowering" tKey="kathaDesc" />}
                 </p>
                 <Link to="/katha" className="inline-flex items-center gap-2 bg-black text-white px-6 py-2 text-xs font-bold hover:bg-gray-800 transition-colors">
-                  {getTranslation(language, 'common', 'knowMore')}
+                  {<AnimatedText section="common" tKey="knowMore" />}
                   <span className="text-lg">→</span>
                 </Link>
               </div>
@@ -47,12 +47,12 @@ const EmpoweringSection = () => {
           <Reveal delay={0.2} direction="up">
             <div className="flex flex-col gap-0 shadow-lg group">
               <div className="bg-white p-6">
-                <h3 className="text-2xl font-serif font-bold text-brand-charcoal mb-4">{getTranslation(language, 'empowering', 'gurukulTitle')}</h3>
+                <h3 className="text-2xl font-serif font-bold text-brand-charcoal mb-4">{<AnimatedText section="empowering" tKey="gurukulTitle" />}</h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  {getTranslation(language, 'empowering', 'gurukulDesc')}
+                  {<AnimatedText section="empowering" tKey="gurukulDesc" />}
                 </p>
                 <Link to="/about#education" className="inline-flex items-center gap-2 bg-black text-white px-6 py-2 text-xs font-bold hover:bg-gray-800 transition-colors">
-                  {getTranslation(language, 'common', 'knowMore')}
+                  {<AnimatedText section="common" tKey="knowMore" />}
                   <span className="text-lg">→</span>
                 </Link>
               </div>
@@ -69,12 +69,12 @@ const EmpoweringSection = () => {
                 <img src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=600&auto=format&fit=crop" alt="Sanstha" className="w-full h-full object-cover" />
               </div>
               <div className="bg-white p-6">
-                <h3 className="text-2xl font-serif font-bold text-brand-charcoal mb-4">{getTranslation(language, 'empowering', 'sansthaTitle')}</h3>
+                <h3 className="text-2xl font-serif font-bold text-brand-charcoal mb-4">{<AnimatedText section="empowering" tKey="sansthaTitle" />}</h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  {getTranslation(language, 'empowering', 'sansthaDesc')}
+                  {<AnimatedText section="empowering" tKey="sansthaDesc" />}
                 </p>
                 <Link to="/sanstha" className="inline-flex items-center gap-2 bg-black text-white px-6 py-2 text-xs font-bold hover:bg-gray-800 transition-colors">
-                  {getTranslation(language, 'common', 'knowMore')}
+                  {<AnimatedText section="common" tKey="knowMore" />}
                   <span className="text-lg">→</span>
                 </Link>
               </div>

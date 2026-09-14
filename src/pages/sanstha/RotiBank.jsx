@@ -2,15 +2,15 @@ import React from 'react';
 import AlternatingContentBlock from '../../components/ui/AlternatingContentBlock';
 import Reveal from '../../components/ui/Reveal';
 import { useLanguage } from '../../context/LanguageContext';
-import { getTranslation } from '../../data/translations';
+import AnimatedText from '../../components/ui/AnimatedText';
 
 const RotiBank = () => {
   const { language } = useLanguage();
 
   return (
     <div className="pt-24 bg-transparent min-h-screen pb-20">
-      <header className="py-20 text-center bg-brand-lightgrey mb-12">
-        <div className="max-w-4xl mx-auto px-4">
+      <header className="py-24 md:py-32 bg-white">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
           <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">The Roti Bank</h1>
           <p className="text-gray-600 font-sans text-lg">Eradicating hunger, one meal at a time.</p>
         </div>
@@ -19,10 +19,10 @@ const RotiBank = () => {
       {/* 1. What is Roti Bank? */}
       <AlternatingContentBlock
         kicker="Initiative"
-        title={getTranslation(language, 'sanstha', 'rotiBankTitle')}
+        title={<AnimatedText section="sanstha" tKey="rotiBankTitle" />}
         content={<>
-          <p className="mb-4">{getTranslation(language, 'sanstha', 'rotiBankDesc1')}</p>
-          <p>{getTranslation(language, 'sanstha', 'rotiBankDesc2')}</p>
+          <p className="mb-4">{<AnimatedText section="sanstha" tKey="rotiBankDesc1" />}</p>
+          <p>{<AnimatedText section="sanstha" tKey="rotiBankDesc2" />}</p>
         </>}
         imageRight={false}
       />
@@ -30,10 +30,10 @@ const RotiBank = () => {
       {/* 2. Objective */}
       <AlternatingContentBlock
         kicker="The Goal"
-        title={getTranslation(language, 'sanstha', 'rotiBankObjTitle')}
+        title={<AnimatedText section="sanstha" tKey="rotiBankObjTitle" />}
         content={<>
-          <p className="mb-4">{getTranslation(language, 'sanstha', 'rotiBankObj1')}</p>
-          <p>{getTranslation(language, 'sanstha', 'rotiBankObj2')}</p>
+          <p className="mb-4">{<AnimatedText section="sanstha" tKey="rotiBankObj1" />}</p>
+          <p>{<AnimatedText section="sanstha" tKey="rotiBankObj2" />}</p>
         </>}
         imageRight={true}
       />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import SansthaHeroSlider from '../../components/sanstha/home/SansthaHeroSlider';
 import SansthaIntroSection from '../../components/sanstha/home/SansthaIntroSection';
@@ -7,9 +8,8 @@ import SansthaVideo from '../../components/sanstha/home/SansthaVideo';
 import SansthaTestimonials from '../../components/sanstha/home/SansthaTestimonials';
 
 
-import DevotionalQuote from '../../components/home/DevotionalQuote';
 import SocialMediaBar from '../../components/home/SocialMediaBar';
-import BookingBanner from '../../components/home/BookingBanner';
+import SansthaDonationBanner from '../../components/sanstha/home/SansthaDonationBanner';
 import LeadershipGrid from '../../components/sanstha/LeadershipGrid';
 import Reveal from '../../components/ui/Reveal';
 
@@ -31,30 +31,31 @@ const SansthaHome = () => {
       {/* 5. Stories From Our Followers / Beneficiaries */}
       <SansthaTestimonials />
 
-
-      <hr className="border-gray-200" />
+      <div className="w-full mx-auto border-t border-gray-100 my-24"></div>
 
       {/* Leadership Section inserted here for Sanstha context */}
-      <section className="py-20 bg-transparent">
-        <div className="w-full mx-auto px-4 text-center mb-16">
+      <section className="py-16 bg-white relative">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-left mb-12">
           <Reveal>
-            <span className="text-sm uppercase tracking-widest text-[#000000] font-bold mb-4 block">Leadership</span>
-            <h2 className="text-3xl md:text-5xl font-serif text-brand-charcoal mb-4">Meet the Visionaries</h2>
-            <p className="text-gray-600 font-sans text-lg max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-widest text-gray-400 font-bold mb-6 block">Leadership</span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-black mb-8 tracking-tight leading-none">Meet the <br /><span className="italic text-gray-400">Visionaries</span></h2>
+            <p className="text-gray-500 font-sans text-xl font-light leading-[1.8] max-w-2xl">
               Guiding our mission with devotion, experience, and a commitment to serving humanity.
             </p>
           </Reveal>
         </div>
-        <LeadershipGrid />
+        <LeadershipGrid showCoreTeam={false} />
+        
+        <div className="text-center mt-12">
+          <Link to="/sanstha/members" className="inline-flex items-center gap-2 text-black border border-black px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-colors">
+            View All Members
+          </Link>
+        </div>
       </section>
-
-      {/* Existing Shared Bottom Sections */}
-      <div className="mt-20">
-        <DevotionalQuote />
+      <div className="mt-12">
         <SocialMediaBar />
-        <BookingBanner />
+        <SansthaDonationBanner />
       </div>
-
     </div>
   );
 };

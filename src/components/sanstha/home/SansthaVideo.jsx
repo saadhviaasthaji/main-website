@@ -1,54 +1,86 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Reveal from '../../ui/Reveal';
 import Kicker from '../../ui/Kicker';
 
 const SansthaVideo = () => {
+  // Array of images for the gallery preview
+  const images = [
+    "https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=800&auto=format&fit=crop"
+  ];
+
   return (
-    <section className="py-24 bg-[#e6ece9]">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+    <section className="py-24 bg-[#e6ece9] overflow-hidden">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
           {/* Left Side: Content */}
           <div className="w-full lg:w-5/12">
             <Reveal direction="left">
-              <Kicker className="mb-2">A GLIMPSE INTO OUR WORK</Kicker>
-              <h2 className="text-4xl md:text-5xl font-serif font-extrabold text-brand-charcoal mb-6">
-                Watch Us In Action
+              <Kicker className="mb-4">A GLIMPSE INTO OUR WORK</Kicker>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-brand-charcoal mb-8 leading-tight tracking-tight">
+                Explore Our Gallery
               </h2>
-              <p className="text-gray-600 mb-8 font-sans leading-relaxed text-sm md:text-base pr-0 md:pr-10">
+              <p className="text-gray-600 mb-10 font-sans leading-relaxed text-lg max-w-lg font-light">
                 Witness the impact of our initiatives firsthand. From massive food drives by the Roti Bank to educational programs and community support, see how dedication transforms into tangible change.
               </p>
-              <Link to="/sanstha/our-works" className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 text-xs font-bold hover:bg-gray-800 transition-colors">
-                Watch More
-                <span className="text-lg">→</span>
+              
+              <Link to="/sanstha/gallery" className="group inline-flex items-center gap-4 text-white bg-black rounded-full px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-gray-800 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                View Gallery
+                <motion.span 
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  →
+                </motion.span>
               </Link>
             </Reveal>
           </div>
 
-          {/* Right Side: Video Thumbnail */}
+          {/* Right Side: Image Grid (Small Boxes) */}
           <div className="w-full lg:w-7/12 mt-12 lg:mt-0">
-            <Reveal delay={0.2} direction="right">
-              <div className="relative w-full aspect-video bg-gray-400 group cursor-pointer overflow-hidden shadow-2xl">
-                {/* Placeholder Image */}
-                <div className="absolute inset-0 flex items-center justify-center text-white/50 bg-gray-600">
-                  <img src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=1200&auto=format&fit=crop" alt="Sanstha Action" className="w-full h-full object-cover" />
-                </div>
-                
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                
-                {/* Play Button & Title */}
-                <div className="absolute bottom-6 left-6 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30 group-hover:bg-white/40 transition-all">
-                    {/* Play Icon */}
-                    <div className="w-0 h-0 border-t-8 border-b-8 border-l-[12px] border-t-transparent border-b-transparent border-l-white ml-1"></div>
-                  </div>
-                  <div>
-                    <span className="text-white text-xs font-bold block mb-1">Watch Now</span>
-                    <span className="text-white font-serif font-bold text-lg leading-none">Roti Bank Distribution Drive</span>
-                  </div>
-                </div>
+            <Reveal delay={0.2} direction="right" className="w-full">
+              <div className="grid grid-cols-2 gap-4 md:gap-6">
+                {images.map((src, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ 
+                      scale: 1.05,
+                      y: -10,
+                      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                      zIndex: 10
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className={`relative rounded-3xl overflow-hidden shadow-lg cursor-pointer transform origin-center ${
+                      index === 0 ? 'mt-0 md:mt-12' : 
+                      index === 1 ? 'mt-8 md:mt-0' : 
+                      index === 2 ? '-mt-4 md:mt-12' : 
+                      'mt-4 md:mt-0'
+                    }`}
+                    style={{ aspectRatio: '4/5' }}
+                  >
+                    <img 
+                      src={src} 
+                      alt={`Gallery Preview ${index + 1}`} 
+                      className="w-full h-full object-cover filter grayscale-[15%] group-hover:grayscale-0 transition-all duration-500"
+                    />
+                    
+                    {/* Hover Overlay */}
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6"
+                    >
+                      <span className="text-white text-sm font-bold tracking-wider uppercase">View Detail</span>
+                    </motion.div>
+                  </motion.div>
+                ))}
               </div>
             </Reveal>
           </div>

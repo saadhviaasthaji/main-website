@@ -7,7 +7,6 @@ import 'swiper/css/effect-fade';
 
 import Reveal from '../../ui/Reveal';
 import { useLanguage } from '../../../context/LanguageContext';
-import { getTranslation } from '../../../data/translations';
 
 const SansthaHeroSlider = () => {
   const { language } = useLanguage();
@@ -59,9 +58,7 @@ const SansthaHeroSlider = () => {
                   <span className="text-sm md:text-base font-bold tracking-widest uppercase text-brand-charcoal mb-4 block">
                     {slide.kicker}
                   </span>
-                  <h1 className={`text-6xl md:text-8xl lg:text-9xl ${language === 'hi' ? 'font-kalam' : 'font-ephesis'} text-brand-charcoal mb-6 leading-[1.1] drop-shadow-sm font-normal`}>
-                    {slide.title}
-                  </h1>
+                  <img src="https://see.fontimg.com/api/rf5/7BWnK/OWIxZDJiOTU1MThlNDNiMGFkZWQ3ZGUwMjU4MTllMWYub3Rm/QWFzdGhhIFNldmFiaGF2aSBTYW5zdGhh/brother-signature.png?r=fs&h=70&w=1250&fg=000000&bg=FFFFFF&tb=1&s=56" alt="Aastha Sevabhavi Sanstha Logo" className="h-20 md:h-28 lg:h-36 w-auto object-contain mb-6 mix-blend-multiply drop-shadow-sm ml-auto" />
                   <p className="text-lg md:text-xl text-gray-800 font-serif max-w-lg ml-auto leading-relaxed drop-shadow-sm">
                     {slide.description}
                   </p>

@@ -2,7 +2,7 @@ import React from 'react';
 import Reveal from '../components/ui/Reveal';
 import SocialMediaBar from '../components/home/SocialMediaBar';
 import { useLanguage } from '../context/LanguageContext';
-import { getTranslation } from '../data/translations';
+import AnimatedText from '../components/ui/AnimatedText';
 
 const About = () => {
   const { language } = useLanguage();
@@ -19,13 +19,13 @@ const About = () => {
                 BIO
               </span>
               <h1 className="text-4xl md:text-6xl font-serif font-bold text-brand-charcoal mb-8">
-                {getTranslation(language, 'home', 'heroTitle')}
+                {<AnimatedText section="home" tKey="heroTitle" />}
               </h1>
               
               <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
-                <p className="mb-6">{getTranslation(language, 'about', 'bioText1')}</p>
-                <p className="mb-6">{getTranslation(language, 'about', 'bioText2')}</p>
-                <p>{getTranslation(language, 'about', 'bioText3')}</p>
+                <p className="mb-6">{<AnimatedText section="about" tKey="bioText1" />}</p>
+                <p className="mb-6">{<AnimatedText section="about" tKey="bioText2" />}</p>
+                <p>{<AnimatedText section="about" tKey="bioText3" />}</p>
               </div>
             </div>
           </Reveal>
@@ -77,9 +77,9 @@ const About = () => {
                   Her Purpose & Vision
                 </h2>
                 <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
-                  <p className="mb-6">{getTranslation(language, 'about', 'missionText')}</p>
-                  <p className="mb-6">{getTranslation(language, 'about', 'bioText4')}</p>
-                  <p>{getTranslation(language, 'about', 'bioText5')}</p>
+                  <p className="mb-6">{<AnimatedText section="about" tKey="missionText" />}</p>
+                  <p className="mb-6">{<AnimatedText section="about" tKey="bioText4" />}</p>
+                  <p>{<AnimatedText section="about" tKey="bioText5" />}</p>
                 </div>
               </div>
 
@@ -89,9 +89,9 @@ const About = () => {
                   Recognition & Honours
                 </h2>
                 <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
-                  <p className="mb-6">{getTranslation(language, 'about', 'motivationText')}</p>
-                  <p className="mb-6">{getTranslation(language, 'about', 'bioText6')}</p>
-                  <p>{getTranslation(language, 'about', 'bioText7')}</p>
+                  <p className="mb-6">{<AnimatedText section="about" tKey="motivationText" />}</p>
+                  <p className="mb-6">{<AnimatedText section="about" tKey="bioText6" />}</p>
+                  <p>{<AnimatedText section="about" tKey="bioText7" />}</p>
                 </div>
               </div>
             </div>
@@ -106,12 +106,12 @@ const About = () => {
                 EDUCATION
               </span>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6">
-                {getTranslation(language, 'about', 'gurukulTitle')}
+                {<AnimatedText section="about" tKey="gurukulTitle" />}
               </h2>
               
               <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
-                <p className="mb-6">{getTranslation(language, 'about', 'gurukulText1')}</p>
-                <p>{getTranslation(language, 'about', 'gurukulText2')}</p>
+                <p className="mb-6">{<AnimatedText section="about" tKey="gurukulText1" />}</p>
+                <p>{<AnimatedText section="about" tKey="gurukulText2" />}</p>
               </div>
             </div>
           </Reveal>

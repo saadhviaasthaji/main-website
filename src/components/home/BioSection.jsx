@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Reveal from '../ui/Reveal';
 import Kicker from '../ui/Kicker';
 import { useLanguage } from '../../context/LanguageContext';
-import { getTranslation } from '../../data/translations';
+import AnimatedText from '../ui/AnimatedText';
 
 const BioSection = () => {
   const { language } = useLanguage();
@@ -18,17 +18,17 @@ const BioSection = () => {
               <div className="lg:pr-10 relative z-10">
                 <Kicker className="mb-4">BIO</Kicker>
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-extrabold mb-6 text-brand-charcoal leading-tight">
-                  {getTranslation(language, 'home', 'heroTitle')}
+                  {<AnimatedText section="home" tKey="heroTitle" />}
                 </h2>
                 
 
 
                 <p className="text-gray-600 mb-10 leading-relaxed font-sans text-base md:text-lg">
-                  {getTranslation(language, 'home', 'introText')}
+                  {<AnimatedText section="home" tKey="introText" />}
                 </p>
                 
                 <Link to="/about" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-gray-800 transition-all hover:scale-105 rounded-full shadow-lg hover:shadow-xl">
-                  {getTranslation(language, 'common', 'readMore')}
+                  {<AnimatedText section="common" tKey="readMore" />}
                   <span className="text-xl">→</span>
                 </Link>
               </div>

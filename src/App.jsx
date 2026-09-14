@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from './components/layout/Navbar';
 import SansthaNavbar from './components/layout/SansthaNavbar';
 import Footer from './components/layout/Footer';
+import SansthaFooter from './components/layout/SansthaFooter';
 import { LanguageProvider } from './context/LanguageContext';
 import ScrollToTop from './components/layout/ScrollToTop';
 
@@ -24,10 +25,8 @@ const SansthaAbout = lazy(() => import('./pages/sanstha/SansthaAbout'));
 const SansthaWorks = lazy(() => import('./pages/sanstha/SansthaWorks'));
 const RotiBank = lazy(() => import('./pages/sanstha/RotiBank'));
 const Gallery = lazy(() => import('./pages/sanstha/Gallery'));
-const Founder = lazy(() => import('./pages/sanstha/Founder'));
-const President = lazy(() => import('./pages/sanstha/President'));
 const Donation = lazy(() => import('./pages/sanstha/Donation'));
-const Membership = lazy(() => import('./pages/sanstha/Membership'));
+const Members = lazy(() => import('./pages/sanstha/Members'));
 
 // Loading Fallback
 const LoadingFallback = () => (
@@ -87,14 +86,12 @@ const AppContent = () => {
             <Route path="/sanstha/our-works" element={<SansthaWorks />} />
             <Route path="/sanstha/roti-bank" element={<RotiBank />} />
             <Route path="/sanstha/gallery" element={<Gallery />} />
-            <Route path="/sanstha/founder" element={<Founder />} />
-            <Route path="/sanstha/president" element={<President />} />
+            <Route path="/sanstha/members" element={<Members />} />
             <Route path="/sanstha/donation" element={<Donation />} />
-            <Route path="/sanstha/membership" element={<Membership />} />
           </Routes>
         </Suspense>
       </main>
-      <Footer />
+      {isSanstha ? <SansthaFooter /> : <Footer />}
     </div>
   );
 };

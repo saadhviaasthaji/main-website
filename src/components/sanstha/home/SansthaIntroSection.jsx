@@ -1,67 +1,142 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Reveal from '../../ui/Reveal';
 import Kicker from '../../ui/Kicker';
 import { useLanguage } from '../../../context/LanguageContext';
-import { getTranslation } from '../../../data/translations';
+import AnimatedText from '../../ui/AnimatedText';
 
 const SansthaIntroSection = () => {
   const { language } = useLanguage();
-  return (
-    <section className="py-24 bg-transparent relative overflow-hidden">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex flex-col lg:flex-row items-center gap-0 lg:gap-8">
-          
-          {/* Left Side Content */}
-          <div className="w-full lg:w-[45%] order-2 lg:order-1 z-10 mt-8 lg:mt-0 relative">
-            <Reveal direction="left">
-              <div className="lg:pr-10 relative z-10">
-                <Kicker className="mb-4">ABOUT</Kicker>
-                <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-extrabold mb-6 text-brand-charcoal leading-tight">
-                  {getTranslation(language, 'sanstha', 'heroTitle')}
-                </h2>
-                
-                <img 
-                  src="https://see.fontimg.com/api/rf5/7BWnK/OWIxZDJiOTU1MThlNDNiMGFkZWQ3ZGUwMjU4MTllMWYub3Rm/U2FhZGh2aSBBYXN0aGEgSmk/brother-signature.png?r=fs&h=70&w=1250&fg=000000&bg=FFFFFF&tb=1&s=56" 
-                  alt="Signature" 
-                  className="h-10 md:h-12 object-contain mix-blend-multiply mb-8 opacity-80" 
-                />
 
-                <p className="text-gray-600 mb-10 leading-relaxed font-sans text-base md:text-lg">
-                  {getTranslation(language, 'sanstha', 'introText')}
-                </p>
-                
-                <Link to="/sanstha/about" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-gray-800 transition-all hover:scale-105 rounded-full shadow-lg hover:shadow-xl">
-                  {getTranslation(language, 'common', 'readMore')}
-                  <span className="text-xl">→</span>
-                </Link>
+  return (
+    <section className="py-24 md:py-32 relative bg-white overflow-hidden">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative">
+        
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center relative">
+          
+          {/* Left Text Content */}
+          <div className="w-full lg:w-5/12 relative z-20">
+            <Reveal direction="up">
+              <Kicker className="mb-6 opacity-70">OUR ORGANIZATION</Kicker>
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium mb-8 text-black leading-[1.1] tracking-tight">
+                <AnimatedText section="sanstha" tKey="heroTitle" />
+              </h2>
+              
+              <div className="w-20 h-1 bg-black mb-10"></div>
+
+              <p className="text-gray-500 mb-8 leading-[1.8] font-sans text-lg font-light max-w-xl">
+                <AnimatedText section="sanstha" tKey="introText" />
+              </p>
+              
+              {/* Added Elements: Quick Stats/Tags */}
+              <div className="grid grid-cols-2 gap-6 mb-12 border-t border-gray-100 pt-8">
+                <div>
+                  <h4 className="text-3xl font-serif text-black mb-1">10+</h4>
+                  <p className="text-xs tracking-widest text-gray-400 uppercase font-bold">Years of Service</p>
+                </div>
+                <div>
+                  <h4 className="text-3xl font-serif text-black mb-1">3</h4>
+                  <p className="text-xs tracking-widest text-gray-400 uppercase font-bold">Core Initiatives</p>
+                </div>
               </div>
+
+              <Link to="/sanstha/about" className="group inline-flex items-center gap-4 text-white bg-black rounded-full px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-gray-800 transition-all duration-300">
+                <AnimatedText section="common" tKey="readMore" />
+                <motion.span 
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  →
+                </motion.span>
+              </Link>
             </Reveal>
           </div>
 
-          {/* Right Side Image */}
-          <div className="w-full lg:w-[55%] order-1 lg:order-2 relative z-0">
-            <Reveal direction="right">
-              <div className="w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative group ml-auto">
-                {/* Placeholder Image container */}
-                <div className="absolute inset-0 bg-gray-200 flex items-center justify-center text-gray-400 transition-transform duration-1000 group-hover:scale-105">
-                  <img src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=800&auto=format&fit=crop" alt="Sanstha Seva" className="w-full h-full object-cover" />
-                </div>
+          {/* Right Image Collage */}
+          <div className="w-full lg:w-7/12 relative">
+            <Reveal direction="left" delay={0.2} className="h-full">
+              <div className="grid grid-cols-12 gap-4 md:gap-6 h-[60vh] lg:h-[80vh]">
                 
-                {/* Gradient overlay at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12 opacity-90 transition-opacity duration-500">
-                  <div className="border-l-4 border-white pl-6">
-                    <ul className="text-white/95 text-sm md:text-base space-y-3 font-medium">
-                      <li>✨ Serving humanity through education and food distribution.</li>
-                      <li>✨ Building a community rooted in compassion and care.</li>
-                    </ul>
+                {/* Main Large Image */}
+                <div className="col-span-12 md:col-span-8 row-span-2 relative rounded-3xl overflow-hidden group shadow-2xl h-full">
+                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 1.5, ease: "easeOut" }} className="absolute inset-0">
+                    <img 
+                      src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=2000&auto=format&fit=crop" 
+                      alt="Sanstha Seva" 
+                      className="w-full h-full object-cover filter grayscale-[10%]" 
+                    />
+                  </motion.div>
+                  <div className="absolute inset-0 bg-black/5 transition-opacity group-hover:bg-transparent"></div>
+                  
+                  {/* Floating Tag */}
+                  <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-6 py-3 rounded-full shadow-lg">
+                    <span className="text-sm font-semibold tracking-wide text-black">Compassion in Action</span>
                   </div>
                 </div>
+
+                {/* Top Right Small Image */}
+                <div className="col-span-6 md:col-span-4 relative rounded-3xl overflow-hidden group shadow-lg h-full">
+                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 1.5, ease: "easeOut" }} className="absolute inset-0">
+                    <img 
+                      src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" 
+                      alt="Roti Bank" 
+                      className="w-full h-full object-cover filter grayscale-[30%]" 
+                    />
+                  </motion.div>
+                </div>
+
+                {/* Bottom Right Small Image */}
+                <div className="col-span-6 md:col-span-4 relative rounded-3xl overflow-hidden group shadow-lg h-full hidden md:block">
+                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 1.5, ease: "easeOut" }} className="absolute inset-0">
+                    <img 
+                      src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop" 
+                      alt="Elderly Care" 
+                      className="w-full h-full object-cover filter grayscale-[20%]" 
+                    />
+                  </motion.div>
+                </div>
+
               </div>
             </Reveal>
           </div>
 
         </div>
+
+        {/* Mission and Vision Blocks */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-32 relative z-20">
+          
+          <Reveal delay={0.1} direction="up">
+            <div className="bg-[#FAFAFA] border border-gray-100 rounded-3xl p-10 md:p-16 h-full hover:shadow-xl transition-shadow duration-500">
+              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-8">
+                <span className="text-white text-2xl">✦</span>
+              </div>
+              <h3 className="text-3xl md:text-5xl font-serif text-black mb-6">
+                <AnimatedText section="sanstha" tKey="missionTitle" />
+              </h3>
+              <p className="text-gray-500 font-sans text-lg md:text-xl leading-[1.8] font-light">
+                <AnimatedText section="sanstha" tKey="missionText" />
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.2} direction="up">
+            <div className="bg-brand-charcoal border border-gray-800 rounded-3xl p-10 md:p-16 h-full hover:shadow-2xl transition-shadow duration-500 group">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8">
+                <span className="text-black text-2xl">✧</span>
+              </div>
+              <h3 className="text-3xl md:text-5xl font-serif text-white mb-6">
+                <AnimatedText section="sanstha" tKey="visionTitle" />
+              </h3>
+              <p className="text-gray-300 font-sans text-lg md:text-xl leading-[1.8] font-light">
+                <AnimatedText section="sanstha" tKey="visionText" />
+              </p>
+            </div>
+          </Reveal>
+
+        </div>
+
       </div>
     </section>
   );

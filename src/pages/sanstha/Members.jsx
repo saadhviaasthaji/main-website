@@ -1,0 +1,49 @@
+import React from 'react';
+import Kicker from '../../components/ui/Kicker';
+import LeadershipGrid from '../../components/sanstha/LeadershipGrid';
+import Reveal from '../../components/ui/Reveal';
+import MembershipModal from '../../components/sanstha/MembershipModal';
+
+const Members = () => {
+  const [isMembershipModalOpen, setIsMembershipModalOpen] = React.useState(false);
+  return (
+    <div className="pt-24 bg-transparent min-h-screen pb-20">
+      <header className="py-24 md:py-32 bg-white">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
+          <Kicker>Our Family</Kicker>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-brand-charcoal mb-4 tracking-tight">Meet the Members</h1>
+          <p className="text-gray-600 font-sans text-lg max-w-2xl mx-auto font-light leading-relaxed">
+            The dedicated individuals guiding our mission with devotion, experience, and a commitment to serving humanity.
+          </p>
+        </div>
+      </header>
+
+      <section className="bg-white relative pb-24">
+        <LeadershipGrid />
+      </section>
+
+      {/* Membership Button Section */}
+      <section className="py-24 bg-[#FAFAFA] text-center border-t border-gray-100">
+        <Reveal>
+          <h2 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-6">Become a Part of Our Family</h2>
+          <p className="text-gray-600 font-sans text-lg max-w-2xl mx-auto mb-10">
+            Join our mission to serve humanity. We are always looking for passionate volunteers to help us make a difference.
+          </p>
+          <button 
+            onClick={() => setIsMembershipModalOpen(true)}
+            className="inline-block bg-black text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-gray-800 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+          >
+            Join The Sanstha
+          </button>
+        </Reveal>
+      </section>
+
+      <MembershipModal 
+        isOpen={isMembershipModalOpen} 
+        onClose={() => setIsMembershipModalOpen(false)} 
+      />
+    </div>
+  );
+};
+
+export default Members;

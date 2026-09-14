@@ -15,8 +15,8 @@ const Donation = () => {
 
   return (
     <div className="pt-24 bg-transparent min-h-screen pb-20">
-      <header className="py-20 text-center bg-brand-lightgrey mb-12">
-        <div className="max-w-4xl mx-auto px-4">
+      <header className="py-24 md:py-32 bg-white">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
           <Kicker>Support Us</Kicker>
           <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">Make a Donation</h1>
           <p className="text-gray-600 font-sans text-lg max-w-2xl mx-auto">
@@ -25,7 +25,7 @@ const Donation = () => {
         </div>
       </header>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           
           {/* Bank Transfer Details */}

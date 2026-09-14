@@ -2,31 +2,31 @@ import React from 'react';
 import Reveal from '../components/ui/Reveal';
 import Kicker from '../components/ui/Kicker';
 import { useLanguage } from '../context/LanguageContext';
-import { getTranslation } from '../data/translations';
 import { Calendar, MapPin } from 'lucide-react';
+import AnimatedText from '../components/ui/AnimatedText';
 
 const Events = () => {
   const { language } = useLanguage();
 
   const upcomingEvent = {
-    title: getTranslation(language, 'events', 'event1Title'),
+    title: <AnimatedText section="events" tKey="event1Title" />,
     date: "1 Oct 2026",
     location: "Mathura, UP",
     image: "https://images.unsplash.com/photo-1604085572501-0498ebdd0d50?q=80&w=800&auto=format&fit=crop",
-    description: getTranslation(language, 'events', 'event1Desc'),
+    description: <AnimatedText section="events" tKey="event1Desc" />,
   };
 
   const pastEvents = [
     {
       id: 1,
-      title: getTranslation(language, 'events', 'event2Title'),
+      title: <AnimatedText section="events" tKey="event2Title" />,
       date: "15 Aug 2025",
       location: "Vrindavan, UP",
       image: "https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=800&auto=format&fit=crop"
     },
     {
       id: 2,
-      title: getTranslation(language, 'events', 'event3Title'),
+      title: <AnimatedText section="events" tKey="event3Title" />,
       date: "10 Mar 2025",
       location: "Rishikesh, UK",
       image: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop"
@@ -40,12 +40,12 @@ const Events = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <Reveal>
-            <Kicker className="mb-4">{getTranslation(language, 'events', 'scheduleKicker')}</Kicker>
+            <Kicker className="mb-4">{<AnimatedText section="events" tKey="scheduleKicker" />}</Kicker>
             <h1 className="text-5xl md:text-7xl font-serif font-extrabold text-brand-charcoal mb-6">
-              {getTranslation(language, 'events', 'title')}
+              {<AnimatedText section="events" tKey="title" />}
             </h1>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              {getTranslation(language, 'events', 'subtitle')}
+              {<AnimatedText section="events" tKey="subtitle" />}
             </p>
           </Reveal>
         </div>
@@ -54,7 +54,7 @@ const Events = () => {
         <Reveal delay={0.1}>
           <div className="mb-24">
             <h2 className="text-3xl font-serif font-bold text-brand-charcoal mb-8 border-l-4 border-black pl-4">
-              {getTranslation(language, 'events', 'upcomingTitle')}
+              {<AnimatedText section="events" tKey="upcomingTitle" />}
             </h2>
             <div className="bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-white/50 group">
               <Reveal direction="left" className="md:w-1/2">
@@ -65,7 +65,7 @@ const Events = () => {
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4 bg-black text-white px-4 py-1 text-sm font-bold uppercase tracking-wider rounded-full">
-                    {getTranslation(language, 'events', 'upcomingTag')}
+                    {<AnimatedText section="events" tKey="upcomingTag" />}
                   </div>
                 </div>
               </Reveal>
@@ -92,7 +92,7 @@ const Events = () => {
                     {upcomingEvent.description}
                   </p>
                   <button className="self-start bg-black text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl">
-                    {getTranslation(language, 'common', 'registerNow')}
+                    {<AnimatedText section="common" tKey="registerNow" />}
                   </button>
                 </div>
               </Reveal>
@@ -104,7 +104,7 @@ const Events = () => {
         <Reveal delay={0.2}>
           <div>
             <h2 className="text-3xl font-serif font-bold text-brand-charcoal mb-8 border-l-4 border-gray-400 pl-4 text-gray-700">
-              {getTranslation(language, 'events', 'pastTitle')}
+              {<AnimatedText section="events" tKey="pastTitle" />}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {pastEvents.map((event) => (

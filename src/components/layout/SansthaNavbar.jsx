@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../context/LanguageContext';
-import { getTranslation } from '../../data/translations';
+import AnimatedText from '../ui/AnimatedText';
 
 const SansthaNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,13 +55,11 @@ const SansthaNavbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = [
-    { name: getTranslation(language, 'sansthaNav', 'home'), path: '/sanstha' },
-    { name: getTranslation(language, 'sansthaNav', 'about'), path: '/sanstha/about' },
-    { name: getTranslation(language, 'sansthaNav', 'rotiBank'), path: '/sanstha/roti-bank' },
-    { name: getTranslation(language, 'sansthaNav', 'gallery'), path: '/sanstha/gallery' },
-    { name: getTranslation(language, 'sansthaNav', 'founder'), path: '/sanstha/founder' },
-    { name: getTranslation(language, 'sansthaNav', 'president'), path: '/sanstha/president' },
-    { name: getTranslation(language, 'sansthaNav', 'membership'), path: '/sanstha/membership' }
+    { name: <AnimatedText section="sansthaNav" tKey="home" />, path: '/sanstha' },
+    { name: <AnimatedText section="sansthaNav" tKey="about" />, path: '/sanstha/about' },
+    { name: <AnimatedText section="sansthaNav" tKey="rotiBank" />, path: '/sanstha/roti-bank' },
+    { name: <AnimatedText section="sansthaNav" tKey="gallery" />, path: '/sanstha/gallery' },
+    { name: "Members", path: '/sanstha/members' }
   ];
 
   const isSansthaHomePage = location.pathname === '/sanstha' || location.pathname === '/sanstha/';
@@ -109,7 +107,7 @@ const SansthaNavbar = () => {
               <div className="hidden md:block">
                 <Link to="/sanstha/donation" className={`hidden md:flex items-center space-x-2 px-6 py-2.5 font-bold rounded-none transition-all hover:scale-105 transform border ${!useDarkText ? 'bg-[#ff6b35] text-white border-[#ff6b35] hover:bg-white hover:text-[#ff6b35]' : 'bg-[#ff6b35] text-white border-[#ff6b35] hover:bg-[#e85a28]'}`}>
                   <Heart size={18} />
-                  <span>{getTranslation(language, 'sansthaNav', 'donation')}</span>
+                  <span>{<AnimatedText section="sansthaNav" tKey="donation" />}</span>
                 </Link>
               </div>
               
@@ -157,7 +155,7 @@ const SansthaNavbar = () => {
                   className="w-full flex items-center justify-center space-x-2 py-4 text-lg font-bold bg-[#ff6b35] text-white rounded-none shadow-lg hover:shadow-xl transition-all hover:scale-105 transform"
                 >
                   <Heart size={20} />
-                  <span>{getTranslation(language, 'sansthaNav', 'donation')}</span>
+                  <span>{<AnimatedText section="sansthaNav" tKey="donation" />}</span>
                 </Link>
                 <Link 
                   to="/" 

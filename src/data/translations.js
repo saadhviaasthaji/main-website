@@ -73,6 +73,8 @@ export const translations = {
       gurukulText2: "Through rigorous study and practice of timeless scriptures like the Shreemad Bhagwat, the Gurukul education provides a solid foundation for guiding modern society with ancient wisdom, preserving our spiritual heritage for future generations."
     },
     sanstha: {
+      heroTitle: "Aastha Sevabhavi Sanstha",
+      introText: "Aastha Sevabhavi Sanstha is an organization working on the principle of 'Human Service is Religion'. The core purpose is to reach people in need with essential support and strengthen the spirit of service, compassion, and responsibility in society.",
       aboutIntro: "Aastha Sevabhavi Sanstha is a service-oriented organization working with the belief that “Maanav Seva Hi Dharma Hai” — Service to Humanity is Dharma. The Sanstha is dedicated to reaching people in need with essential support and creating a more compassionate and responsible society.",
       aboutText1: "The Sanstha primarily focuses on the service and support of elderly mothers, while also extending its efforts towards orphanages, persons with disabilities and other underprivileged sections of society. Its service activities include food distribution, ration distribution, clothing distribution, school-kit distribution and other forms of essential assistance.",
       aboutText2: "The organization's registered objectives also encompass various areas of social welfare, education, cultural activities and community development.",
@@ -169,6 +171,8 @@ export const translations = {
       gurukulText2: "श्रीमद्भागवत जैसे कालजयी ग्रंथों के कठोर अध्ययन और अभ्यास के माध्यम से, गुरुकुल शिक्षा आधुनिक समाज को प्राचीन ज्ञान के साथ मार्गदर्शन करने के लिए एक ठोस आधार प्रदान करती है, जिससे आने वाली पीढ़ियों के लिए हमारी आध्यात्मिक विरासत संरक्षित रहती है।"
     },
     sanstha: {
+      heroTitle: "आस्था सेवाभावी संस्था",
+      introText: "आस्था सेवाभावी संस्था 'मानव सेवा ही धर्म है' के सिद्धांत पर कार्य करने वाली एक संस्था है। संस्था का मुख्य उद्देश्य जरूरतमंद लोगों तक आवश्यक सहायता पहुँचाना तथा समाज में सेवा, संवेदना और जिम्मेदारी की भावना को मजबूत करना है।",
       aboutIntro: "आस्था सेवाभावी संस्था “मानव सेवा ही धर्म है” के तसद्धांत पर कार्य करने वािी एक सेवाभावी संस्था है। संस्था का उद्देश्य जरूरतमंद लोगों तक आवश्यक सहायता पहुाँचाना तथा समाज में सेवा, संवेदना और तजम्मेदारी की भावना को मजबूत करना है।",
       aboutText1: "संस्था का मुख्य ध्यान वृद्ध एवं जरूरतमंद माताओं की सेवा एवं सहायता पर है। इसके साथ ही अनाथाियों, तदव्यांगजनों तथा समाज के अन्य जरूरतमंद एवं वंतचत वगों तक भी सेवा पहुाँचाने का कार्य तकया जाता है। संस्था द्वारा भोजन, राशन, वस्त्र, स्कू ि तकट एवं अन्य आवश्यक सामग्री का तवतरण तकया जाता है।",
       aboutText2: "संस्था के पंजीकृ त उद्देश्यों में सामातजक कल्याण के साथ तशक्षा, सांस्कृ ततक गतततवतधयों एवं सामुदातयक तवकास से संबंतधत तवतभन्न सेवा कार्य भी सक्तम्मतित हैं।",

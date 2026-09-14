@@ -9,8 +9,8 @@ const LeadershipCard = ({ person, onClick }) => {
     <motion.div
       layoutId={`card-${person.id}`}
       onClick={onClick}
-      className="cursor-pointer group relative bg-brand-lightgrey rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 w-full"
-      whileHover={{ scale: 1.06, y: -5 }}
+      className="cursor-pointer group relative overflow-hidden w-full bg-white border border-transparent hover:border-gray-200 rounded-3xl transition-shadow duration-500"
+      whileHover={{ y: -5 }}
       whileTap={{ scale: 0.98 }}
       tabIndex={0}
       onKeyDown={(e) => {
@@ -20,27 +20,26 @@ const LeadershipCard = ({ person, onClick }) => {
         }
       }}
     >
-      <div className="aspect-[3/4] relative overflow-hidden">
-        <motion.img
-          layoutId={`image-${person.id}`}
+      <motion.div layoutId={`image-container-${person.id}`} className="aspect-square relative overflow-hidden rounded-t-3xl md:rounded-3xl m-2 bg-gray-100">
+        <img
           src={person.photo}
           alt={person.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover filter grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
         />
         {/* Hover Peek Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-          <p className="text-white font-sans text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 line-clamp-3">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+          <p className="text-white font-sans text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 line-clamp-3 font-light">
             {person.intro}
           </p>
         </div>
-      </div>
+      </motion.div>
       
-      <motion.div layoutId={`details-${person.id}`} className="p-6 bg-white text-center">
-        <h3 className="font-serif text-2xl text-brand-charcoal mb-1">{person.name}</h3>
-        <span className="text-xs uppercase tracking-[2px] font-bold text-[#000000]">
+      <div className="p-8 text-left bg-white">
+        <span className="text-xs uppercase tracking-widest font-bold text-gray-400 mb-2 block">
           {person.designation}
         </span>
-      </motion.div>
+        <h3 className="font-serif text-3xl md:text-4xl text-black leading-tight tracking-tight">{person.name}</h3>
+      </div>
     </motion.div>
   );
 };
@@ -54,62 +53,58 @@ const ExpandedProfile = ({ person, onClose }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
+        className="absolute inset-0 bg-white/90 backdrop-blur-md cursor-pointer"
       />
       
       {/* Expanded Modal Content */}
       <motion.div
         layoutId={`card-${person.id}`}
-        className="relative bg-white w-full max-w-5xl max-h-full overflow-y-auto rounded-3xl shadow-2xl flex flex-col md:flex-row z-10"
+        className="relative bg-white w-full max-w-6xl max-h-full overflow-hidden rounded-[2rem] border border-gray-100 shadow-[0_20px_60px_rgb(0,0,0,0.08)] flex flex-col md:flex-row z-10"
         role="dialog"
         aria-modal="true"
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 bg-white/80 backdrop-blur rounded-full hover:bg-gray-200 transition-colors"
+          className="absolute top-6 right-6 z-20 p-4 bg-gray-100/80 backdrop-blur-lg rounded-full hover:bg-gray-200 transition-colors"
           aria-label="Close"
         >
-          <X size={24} className="text-brand-charcoal" />
+          <X size={20} className="text-black" />
         </button>
 
-        <motion.div className="w-full md:w-2/5 h-64 md:h-auto relative shrink-0">
-          <motion.img
-            layoutId={`image-${person.id}`}
+        <motion.div layoutId={`image-container-${person.id}`} className="w-full md:w-2/5 h-[300px] md:h-auto relative shrink-0 overflow-hidden bg-gray-100">
+          <img
             src={person.photo}
             alt={person.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover filter grayscale-[20%]"
           />
         </motion.div>
 
-        <motion.div layoutId={`details-${person.id}`} className="p-8 md:p-12 w-full flex flex-col">
-          <span className="text-sm uppercase tracking-[2px] font-bold text-[#000000] mb-2 block">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.1, duration: 0.3 }}
+          className="p-8 md:p-16 w-full flex flex-col justify-center overflow-y-auto"
+        >
+          <span className="text-sm uppercase tracking-widest font-bold text-gray-400 mb-4 block">
             {person.designation}
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif text-brand-charcoal mb-6">{person.name}</h2>
+          <h2 className="text-4xl md:text-6xl font-serif text-black mb-10 tracking-tight leading-none">{person.name}</h2>
           
-          <div className="prose prose-lg font-sans text-gray-600 mb-8 max-w-none">
-            <p className="font-semibold text-brand-charcoal mb-4">{person.intro}</p>
-            <p className="mb-4">{person.background}</p>
-            <p className="mb-4"><strong className="text-brand-charcoal">Role:</strong> {person.role}</p>
-            <p className="mb-4"><strong className="text-brand-charcoal">Journey:</strong> {person.journey}</p>
+          <div className="prose prose-lg font-sans text-gray-500 mb-12 max-w-none font-light leading-[1.8]">
+            <p className="font-normal text-black text-xl mb-6 leading-relaxed">{person.intro}</p>
+            <p className="mb-6">{person.background}</p>
+            <p className="mb-6"><strong className="text-black font-medium">Role:</strong> {person.role}</p>
+            <p className="mb-6"><strong className="text-black font-medium">Journey:</strong> {person.journey}</p>
           </div>
 
-          <div className="mt-auto pt-8 border-t border-gray-100 flex items-center justify-between">
-            <Link 
-              to={`/sanstha/${person.id}`} 
-              className="text-[#000000] font-bold hover:text-brand-charcoal transition-colors flex items-center gap-2"
-              onClick={onClose}
-            >
-              View Full Page &rarr;
-            </Link>
-          </div>
         </motion.div>
       </motion.div>
     </div>
   );
 };
 
-const LeadershipGrid = () => {
+const LeadershipGrid = ({ showCoreTeam = true }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   const leaders = [leadershipData.founder, leadershipData.president];
@@ -126,7 +121,7 @@ const LeadershipGrid = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-4xl mx-auto px-4 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 mb-12">
         {leaders.map(person => (
           <LeadershipCard 
             key={person.id} 
@@ -136,18 +131,20 @@ const LeadershipGrid = () => {
         ))}
       </div>
 
-      {leadershipData.members && leadershipData.members.length > 0 && (
-        <div className="max-w-5xl mx-auto px-4 mt-16">
-          <h3 className="text-3xl font-serif text-brand-charcoal text-center mb-10 border-b border-gray-200 pb-4">Our Core Team</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {showCoreTeam && leadershipData.members && leadershipData.members.length > 0 && (
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 mt-24">
+          <div className="flex items-end justify-between mb-16 border-b border-gray-200 pb-6">
+            <h3 className="text-3xl md:text-5xl font-serif text-black tracking-tight">Our Core Team</h3>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {leadershipData.members.map((member, idx) => (
-              <div key={idx} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow text-center">
-                <div className="aspect-[4/3] w-full">
-                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+              <div key={idx} className="group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100">
+                <div className="aspect-[4/3] w-full overflow-hidden">
+                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105" />
                 </div>
-                <div className="p-4 border-t border-gray-100">
-                  <h4 className="font-serif text-lg text-brand-charcoal mb-1">{member.name}</h4>
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">{member.designation}</p>
+                <div className="p-6">
+                  <h4 className="font-serif text-xl text-black mb-2">{member.name}</h4>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{member.designation}</p>
                 </div>
               </div>
             ))}

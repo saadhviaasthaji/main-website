@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -13,53 +13,52 @@ const SansthaTestimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Suresh (Mumbai)",
+      name: "Suresh",
+      location: "Mumbai",
       role: "BENEFICIARY",
-      text: "The Roti Bank has been a lifeline for me and my family during tough times. To receive a freshly cooked meal when you have nothing is a true blessing from God.",
-      rating: 5
+      text: "The Roti Bank has been a lifeline for me and my family during tough times. To receive a freshly cooked meal when you have nothing is a true blessing from God."
     },
     {
       id: 2,
-      name: "Pooja Mehta (Volunteer)",
+      name: "Pooja Mehta",
+      location: "Volunteer",
       role: "COMMUNITY VOLUNTEER",
-      text: "Serving with Aastha Sevabhavi Sanstha has changed my perspective on life. The smiles we see when distributing food are the most rewarding part of my week.",
-      rating: 5
+      text: "Serving with Aastha Sevabhavi Sanstha has changed my perspective on life. The smiles we see when distributing food are the most rewarding part of my week."
     }
   ];
 
   return (
-    <section className="py-24 bg-transparent">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-32 bg-white">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         
         {/* Header & Navigation */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24">
           <Reveal>
-            <Kicker className="mb-2">IMPACT STORIES</Kicker>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-charcoal">
-              Voices from the Community
+            <Kicker className="mb-4 opacity-70">IMPACT STORIES</Kicker>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium text-black tracking-tight leading-none">
+              Voices of <span className="italic text-gray-400">Change</span>
             </h2>
           </Reveal>
           
-          <div className="flex gap-4 mt-6 md:mt-0">
-            <button onClick={() => swiperRef.current?.slidePrev()} className="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full hover:bg-black hover:text-white transition-colors group">
-              <span className="text-xl">←</span>
+          <div className="flex gap-4 mt-8 md:mt-0">
+            <button onClick={() => swiperRef.current?.slidePrev()} className="w-14 h-14 flex items-center justify-center border border-gray-200 rounded-full hover:bg-black hover:text-white hover:border-black transition-all duration-300">
+              <span className="text-xl font-light">←</span>
             </button>
-            <button onClick={() => swiperRef.current?.slideNext()} className="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full hover:bg-black hover:text-white transition-colors group">
-              <span className="text-xl">→</span>
+            <button onClick={() => swiperRef.current?.slideNext()} className="w-14 h-14 flex items-center justify-center border border-gray-200 rounded-full hover:bg-black hover:text-white hover:border-black transition-all duration-300">
+              <span className="text-xl font-light">→</span>
             </button>
           </div>
         </div>
 
-        {/* Slider */}
+        {/* Editorial Slider */}
         <Reveal delay={0.2}>
           <Swiper
-            modules={[Navigation]}
-            spaceBetween={40}
+            modules={[Navigation, Autoplay]}
+            spaceBetween={80}
             slidesPerView={1}
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 2 },
-            }}
+            speed={1000}
+            loop={true}
+            autoplay={{ delay: 6000, disableOnInteraction: false }}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
@@ -67,32 +66,28 @@ const SansthaTestimonials = () => {
           >
             {testimonials.map((t) => (
               <SwiperSlide key={t.id}>
-                <div className="flex gap-6 items-start">
-                  {/* Avatar */}
-                  <div className="flex-shrink-0 w-24 h-24 bg-gray-300 rounded-full shadow-md overflow-hidden relative">
-                     <div className="absolute inset-0 bg-gradient-to-br from-blue-300 to-gray-400"></div>
-                     <div className="absolute inset-0 flex items-center justify-center opacity-30 text-4xl">👤</div>
+                <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
+                  
+                  {/* Huge Quote Mark */}
+                  <div className="hidden md:block text-[15rem] leading-none font-serif text-gray-100 opacity-50 select-none -mt-32">
+                    "
                   </div>
                   
                   {/* Content */}
-                  <div>
-                    {/* Stars */}
-                    <div className="flex gap-1 mb-4 text-black text-xs">
-                      {[...Array(t.rating)].map((_, i) => (
-                        <span key={i}>★</span>
-                      ))}
-                    </div>
-                    
-                    <p className="text-gray-600 font-sans text-sm leading-relaxed mb-6">
-                      {t.text}
+                  <div className="flex-1">
+                    <p className="text-2xl md:text-3xl lg:text-5xl font-serif text-black leading-[1.3] mb-12 tracking-tight">
+                      "{t.text}"
                     </p>
                     
-                    <div>
-                      <span className="font-bold text-black text-sm">{t.name}</span>
-                      <span className="mx-2 text-gray-300">|</span>
-                      <span className="text-xs text-gray-500 uppercase tracking-widest">{t.role}</span>
+                    <div className="flex items-center gap-6">
+                      <div className="w-12 h-[1px] bg-black"></div>
+                      <div>
+                        <span className="font-medium text-black text-lg block">{t.name}</span>
+                        <span className="text-xs text-gray-400 uppercase tracking-widest mt-1 block">{t.role} — {t.location}</span>
+                      </div>
                     </div>
                   </div>
+
                 </div>
               </SwiperSlide>
             ))}
