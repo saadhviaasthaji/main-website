@@ -15,7 +15,7 @@ const President = () => {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
           <div className="w-full md:w-2/5 h-96 md:h-auto shrink-0 relative">
             <img src={person.photo} alt={person.name} className="w-full h-full object-cover" />

@@ -53,7 +53,7 @@ const SansthaHeroSlider = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white/90"></div>
             </div>
 
-            <div className="w-full h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center md:items-end text-center md:text-right relative z-10 pt-24 pb-12 md:pb-0">
+            <div className="w-full h-full w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center md:items-end text-center md:text-right relative z-10 pt-24 pb-12 md:pb-0">
               <div className="w-full md:w-[60%] flex flex-col items-center md:items-end">
                 <Reveal>
                   <span className="text-sm md:text-base font-bold tracking-widest uppercase text-brand-charcoal mb-4 block">

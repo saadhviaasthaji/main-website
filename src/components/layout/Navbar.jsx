@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../context/LanguageContext';
+import { getTranslation } from '../../data/translations';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,11 +60,11 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Events', path: '/events' },
-    { name: 'Booking', path: '/booking' },
-    { name: 'Contact', path: '/contact' }
+    { name: getTranslation(language, 'nav', 'home'), path: '/' },
+    { name: getTranslation(language, 'nav', 'about'), path: '/about' },
+    { name: getTranslation(language, 'nav', 'events'), path: '/events' },
+    { name: getTranslation(language, 'nav', 'booking'), path: '/booking' },
+    { name: getTranslation(language, 'nav', 'contact'), path: '/contact' }
   ];
 
   const isHomePage = location.pathname === '/';
@@ -74,15 +75,15 @@ const Navbar = () => {
     <>
       <header 
         onMouseEnter={() => setIsIdle(false)}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${showBackground ? 'bg-white/95 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-b-3xl' : 'bg-transparent shadow-none rounded-b-none'} py-4`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform-gpu will-change-transform ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${showBackground ? 'bg-white/95 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-b-3xl' : 'bg-transparent shadow-none rounded-b-none'} py-4`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center max-w-[55vw]">
-              <Link to="/">
-                <img src="https://see.fontimg.com/api/rf5/7BWnK/OWIxZDJiOTU1MThlNDNiMGFkZWQ3ZGUwMjU4MTllMWYub3Rm/U2FhZGh2aSBBYXN0aGEgSmk/brother-signature.png?r=fs&h=70&w=1250&fg=000000&bg=FFFFFF&tb=1&s=56" alt="Saadhvi Aastha Ji Logo" className={`h-8 md:h-12 w-full object-contain transition-all duration-300 ${!useDarkText ? 'invert mix-blend-screen' : 'mix-blend-multiply'}`} />
+              <Link to="/" className="h-8 md:h-12 flex items-center gap-2">
+                <img src="https://see.fontimg.com/api/rf5/7BWnK/OWIxZDJiOTU1MThlNDNiMGFkZWQ3ZGUwMjU4MTllMWYub3Rm/U2FhZGh2aSBBYXN0aGEgSmk=/brother-signature.png?r=fs&h=70&w=1250&fg=000000&bg=FFFFFF&tb=1&s=56" alt="Saadhvi Aastha Ji Logo" className={`h-full w-auto object-contain transition-all duration-300 ${!useDarkText ? 'invert mix-blend-screen' : 'mix-blend-multiply'}`} />
               </Link>
             </div>
 
@@ -93,11 +94,24 @@ const Navbar = () => {
                 className={`flex items-center space-x-1 px-3 py-1.5 rounded-full border transition-all ${!useDarkText ? 'text-white border-white/50 hover:bg-white/10' : 'text-brand-charcoal border-gray-300 hover:bg-gray-100'}`}
               >
                 <Globe size={16} />
-                <span className="text-sm font-medium uppercase">{language === 'en' ? 'EN' : 'HI'}</span>
+                <div className="relative w-4 h-5 flex items-center justify-center overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={language}
+                      initial={{ y: 15, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -15, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute text-sm font-medium uppercase"
+                    >
+                      {language === 'en' ? 'EN' : 'HI'}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
               </button>
               <div className="hidden md:block">
                 <Link to="/sanstha" className={`px-6 py-2.5 font-semibold rounded-none transition-all hover:scale-105 transform border ${!useDarkText ? 'bg-transparent text-white border-white hover:bg-white hover:text-black' : 'bg-brand-charcoal text-white border-brand-charcoal hover:bg-black'}`}>
-                  Sanstha Works
+                  {getTranslation(language, 'nav', 'sansthaWorks')}
                 </Link>
               </div>
               
@@ -144,7 +158,7 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)} 
                   className="w-full text-center py-4 text-lg font-bold bg-white text-brand-charcoal rounded-none shadow-lg hover:shadow-xl transition-all hover:scale-105 transform"
                 >
-                  Sanstha Works
+                  {getTranslation(language, 'nav', 'sansthaWorks')}
                 </Link>
               </div>
             </div>

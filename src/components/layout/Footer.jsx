@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-transparent text-black pt-20 pb-8 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           
           {/* Col 1: Brand & Bio */}
@@ -20,13 +22,13 @@ const Footer = () => {
               <div>
                 <span className="block text-black font-bold text-sm mb-1">Phone Number</span>
                 <a href="tel:+910000000000" className="text-gray-600 text-xs hover:text-black transition-colors flex items-center gap-2">
-                  <span>📞</span> +91 00000 00000
+                  <Phone size={14} className="text-brand-charcoal" /> +91 00000 00000
                 </a>
               </div>
               <div>
                 <span className="block text-black font-bold text-sm mb-1">Email Address</span>
                 <a href="mailto:contact@saadhviaasthaji.in" className="text-gray-600 text-xs hover:text-black transition-colors flex items-center gap-2">
-                  <span>✉️</span> contact@saadhviaasthaji.in
+                  <Mail size={14} className="text-brand-charcoal" /> contact@saadhviaasthaji.in
                 </a>
               </div>
             </div>
@@ -45,7 +47,7 @@ const Footer = () => {
                   <FaInstagram size={12} />
                 </a>
                 <a href="#" className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white transition-all duration-300">
-                  <FaTwitter size={12} />
+                  <FaXTwitter size={12} />
                 </a>
                 <a href="#" className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white transition-all duration-300">
                   <FaYoutube size={12} />
@@ -59,7 +61,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold font-serif mb-4 text-black">Quick Links</h3>
             <div className="flex flex-col space-y-3">
               <Link to="/about" className="text-gray-600 text-xs hover:text-black transition-colors">About Saadhvi Aastha Ji</Link>
-              <Link to="/press" className="text-gray-600 text-xs hover:text-black transition-colors">Press Room</Link>
+
               <Link to="/booking" className="text-gray-600 text-xs hover:text-black transition-colors">Bookings</Link>
               <Link to="/contact" className="text-gray-600 text-xs hover:text-black transition-colors">Contact</Link>
             </div>
@@ -80,11 +82,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-300 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
           <p>&copy; {new Date().getFullYear()} Saadhvi Aastha Ji Ventures. Powered by <span className="font-semibold text-gray-700">PM Talents</span></p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link to="/privacy-policy" className="hover:text-black transition-colors">Privacy Policy</Link>
-            <span>|</span>
-            <Link to="/cookies" className="hover:text-black transition-colors">Cookies</Link>
-          </div>
+
         </div>
       </div>
     </footer>

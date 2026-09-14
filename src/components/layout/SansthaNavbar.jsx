@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../context/LanguageContext';
+import { getTranslation } from '../../data/translations';
 
 const SansthaNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,16 +55,13 @@ const SansthaNavbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = [
-    { name: 'Home', path: '/sanstha' },
-    { name: 'About Us', path: '/sanstha/about' },
-    { name: 'Our Works', path: '/sanstha/our-works' },
-    { name: 'Roti Bank', path: '/sanstha/roti-bank' },
-    { name: 'Gallery', path: '/sanstha/gallery' },
-    { name: 'Donation', path: '/sanstha/donation' },
-    { name: 'Membership', path: '/sanstha/membership' },
-    { name: 'Founder', path: '/sanstha/founder' },
-    { name: 'President', path: '/sanstha/president' },
-    { name: 'Contact', path: '/contact' }
+    { name: getTranslation(language, 'sansthaNav', 'home'), path: '/sanstha' },
+    { name: getTranslation(language, 'sansthaNav', 'about'), path: '/sanstha/about' },
+    { name: getTranslation(language, 'sansthaNav', 'rotiBank'), path: '/sanstha/roti-bank' },
+    { name: getTranslation(language, 'sansthaNav', 'gallery'), path: '/sanstha/gallery' },
+    { name: getTranslation(language, 'sansthaNav', 'founder'), path: '/sanstha/founder' },
+    { name: getTranslation(language, 'sansthaNav', 'president'), path: '/sanstha/president' },
+    { name: getTranslation(language, 'sansthaNav', 'membership'), path: '/sanstha/membership' }
   ];
 
   const isSansthaHomePage = location.pathname === '/sanstha' || location.pathname === '/sanstha/';
@@ -74,9 +72,9 @@ const SansthaNavbar = () => {
     <>
       <header 
         onMouseEnter={() => setIsIdle(false)}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${showBackground ? 'bg-white/95 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-b-3xl' : 'bg-transparent shadow-none rounded-b-none'} py-4`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform-gpu will-change-transform ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${showBackground ? 'bg-white/95 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-b-3xl' : 'bg-transparent shadow-none rounded-b-none'} py-4`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             
             {/* Logo */}
@@ -93,11 +91,25 @@ const SansthaNavbar = () => {
                 className={`flex items-center space-x-1 px-3 py-1.5 rounded-full border transition-all ${!useDarkText ? 'text-white border-white/50 hover:bg-white/10' : 'text-brand-charcoal border-gray-300 hover:bg-gray-100'}`}
               >
                 <Globe size={16} />
-                <span className="text-sm font-medium uppercase">{language === 'en' ? 'EN' : 'HI'}</span>
+                <div className="relative w-4 h-5 flex items-center justify-center overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={language}
+                      initial={{ y: 15, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -15, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute text-sm font-medium uppercase"
+                    >
+                      {language === 'en' ? 'EN' : 'HI'}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
               </button>
               <div className="hidden md:block">
-                <Link to="/" className={`px-6 py-2.5 font-semibold rounded-none transition-all hover:scale-105 transform border ${!useDarkText ? 'bg-transparent text-white border-white hover:bg-white hover:text-black' : 'bg-brand-charcoal text-white border-brand-charcoal hover:bg-black'}`}>
-                  Saadhvi Aastha Ji
+                <Link to="/sanstha/donation" className={`hidden md:flex items-center space-x-2 px-6 py-2.5 font-bold rounded-none transition-all hover:scale-105 transform border ${!useDarkText ? 'bg-[#ff6b35] text-white border-[#ff6b35] hover:bg-white hover:text-[#ff6b35]' : 'bg-[#ff6b35] text-white border-[#ff6b35] hover:bg-[#e85a28]'}`}>
+                  <Heart size={18} />
+                  <span>{getTranslation(language, 'sansthaNav', 'donation')}</span>
                 </Link>
               </div>
               
@@ -140,11 +152,12 @@ const SansthaNavbar = () => {
               ))}
               <div className="pt-12 w-full max-w-xs flex flex-col items-center gap-6">
                 <Link 
-                  to="/contact" 
+                  to="/sanstha/donation" 
                   onClick={() => setIsOpen(false)} 
-                  className="w-full text-center py-4 text-lg font-bold bg-white text-brand-charcoal rounded-none shadow-lg hover:shadow-xl transition-all hover:scale-105 transform"
+                  className="w-full flex items-center justify-center space-x-2 py-4 text-lg font-bold bg-[#ff6b35] text-white rounded-none shadow-lg hover:shadow-xl transition-all hover:scale-105 transform"
                 >
-                  Contact Us
+                  <Heart size={20} />
+                  <span>{getTranslation(language, 'sansthaNav', 'donation')}</span>
                 </Link>
                 <Link 
                   to="/" 

@@ -51,21 +51,26 @@ const HeroSlider = () => {
             {/* Full Slide Background Image */}
             <div className="absolute inset-0 w-full h-full">
               {/* Placeholder Image - swap URL for actual images */}
-              <img src={`https://picsum.photos/seed/${slide.id}/1920/1080`} alt="Slide background" className="w-full h-full object-cover" />
+              <img 
+                src={`https://picsum.photos/seed/${slide.id}/1920/1080`} 
+                alt="Slide background" 
+                className="w-full h-full object-cover" 
+                fetchpriority={slide.id === 1 ? "high" : "auto"}
+                loading={slide.id === 1 ? "eager" : "lazy"}
+                decoding="async"
+              />
               {/* Subtle Gradient Overlay to ensure text readability on the right */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white/90"></div>
             </div>
 
-            <div className="w-full h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center md:items-end text-center md:text-right relative z-10 pt-24 pb-12 md:pb-0">
-              {/* Content Box (takes up roughly half the screen on desktop) */}
-              <div className="w-full md:w-[60%] flex flex-col items-center md:items-end">
+            <div className="w-full h-full w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center md:items-end text-center md:text-right relative z-10 pt-24 pb-12 md:pb-0">
+              {/* Content Box (takes up roughly half the screen on desktop, with right padding to clear the navigation arrow) */}
+              <div className="w-full md:w-[60%] flex flex-col items-center md:items-end md:pr-12 lg:pr-20">
                 <Reveal>
                   <span className="text-sm md:text-base font-bold tracking-widest uppercase text-brand-charcoal mb-4 block">
                     {slide.kicker}
                   </span>
-                  <h1 className={`text-6xl md:text-8xl lg:text-9xl ${language === 'hi' ? 'font-kalam' : 'font-ephesis'} text-brand-charcoal mb-6 leading-[1.1] drop-shadow-sm font-normal`}>
-                    {slide.title}
-                  </h1>
+
                   <p className="text-lg md:text-xl text-gray-800 font-serif max-w-lg ml-auto leading-relaxed drop-shadow-sm">
                     {slide.description}
                   </p>

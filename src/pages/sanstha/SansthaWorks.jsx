@@ -23,7 +23,7 @@ const SansthaWorks = () => {
 
       {/* Roti Bank Spotlight Block */}
       <section className="py-20 bg-brand-lightgrey">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="bg-white rounded-3xl shadow-xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
               <div className="w-full md:w-1/2">

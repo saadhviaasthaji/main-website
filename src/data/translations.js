@@ -5,6 +5,48 @@ export const translations = {
       knowMore: "Know More",
       contactUs: "Contact Us",
       donate: "Donate",
+      submit: "Submit",
+      registerNow: "Register Now",
+      schedule: "SCHEDULE"
+    },
+    nav: {
+      home: "Home",
+      about: "About",
+      events: "Events",
+      booking: "Booking",
+      contact: "Contact",
+      sansthaWorks: "Sanstha Works"
+    },
+    sansthaNav: {
+      home: "Home",
+      about: "About",
+      rotiBank: "Roti Bank",
+      gallery: "Gallery",
+      founder: "Founder",
+      president: "President",
+      membership: "Membership",
+      donation: "Donation"
+    },
+    events: {
+      title: "Events",
+      subtitle: "Join Saadhvi Aastha Ji in an immersive journey of devotion, wisdom, and spiritual enlightenment.",
+      upcomingTitle: "Upcoming Event",
+      upcomingTag: "Upcoming",
+      pastTitle: "Past Events",
+      event1Title: "Bagwat Path",
+      event1Desc: "Join us for a divine and soul-stirring Bagwat Path by Saadhvi Aastha Ji in the holy city of Mathura. Experience profound spiritual bliss and discover the path to inner peace.",
+      event2Title: "Shri Krishna Katha",
+      event3Title: "Spiritual Awakening Retreat"
+    },
+    empowering: {
+      kicker: "SAADHVI AASTHA JI",
+      title: "Empowering You, Your Life",
+      kathaTitle: "Katha",
+      kathaDesc: "A heartfelt spiritual dialogue that connects ancient wisdom with modern life, nurturing faith, clarity, and inner peace.",
+      gurukulTitle: "Gurukul",
+      gurukulDesc: "Rooted in the ancient Gurukul tradition, imbibing the timeless wisdom of the Vedas and Shreemad Bhagwat to guide modern life.",
+      sansthaTitle: "Sanstha",
+      sansthaDesc: "Aastha Sevabhavi Sanstha—a dedicated mission of serving humanity through the Roti Bank and uplifting the underprivileged."
     },
     home: {
       heroTitle: "Saadhvi Aastha Ji",
@@ -26,6 +68,9 @@ export const translations = {
       motivationText: "The central inspiration behind Saadhvi Aastha Ji’s spiritual path is her devotion towards Lord Krishna and her desire to understand and share the wisdom of Shreemad Bhagwat. She wishes to make spirituality relatable to everyday life and inspire people to remain connected with Krishna Bhakti even amidst the pressures of modern life. Through Bhagwat Katha and devotional teachings, she seeks to encourage people to trust Thakur Ji, perform their duties sincerely, remember Radha Naam and discover greater peace through devotion.",
       missionTitle: "Mission / Purpose Statement",
       missionText: "To connect people with Lord Krishna through Shreemad Bhagwat, devotion and the remembrance of Radha Naam, inspiring them to live with faith, love, inner peace and a sense of spiritual purpose.",
+      gurukulTitle: "Gurukul & Vedic Education",
+      gurukulText1: "Rooted in the ancient Gurukul tradition, the pursuit of spiritual knowledge is not just an academic endeavor but a way of life. The environment of the Gurukul fosters discipline, devotion, and a deep understanding of the Vedas.",
+      gurukulText2: "Through rigorous study and practice of timeless scriptures like the Shreemad Bhagwat, the Gurukul education provides a solid foundation for guiding modern society with ancient wisdom, preserving our spiritual heritage for future generations."
     },
     sanstha: {
       aboutIntro: "Aastha Sevabhavi Sanstha is a service-oriented organization working with the belief that “Maanav Seva Hi Dharma Hai” — Service to Humanity is Dharma. The Sanstha is dedicated to reaching people in need with essential support and creating a more compassionate and responsible society.",
@@ -56,6 +101,48 @@ export const translations = {
       knowMore: "और जानें",
       contactUs: "संपर्क करें",
       donate: "दान करें",
+      submit: "जमा करें",
+      registerNow: "अभी पंजीकरण करें",
+      schedule: "अनुसूची"
+    },
+    nav: {
+      home: "होम",
+      about: "परिचय",
+      events: "कार्यक्रम",
+      booking: "बुकिंग",
+      contact: "संपर्क",
+      sansthaWorks: "संस्था के कार्य"
+    },
+    sansthaNav: {
+      home: "होम",
+      about: "परिचय",
+      rotiBank: "रोटी बैंक",
+      gallery: "गैलरी",
+      founder: "संस्थापक",
+      president: "अध्यक्ष",
+      membership: "सदस्यता",
+      donation: "दान"
+    },
+    events: {
+      title: "कार्यक्रम",
+      subtitle: "साध्वी आस्था जी के साथ भक्ति, ज्ञान और आध्यात्मिक जागृति की एक गहन यात्रा में शामिल हों।",
+      upcomingTitle: "आगामी कार्यक्रम",
+      upcomingTag: "आगामी",
+      pastTitle: "पिछले कार्यक्रम",
+      event1Title: "भागवत पाठ",
+      event1Desc: "मथुरा की पवित्र नगरी में साध्वी आस्था जी द्वारा एक दिव्य और भावपूर्ण भागवत पाठ में हमारे साथ जुड़ें। गहरी आध्यात्मिक शांति का अनुभव करें।",
+      event2Title: "श्री कृष्ण कथा",
+      event3Title: "आध्यात्मिक जागृति रिट्रीट"
+    },
+    empowering: {
+      kicker: "साध्वी आस्था जी",
+      title: "सशक्त आप, सशक्त जीवन",
+      kathaTitle: "कथा",
+      kathaDesc: "एक भावपूर्ण आध्यात्मिक संवाद जो प्राचीन ज्ञान को आधुनिक जीवन से जोड़ता है, विश्वास, स्पष्टता और आंतरिक शांति का पोषण करता है।",
+      gurukulTitle: "गुरुकुल",
+      gurukulDesc: "प्राचीन गुरुकुल परंपरा में निहित, आधुनिक जीवन का मार्गदर्शन करने के लिए वेदों और श्रीमद्भागवत के कालातीत ज्ञान को आत्मसात करना।",
+      sansthaTitle: "संस्था",
+      sansthaDesc: "आस्था सेवाभावी संस्था—रोटी बैंक के माध्यम से मानवता की सेवा और वंचितों के उत्थान का एक समर्पित मिशन।"
     },
     home: {
       heroTitle: "साध्वी आस्था जी",
@@ -77,6 +164,9 @@ export const translations = {
       motivationText: "साध्वी आस्था जी की आध्यात्मिक यात्रा की मुख्य प्रेरणा भगवान श्रीकृ ष्ण के प्रतत उनकी भक्ति तथा श्रीमद्भागवत के ज्ञान को समझने और जन-जन तक पहुाँचाने की भावना है। वे चाहती हैं तक आज के आधुतनक एवं व्यस्त जीवन में भी व्यक्ति आध्यात्मिकता और कृ ष्ण भक्ति से जुड़ा रहे। श्रीमद्भागवत कथा एवं भक्ति के माध्यम से उनका प्रयास है तक लोग ठाकु र जी पर तवश्वास रखें, अपने कर्म को पूरी तनष्ठा से करते रहें, राधा नाम का स्मरण करें और भक्ति के माध्यम से जीवन में शांतत एवं सकारात्मकता का अनुभव करें।",
       missionTitle: "उद्देश्य / संकल्प",
       missionText: "श्रीमद्भागवत, भक्ति और राधा नाम के स्मरण के माध्यम से लोगों को श्रीकृ ष्ण से जोड़ना तथा उन्हें तवश्वास, प्रेम, आंतररक शांतत और आध्यात्मिक उद्देश्य के साथ जीवन जीने के तिए प्रेररत करना।",
+      gurukulTitle: "गुरुकुल एवं वैदिक शिक्षा",
+      gurukulText1: "प्राचीन गुरुकुल परंपरा में निहित, आध्यात्मिक ज्ञान की खोज केवल एक शैक्षणिक प्रयास नहीं है बल्कि जीवन जीने की एक शैली है। गुरुकुल का वातावरण अनुशासन, भक्ति और वेदों की गहरी समझ को बढ़ावा देता है।",
+      gurukulText2: "श्रीमद्भागवत जैसे कालजयी ग्रंथों के कठोर अध्ययन और अभ्यास के माध्यम से, गुरुकुल शिक्षा आधुनिक समाज को प्राचीन ज्ञान के साथ मार्गदर्शन करने के लिए एक ठोस आधार प्रदान करती है, जिससे आने वाली पीढ़ियों के लिए हमारी आध्यात्मिक विरासत संरक्षित रहती है।"
     },
     sanstha: {
       aboutIntro: "आस्था सेवाभावी संस्था “मानव सेवा ही धर्म है” के तसद्धांत पर कार्य करने वािी एक सेवाभावी संस्था है। संस्था का उद्देश्य जरूरतमंद लोगों तक आवश्यक सहायता पहुाँचाना तथा समाज में सेवा, संवेदना और तजम्मेदारी की भावना को मजबूत करना है।",

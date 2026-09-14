@@ -36,7 +36,7 @@ const SansthaHome = () => {
 
       {/* Leadership Section inserted here for Sanstha context */}
       <section className="py-20 bg-transparent">
-        <div className="max-w-7xl mx-auto px-4 text-center mb-16">
+        <div className="w-full mx-auto px-4 text-center mb-16">
           <Reveal>
             <span className="text-sm uppercase tracking-widest text-[#000000] font-bold mb-4 block">Leadership</span>
             <h2 className="text-3xl md:text-5xl font-serif text-brand-charcoal mb-4">Meet the Visionaries</h2>

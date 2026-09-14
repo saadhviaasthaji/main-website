@@ -9,7 +9,7 @@ const SansthaIntroSection = () => {
   const { language } = useLanguage();
   return (
     <section className="py-24 bg-transparent relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex flex-col lg:flex-row items-center gap-0 lg:gap-8">
           
           {/* Left Side Content */}

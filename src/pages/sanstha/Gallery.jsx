@@ -36,7 +36,7 @@ const Gallery = () => {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">

@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import Reveal from '../ui/Reveal';
 import Kicker from '../ui/Kicker';
 
@@ -8,7 +9,7 @@ const SocialMediaBar = () => {
     { icon: <FaInstagram size={28} />, name: 'Instagram', link: '#' },
     { icon: <FaYoutube size={28} />, name: 'YouTube', link: '#' },
     { icon: <FaFacebookF size={28} />, name: 'Facebook', link: '#' },
-    { icon: <FaTwitter size={28} />, name: 'Twitter', link: '#' },
+    { icon: <FaXTwitter size={28} />, name: 'X', link: '#' },
   ];
 
   return (

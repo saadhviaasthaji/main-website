@@ -70,7 +70,7 @@ const RotiBank = () => {
 
       {/* 5. Images from Our Work */}
       <section className="py-20 bg-brand-lightgrey">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center mb-12">
               <span className="text-sm uppercase tracking-[2px] font-bold text-[#000000] mb-2 block">Gallery</span>

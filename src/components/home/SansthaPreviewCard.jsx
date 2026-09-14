@@ -11,7 +11,7 @@ const SansthaPreviewCard = () => {
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
             
             {/* Image Placeholder */}
-            <div className="md:w-5/12 bg-gray-200 relative min-h-[300px] md:min-h-full">
+            <div className="w-full md:w-5/12 bg-gray-200 relative min-h-[300px] md:min-h-full">
               <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-sans">
                 [Sanstha Image Placeholder]
               </div>
