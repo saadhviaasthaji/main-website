@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import SansthaNavbar from './components/layout/SansthaNavbar';
@@ -9,6 +9,7 @@ import ScrollToTop from './components/layout/ScrollToTop';
 
 // Lazy load Heavy Components
 const GradientWaves = lazy(() => import('./components/ui/GradientWaves'));
+import SignatureText from './components/ui/SignatureText';
 
 // Lazy load Main Pages
 const Home = lazy(() => import('./pages/Home'));
@@ -30,8 +31,8 @@ const Members = lazy(() => import('./pages/sanstha/Members'));
 
 // Loading Fallback
 const LoadingFallback = () => (
-  <div className="flex items-center justify-center min-h-[50vh]">
-    <div className="w-8 h-8 border-4 border-gray-200 border-t-black rounded-full animate-spin"></div>
+  <div className="flex items-center justify-center min-h-screen">
+    <SignatureText width="200px" />
   </div>
 );
 
@@ -96,11 +97,43 @@ const AppContent = () => {
   );
 };
 
+import { AnimatePresence, motion } from 'framer-motion';
+
 function App() {
+  const [initialLoading, setInitialLoading] = useState(true);
+
+  useEffect(() => {
+    // The SVG animation takes around 1.72s to complete fully.
+    // We add a small buffer so the user can read it.
+    const timer = setTimeout(() => {
+      setInitialLoading(false);
+    }, 2200);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <LanguageProvider>
       <Router>
-        <AppContent />
+        <AnimatePresence mode="wait">
+          {initialLoading ? (
+            <motion.div
+              key="splash"
+              exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
+              className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
+            >
+              <SignatureText width="800px" className="w-full max-w-3xl px-4" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="app"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 0.8, ease: "easeInOut" } }}
+              className="w-full min-h-screen"
+            >
+              <AppContent />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </Router>
     </LanguageProvider>
   );

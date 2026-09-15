@@ -22,3 +22,30 @@
     @apply border border-[#000000] text-[#000000] px-6 py-3 rounded-none font-sans font-medium hover:bg-[#000000] hover:text-white transition-colors duration-300 inline-block text-center;
   }
 }
+
+@layer utilities {
+  .ink-flow-text {
+    background: linear-gradient(
+      110deg,
+      #e5e7eb 0%,
+      #e5e7eb 40%,
+      #000000 50%,
+      #000000 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: inkFlowAnim 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes inkFlowAnim {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
