@@ -69,21 +69,26 @@ const Navbar = () => {
 
   const isHomePage = location.pathname === '/';
   const useDarkText = isScrolled || isOpen || !isHomePage;
-  const showBackground = isScrolled && !isIdle;
+  const actuallyVisible = isVisible && (!isIdle || !isScrolled || isOpen);
+  const showBackground = isScrolled;
 
   return (
     <>
       <header 
         onMouseEnter={() => setIsIdle(false)}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform-gpu will-change-transform ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${showBackground ? 'bg-white/95 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-b-3xl' : 'bg-transparent shadow-none rounded-b-none'} py-4`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform-gpu will-change-transform ${actuallyVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${showBackground ? 'bg-white/95 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-b-3xl' : 'bg-transparent shadow-none rounded-b-none'} py-4`}
       >
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center max-w-[55vw]">
-              <Link to="/" className="h-8 md:h-12 flex items-center gap-2">
-                <img src="https://see.fontimg.com/api/rf5/7BWnK/OWIxZDJiOTU1MThlNDNiMGFkZWQ3ZGUwMjU4MTllMWYub3Rm/U2FhZGh2aSBBYXN0aGEgSmk=/brother-signature.png?r=fs&h=70&w=1250&fg=000000&bg=FFFFFF&tb=1&s=56" alt="Saadhvi Aastha Ji Logo" className={`h-full w-auto object-contain transition-all duration-300 ${!useDarkText ? 'invert mix-blend-screen' : 'mix-blend-multiply'}`} />
+              <Link to="/" className="flex items-center gap-3 group relative w-40 h-16 sm:w-48 sm:h-20" aria-label="Home">
+                <img 
+                  src="/assets/shared/logos/aastha-logo.webp" 
+                  alt="Aastha Logo" 
+                  className="w-full h-full object-contain"
+                />
               </Link>
             </div>
 

@@ -13,7 +13,7 @@ const BioSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-0 lg:gap-8">
           
           {/* Left Side Content */}
-          <div className="w-full lg:w-[45%] order-2 lg:order-1 z-10 mt-8 lg:mt-0 relative">
+          <div className="w-full lg:w-[45%] order-1 lg:order-1 z-10 mt-8 lg:mt-0 relative">
             <Reveal direction="left">
               <div className="lg:pr-10 relative z-10">
                 <Kicker className="mb-4">BIO</Kicker>
@@ -36,26 +36,26 @@ const BioSection = () => {
           </div>
 
           {/* Right Side Image Collage */}
-          <div className="w-full lg:w-[55%] order-1 lg:order-2 relative z-0">
+          <div className="w-full lg:w-[55%] order-2 lg:order-2 relative z-0 mt-12 lg:mt-0">
             <Reveal direction="right">
               <div className="grid grid-cols-2 gap-4 md:gap-6 h-[450px] sm:h-[550px] md:h-[650px] w-full max-w-2xl mx-auto lg:ml-auto">
                 {/* Column 1 (Offset down) */}
                 <div className="col-span-1 pt-12 md:pt-20 flex flex-col gap-4 md:gap-6">
                   <div className="flex-grow rounded-3xl overflow-hidden shadow-2xl relative group">
-                    <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=600&auto=format&fit=crop" alt="Spiritual journey" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    <img src="/assets/pages/home/bio/bio-1.webp" alt="Spiritual journey" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   </div>
                   <div className="h-1/3 rounded-3xl overflow-hidden shadow-xl relative group hidden sm:block">
-                    <img src="https://images.unsplash.com/photo-1528642474498-1af0c17fd8c3?q=80&w=600&auto=format&fit=crop" alt="Meditation" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    <img src="/assets/pages/home/bio/bio-2.webp" alt="Meditation" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   </div>
                 </div>
                 
                 {/* Column 2 (Offset up) */}
                 <div className="col-span-1 pb-12 md:pb-20 flex flex-col gap-4 md:gap-6">
                   <div className="h-2/5 rounded-3xl overflow-hidden shadow-xl relative group">
-                    <img src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=600&auto=format&fit=crop" alt="Community" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    <img src="/assets/pages/home/bio/bio-3.webp" alt="Community" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   </div>
                   <div className="flex-grow rounded-3xl overflow-hidden shadow-2xl relative group">
-                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=800&auto=format&fit=crop" alt="Preaching" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    <img src="/assets/pages/home/bio/bio-4.webp" alt="Preaching" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   </div>
                 </div>
               </div>

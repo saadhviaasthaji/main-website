@@ -14,29 +14,59 @@ const HeroSlider = () => {
   const slides = [
     {
       id: 1,
-      kicker: <AnimatedText section="home" tKey="heroSubtitle" uppercase />,
-      title: <AnimatedText section="home" tKey="heroTitle" />,
-      description: <AnimatedText section="home" tKey="heroTagline" />
+      image: "/assets/pages/home/hero/desktop-1.webp",
+      mobileImage: "/assets/pages/home/hero/mobile-1.webp",
+      kicker: "",
+      title: "",
+      description: ""
     },
     {
       id: 2,
-      kicker: "DEVOTION",
-      title: <AnimatedText section="home" tKey="heroTitle" />,
-      description: <AnimatedText section="home" tKey="heroQuote" />
+      image: "/assets/pages/home/hero/desktop-2.webp",
+      mobileImage: "/assets/pages/home/hero/mobile-2.webp",
+      kicker: "",
+      title: "",
+      description: ""
+    },
+    {
+      id: 3,
+      image: "/assets/pages/home/hero/desktop-3.webp",
+      mobileImage: "/assets/pages/home/hero/mobile-3.webp",
+      kicker: "",
+      title: "",
+      description: ""
+    },
+    {
+      id: 4,
+      image: "/assets/pages/home/hero/desktop-4.webp",
+      mobileImage: "/assets/pages/home/hero/mobile-4.webp",
+      kicker: "",
+      title: "",
+      description: ""
+    },
+    {
+      id: 5,
+      image: "/assets/pages/home/hero/desktop-5.webp",
+      mobileImage: "/assets/pages/home/hero/mobile-5.webp",
+      kicker: "",
+      title: "",
+      description: ""
     }
   ];
 
   return (
-    <div 
-      className="relative w-full h-screen bg-transparent overflow-hidden"
-      style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' }}
+    <div
+      className="relative w-full h-[85vh] md:h-screen bg-transparent overflow-hidden"
     >
       {/* Decorative Background Blob/Texture Placeholder */}
       <div className="absolute inset-0 z-0 opacity-30" style={{ background: 'radial-gradient(circle at 70% 30%, #e6e6e9 0%, transparent 60%), radial-gradient(circle at 30% 70%, #ffffff 0%, transparent 50%)' }}></div>
-      
-      {/* Top dark gradient to ensure navbar visibility */}
-      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-black/60 to-transparent z-40 pointer-events-none"></div>
-      
+
+      {/* Top left white cloud blur effect to highlight logo */}
+      <div className="absolute -top-[10%] -left-[10%] w-[80%] max-w-[600px] h-[40%] max-h-[400px] bg-white rounded-full mix-blend-normal filter blur-[80px] md:blur-[120px] opacity-90 z-40 pointer-events-none"></div>
+
+      {/* Bottom blur/fade effect */}
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#f8f9fa] to-transparent z-40 pointer-events-none"></div>
+
       <Swiper
         modules={[Navigation, Autoplay, EffectFade]}
         effect="fade"
@@ -51,16 +81,17 @@ const HeroSlider = () => {
             {/* Full Slide Background Image */}
             <div className="absolute inset-0 w-full h-full">
               {/* Placeholder Image - swap URL for actual images */}
-              <img 
-                src={`https://picsum.photos/seed/${slide.id}/1920/1080`} 
-                alt="Slide background" 
-                className="w-full h-full object-cover" 
-                fetchpriority={slide.id === 1 ? "high" : "auto"}
-                loading={slide.id === 1 ? "eager" : "lazy"}
-                decoding="async"
-              />
-              {/* Subtle Gradient Overlay to ensure text readability on the right */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white/90"></div>
+              <picture>
+                <source media="(min-width: 768px)" srcSet={slide.image} />
+                <img
+                  src={slide.mobileImage}
+                  alt="Slide background"
+                  className="w-full h-full object-cover"
+                  fetchpriority={slide.id === 1 ? "high" : "auto"}
+                  loading={slide.id === 1 ? "eager" : "lazy"}
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div className="w-full h-full w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center md:items-end text-center md:text-right relative z-10 pt-24 pb-12 md:pb-0">
@@ -80,7 +111,7 @@ const HeroSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      
+
       <style>{`
         .custom-swiper .swiper-button-next,
         .custom-swiper .swiper-button-prev {

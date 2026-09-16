@@ -10,7 +10,7 @@ const EmpoweringSection = () => {
   return (
     <section className="py-24 bg-transparent">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
           <Reveal>
@@ -23,12 +23,12 @@ const EmpoweringSection = () => {
 
         {/* 3-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-          
+
           {/* Column 1: Image Top, Content Bottom */}
           <Reveal delay={0.1} direction="left">
             <div className="flex flex-col gap-0 shadow-lg group">
               <div className="w-full aspect-[4/3] bg-gray-300 relative overflow-hidden flex items-center justify-center">
-                <span className="text-gray-500 font-serif">Katha Image</span>
+                <img src="/assets/pages/home/empowering/katha.webp" alt="Katha" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="bg-white p-6">
                 <h3 className="text-2xl font-serif font-bold text-brand-charcoal mb-4">{<AnimatedText section="empowering" tKey="kathaTitle" />}</h3>
@@ -57,7 +57,7 @@ const EmpoweringSection = () => {
                 </Link>
               </div>
               <div className="w-full aspect-[4/3] bg-gray-300 relative overflow-hidden flex items-center justify-center">
-                <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=600&auto=format&fit=crop" alt="Gurukul" className="w-full h-full object-cover" />
+                <img src="/assets/pages/home/empowering/gurukul.webp" alt="Gurukul" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
             </div>
           </Reveal>
@@ -66,7 +66,7 @@ const EmpoweringSection = () => {
           <Reveal delay={0.3} direction="right">
             <div className="flex flex-col gap-0 shadow-lg group">
               <div className="w-full aspect-[4/3] bg-gray-300 relative overflow-hidden flex items-center justify-center">
-                <img src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=600&auto=format&fit=crop" alt="Sanstha" className="w-full h-full object-cover" />
+                <img src="/assets/pages/home/empowering/sanstha.webp" alt="Sanstha" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="bg-white p-6">
                 <h3 className="text-2xl font-serif font-bold text-brand-charcoal mb-4">{<AnimatedText section="empowering" tKey="sansthaTitle" />}</h3>

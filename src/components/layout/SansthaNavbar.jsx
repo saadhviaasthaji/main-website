@@ -64,13 +64,14 @@ const SansthaNavbar = () => {
 
   const isSansthaHomePage = location.pathname === '/sanstha' || location.pathname === '/sanstha/';
   const useDarkText = isScrolled || isOpen || !isSansthaHomePage;
-  const showBackground = isScrolled && !isIdle;
+  const actuallyVisible = isVisible && (!isIdle || !isScrolled || isOpen);
+  const showBackground = isScrolled;
 
   return (
     <>
       <header 
         onMouseEnter={() => setIsIdle(false)}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform-gpu will-change-transform ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${showBackground ? 'bg-white/95 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-b-3xl' : 'bg-transparent shadow-none rounded-b-none'} py-4`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform-gpu will-change-transform ${actuallyVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${showBackground ? 'bg-white/95 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-b-3xl' : 'bg-transparent shadow-none rounded-b-none'} py-4`}
       >
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -78,7 +79,7 @@ const SansthaNavbar = () => {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center max-w-[55vw]">
               <Link to="/sanstha">
-                <img src="https://see.fontimg.com/api/rf5/7BWnK/OWIxZDJiOTU1MThlNDNiMGFkZWQ3ZGUwMjU4MTllMWYub3Rm/QWFzdGhhIFNldmFiaGF2aSBTYW5zdGhh/brother-signature.png?r=fs&h=70&w=1250&fg=000000&bg=FFFFFF&tb=1&s=56" alt="Aastha Sevabhavi Sanstha Logo" className={`h-8 md:h-12 w-full object-contain transition-all duration-300 ${!useDarkText ? 'invert mix-blend-screen' : 'mix-blend-multiply'}`} />
+                <img src="/assets/shared/logos/sanstha-logo.webp" alt="Aastha Sevabhavi Sanstha Logo" className="h-12 md:h-16 w-full object-contain transition-all duration-300" />
               </Link>
             </div>
 
