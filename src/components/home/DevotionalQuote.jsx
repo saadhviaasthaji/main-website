@@ -34,25 +34,28 @@ const DevotionalQuote = () => {
             {quotes.map((quote) => (
               <div 
                 key={quote.id} 
-                className="bg-[#2A3337] rounded-lg p-8 relative flex flex-col justify-between shadow-xl transform transition-transform hover:-translate-y-2"
-                style={{ borderRadius: '12px 12px 24px 12px' }}
+                className="rounded-lg p-8 relative flex flex-col justify-between shadow-xl transform transition-transform hover:-translate-y-2 bg-no-repeat bg-cover bg-center"
+                style={{ 
+                  backgroundImage: 'url(/assets/pages/home/quotes/quotes_bg.webp)',
+                  borderRadius: '12px 12px 24px 12px' 
+                }}
               >
                 {/* Top Quote Icon */}
-                <div className="absolute top-4 left-4 text-[#8C989C] opacity-50 text-6xl font-serif leading-none">
+                <div className="absolute top-4 left-4 text-red-600 opacity-80 text-6xl font-serif leading-none">
                   “
                 </div>
                 
-                <div className="mt-8 z-10 relative">
-                  <h3 className="text-white font-bold text-lg md:text-xl mb-4 font-sans border-b border-gray-600 pb-2 inline-block">
+                <div className="mt-8 z-10 relative pb-10">
+                  <h3 className="text-red-600 font-bold text-lg md:text-xl mb-4 font-sans border-b border-red-600 pb-2 inline-block">
                     {quote.name}
                   </h3>
-                  <p className="text-gray-300 text-sm md:text-base leading-relaxed font-sans mt-2">
+                  <p className="text-black text-sm md:text-base leading-relaxed font-bold font-sans mt-2">
                     {quote.text}
                   </p>
                 </div>
                 
                 {/* Bottom Quote Icon */}
-                <div className="absolute bottom-[-10px] right-6 text-[#8C989C] opacity-50 text-8xl font-serif leading-none">
+                <div className="absolute bottom-2 right-4 text-red-600 opacity-60 text-8xl font-serif leading-none z-0">
                   ”
                 </div>
               </div>

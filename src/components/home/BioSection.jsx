@@ -17,7 +17,7 @@ const BioSection = () => {
             <Reveal direction="left">
               <div className="lg:pr-10 relative z-10">
                 <Kicker className="mb-4">BIO</Kicker>
-                <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-extrabold mb-6 text-brand-charcoal leading-tight">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-extrabold mb-6 text-brand-charcoal leading-tight break-words">
                   {<AnimatedText section="home" tKey="heroTitle" />}
                 </h2>
                 

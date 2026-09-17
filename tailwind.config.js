@@ -24,6 +24,20 @@ export default {
         ephesis: ['"Ephesis"', 'cursive'],
         kalam: ['"Kalam"', 'cursive']
       },
+      animation: {
+        'spin-slow': 'spin-slow 80s linear infinite',
+        'spin-slow-reverse': 'spin-slow-reverse 80s linear infinite',
+      },
+      keyframes: {
+        'spin-slow': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+        'spin-slow-reverse': {
+          from: { transform: 'rotate(360deg)' },
+          to: { transform: 'rotate(0deg)' },
+        }
+      }
     },
   },
   plugins: [],

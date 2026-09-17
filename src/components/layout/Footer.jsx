@@ -12,7 +12,11 @@ const Footer = () => {
           
           {/* Col 1: Brand & Bio */}
           <div className="lg:col-span-4">
-            <img src="https://see.fontimg.com/api/rf5/7BWnK/OWIxZDJiOTU1MThlNDNiMGFkZWQ3ZGUwMjU4MTllMWYub3Rm/U2FhZGh2aSBBYXN0aGEgSmk/brother-signature.png?r=fs&h=70&w=1250&fg=000000&bg=FFFFFF&tb=1&s=56" alt="Saadhvi Aastha Ji Logo" className="h-10 object-contain mix-blend-multiply mb-6" />
+            <img 
+              src="/assets/shared/logos/aastha-logo.webp" 
+              alt="Saadhvi Aastha Ji Logo" 
+              className="h-16 object-contain mb-6" 
+            />
             
             <p className="text-gray-600 text-xs mb-10 leading-relaxed font-sans pr-6">
               Saadhvi Aastha Ji is a renowned spiritual orator, author, motivational speaker, and devotional artist known for her heartfelt kathavachans and inspirational messages.

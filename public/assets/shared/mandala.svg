@@ -1,0 +1,34 @@
+<svg xmlns="http://www.svgrepo.com/show/339174/mandala.svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="petal">
+      <path d="M 50 50 Q 40 20 50 5 Q 60 20 50 50 Z" fill="none" stroke="#d4af37" stroke-width="1.5" />
+      <circle cx="50" cy="15" r="2" fill="#d4af37" />
+    </g>
+    <g id="petal-inner">
+      <path d="M 50 50 Q 45 35 50 25 Q 55 35 50 50 Z" fill="none" stroke="#c5a059" stroke-width="1" />
+    </g>
+  </defs>
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#d4af37" stroke-width="0.5" stroke-dasharray="1 3"/>
+  <circle cx="50" cy="50" r="35" fill="none" stroke="#c5a059" stroke-width="1" />
+  <circle cx="50" cy="50" r="25" fill="none" stroke="#d4af37" stroke-width="0.5" />
+  <circle cx="50" cy="50" r="10" fill="none" stroke="#c5a059" stroke-width="1.5" />
+  <circle cx="50" cy="50" r="5" fill="#d4af37" />
+  
+  <use href="#petal" transform="rotate(0 50 50)" />
+  <use href="#petal" transform="rotate(45 50 50)" />
+  <use href="#petal" transform="rotate(90 50 50)" />
+  <use href="#petal" transform="rotate(135 50 50)" />
+  <use href="#petal" transform="rotate(180 50 50)" />
+  <use href="#petal" transform="rotate(225 50 50)" />
+  <use href="#petal" transform="rotate(270 50 50)" />
+  <use href="#petal" transform="rotate(315 50 50)" />
+
+  <use href="#petal-inner" transform="rotate(22.5 50 50)" />
+  <use href="#petal-inner" transform="rotate(67.5 50 50)" />
+  <use href="#petal-inner" transform="rotate(112.5 50 50)" />
+  <use href="#petal-inner" transform="rotate(157.5 50 50)" />
+  <use href="#petal-inner" transform="rotate(202.5 50 50)" />
+  <use href="#petal-inner" transform="rotate(247.5 50 50)" />
+  <use href="#petal-inner" transform="rotate(292.5 50 50)" />
+  <use href="#petal-inner" transform="rotate(337.5 50 50)" />
+</svg>

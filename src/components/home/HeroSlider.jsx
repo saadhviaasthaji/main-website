@@ -57,6 +57,10 @@ const HeroSlider = () => {
   return (
     <div
       className="relative w-full h-[85vh] md:h-screen bg-transparent overflow-hidden"
+      style={{
+        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+        maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)'
+      }}
     >
       {/* Decorative Background Blob/Texture Placeholder */}
       <div className="absolute inset-0 z-0 opacity-30" style={{ background: 'radial-gradient(circle at 70% 30%, #e6e6e9 0%, transparent 60%), radial-gradient(circle at 30% 70%, #ffffff 0%, transparent 50%)' }}></div>
@@ -64,8 +68,7 @@ const HeroSlider = () => {
       {/* Top left white cloud blur effect to highlight logo */}
       <div className="absolute -top-[10%] -left-[10%] w-[80%] max-w-[600px] h-[40%] max-h-[400px] bg-white rounded-full mix-blend-normal filter blur-[80px] md:blur-[120px] opacity-90 z-40 pointer-events-none"></div>
 
-      {/* Bottom blur/fade effect */}
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#f8f9fa] to-transparent z-40 pointer-events-none"></div>
+      {/* The solid bottom gradient fade was removed in favor of the CSS mask-image on the wrapper for true transparency blending */}
 
       <Swiper
         modules={[Navigation, Autoplay, EffectFade]}
