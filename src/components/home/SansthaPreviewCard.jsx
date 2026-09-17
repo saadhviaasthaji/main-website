@@ -10,11 +10,13 @@ const SansthaPreviewCard = () => {
         <Reveal>
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
             
-            {/* Image Placeholder */}
-            <div className="w-full md:w-5/12 bg-gray-200 relative min-h-[300px] md:min-h-full">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-sans">
-                [Sanstha Image Placeholder]
-              </div>
+            {/* Image Section */}
+            <div className="w-full md:w-5/12 relative min-h-[300px] md:min-h-full bg-gray-100">
+              <img 
+                src="/assets/pages/home/sanstha/sanstha.webp" 
+                alt="Aastha Sevabhavi Sanstha" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
 
             {/* Content */}
@@ -24,7 +26,7 @@ const SansthaPreviewCard = () => {
                 Service to Humanity
               </h2>
               <div className="mb-6 font-sans text-sm text-brand-blue font-semibold tracking-wide">
-                Registration No: [Placeholder]
+                Registration No: F/40324/Thane
               </div>
               <p className="text-gray-600 font-sans leading-relaxed mb-8 text-lg">
                 Established with the vision that devotion must manifest as service. Aastha Sevabhavi Sanstha runs multiple sustained initiatives, including the Roti Bank, to ensure no individual goes to sleep hungry and to empower the next generation.

@@ -20,7 +20,7 @@ const Navbar = () => {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Background change
       setIsScrolled(currentScrollY > 50);
 
@@ -30,7 +30,7 @@ const Navbar = () => {
       } else {
         setIsVisible(true);  // Scrolling up or at top
       }
-      
+
       setLastScrollY(currentScrollY);
 
       setIsIdle(false);
@@ -39,7 +39,7 @@ const Navbar = () => {
         setIsIdle(true);
       }, 3000);
     };
-    
+
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     timeoutId = setTimeout(() => {
@@ -53,7 +53,7 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  
+
   const handleDropdown = (name) => {
     if (activeDropdown === name) setActiveDropdown(null);
     else setActiveDropdown(name);
@@ -68,25 +68,25 @@ const Navbar = () => {
   ];
 
   const isHomePage = location.pathname === '/';
-  const useDarkText = isScrolled || isOpen || !isHomePage;
+  const useDarkText = true; // Always true because the new global background is pale
   const actuallyVisible = isVisible && (!isIdle || !isScrolled || isOpen);
   const showBackground = isScrolled;
 
   return (
     <>
-      <header 
+      <header
         onMouseEnter={() => setIsIdle(false)}
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform-gpu will-change-transform ${actuallyVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${showBackground ? 'bg-white/95 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-b-3xl' : 'bg-transparent shadow-none rounded-b-none'} py-4`}
       >
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            
+
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center max-w-[55vw]">
               <Link to="/" className="flex items-center gap-3 group relative w-40 h-16 sm:w-48 sm:h-20" aria-label="Home">
-                <img 
-                  src="/assets/shared/logos/aastha-logo.webp" 
-                  alt="Aastha Logo" 
+                <img
+                  src="/assets/shared/logos/aastha-logo.webp"
+                  alt="Aastha Logo"
                   className="w-full h-full object-contain"
                 />
               </Link>
@@ -96,7 +96,7 @@ const Navbar = () => {
             <div className="flex items-center space-x-2 md:space-x-4">
               <button 
                 onClick={toggleLanguage}
-                className={`flex items-center space-x-1 px-3 py-1.5 rounded-full border transition-all ${!useDarkText ? 'text-white border-white/50 hover:bg-white/10' : 'text-brand-charcoal border-gray-300 hover:bg-gray-100'}`}
+                className={`flex items-center space-x-1 px-3 py-1.5 rounded-full border transition-all duration-300 ${!useDarkText ? 'text-white border-white/50 hover:bg-white/10' : 'text-brand-charcoal border-brand-charcoal/50 hover:bg-brand-charcoal hover:text-white'}`}
               >
                 <Globe size={16} />
                 <div className="relative w-4 h-5 flex items-center justify-center overflow-hidden">
@@ -115,12 +115,12 @@ const Navbar = () => {
                 </div>
               </button>
               <div className="hidden md:block">
-                <Link to="/sanstha" className={`px-6 py-2.5 font-semibold rounded-none transition-all hover:scale-105 transform border ${!useDarkText ? 'bg-transparent text-white border-white hover:bg-white hover:text-black' : 'bg-brand-charcoal text-white border-brand-charcoal hover:bg-black'}`}>
+                <Link to="/sanstha" className={`px-6 py-2.5 font-semibold rounded-none transition-all duration-300 hover:scale-105 transform border ${!useDarkText ? 'bg-transparent text-white border-white hover:bg-white hover:text-black' : 'bg-transparent text-brand-charcoal border-brand-charcoal hover:bg-brand-charcoal hover:text-white'}`}>
                   {<AnimatedText section="nav" tKey="sansthaWorks" />}
                 </Link>
               </div>
               
-              <button onClick={toggleMenu} className={`p-2 hover:bg-gray-200/50 hover:text-brand-charcoal rounded-full transition-colors ${!useDarkText ? 'text-white' : 'text-brand-charcoal'}`}>
+              <button onClick={toggleMenu} className={`p-2 rounded-full transition-colors duration-300 ${!useDarkText ? 'text-white hover:bg-white/20' : 'text-brand-charcoal hover:bg-brand-charcoal/10'}`}>
                 {isOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
             </div>
@@ -131,7 +131,7 @@ const Navbar = () => {
       {/* Full-Screen Overlay Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -148,9 +148,9 @@ const Navbar = () => {
             <div className="flex flex-col items-center justify-start min-h-full pt-28 pb-12 px-4 space-y-6 relative z-10 overflow-y-auto">
               {navLinks.map((link, idx) => (
                 <div key={idx}>
-                  <Link 
-                    to={link.path} 
-                    onClick={() => setIsOpen(false)} 
+                  <Link
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
                     className="block text-brand-charcoal font-serif text-3xl md:text-4xl hover:text-black transition-all duration-300 hover:scale-105 transform drop-shadow-sm"
                   >
                     {link.name}
@@ -158,9 +158,9 @@ const Navbar = () => {
                 </div>
               ))}
               <div className="pt-12 w-full max-w-xs flex flex-col items-center gap-6">
-                <Link 
-                  to="/sanstha" 
-                  onClick={() => setIsOpen(false)} 
+                <Link
+                  to="/sanstha"
+                  onClick={() => setIsOpen(false)}
                   className="w-full text-center py-4 text-lg font-bold bg-white text-brand-charcoal rounded-none shadow-lg hover:shadow-xl transition-all hover:scale-105 transform"
                 >
                   {<AnimatedText section="nav" tKey="sansthaWorks" />}
