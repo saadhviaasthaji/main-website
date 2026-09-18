@@ -17,8 +17,8 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'serif'],
-        sans: ['"Inter"', 'sans-serif'],
+        serif: ['"Playfair Display"', '"Tiro Devanagari Hindi"', 'serif'],
+        sans: ['"Inter"', '"Tiro Devanagari Hindi"', 'sans-serif'],
         script: ['"Great Vibes"', 'cursive'],
         scriptalt: ['"Dancing Script"', 'cursive'],
         ephesis: ['"Ephesis"', 'cursive'],

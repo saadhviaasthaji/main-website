@@ -12,13 +12,13 @@ const AnimatedText = ({ section, tKey, uppercase = false, className = "" }) => {
   }
 
   return (
-    <span className={`inline-flex relative overflow-hidden align-bottom ${className}`}>
+    <span className={`inline-flex relative overflow-hidden align-bottom pb-3 -mb-3 pt-3 -mt-3 px-1 -mx-1 ${className}`}>
       <AnimatePresence mode="wait">
         <motion.span
           key={language + text}
-          initial={{ y: 15, opacity: 0 }}
+          initial={{ y: 25, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -15, opacity: 0 }}
+          exit={{ y: -25, opacity: 0 }}
           transition={{ duration: 0.2 }}
           className="inline-block"
         >
