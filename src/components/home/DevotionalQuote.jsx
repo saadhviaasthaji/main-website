@@ -25,7 +25,7 @@ const DevotionalQuote = () => {
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-charcoal">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#a63c06]">
               Saadhvi Aastha Ji Quotes
             </h2>
           </div>
@@ -49,7 +49,7 @@ const DevotionalQuote = () => {
                   <h3 className="text-red-600 font-bold text-lg md:text-xl mb-4 font-sans border-b border-red-600 pb-2 inline-block">
                     {quote.name}
                   </h3>
-                  <p className="text-black text-sm md:text-base leading-relaxed font-bold font-sans mt-2">
+                  <p className="text-[#a63c06] text-sm md:text-base leading-relaxed font-bold font-sans mt-2">
                     {quote.text}
                   </p>
                 </div>

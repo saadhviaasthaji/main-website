@@ -34,12 +34,12 @@ const SansthaHome = () => {
       <div className="w-full mx-auto border-t border-gray-100 my-24"></div>
 
       {/* Leadership Section inserted here for Sanstha context */}
-      <section className="py-16 bg-white relative">
+      <section className="py-16 bg-transparent relative">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-left mb-12">
           <Reveal>
-            <span className="text-xs uppercase tracking-widest text-gray-400 font-bold mb-6 block">Leadership</span>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-black mb-8 tracking-tight leading-none">Meet the <br /><span className="italic text-gray-400">Visionaries</span></h2>
-            <p className="text-gray-500 font-sans text-xl font-light leading-[1.8] max-w-2xl">
+            <span className="text-xs uppercase tracking-widest text-[#c36f09] font-bold mb-6 block">Leadership</span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#a63c06] mb-8 tracking-tight leading-none">Meet the <br /><span className="italic text-[#c36f09]">Visionaries</span></h2>
+            <p className="text-[#c36f09] font-sans text-xl font-light leading-[1.8] max-w-2xl">
               Guiding our mission with devotion, experience, and a commitment to serving humanity.
             </p>
           </Reveal>
@@ -47,7 +47,7 @@ const SansthaHome = () => {
         <LeadershipGrid showCoreTeam={false} />
         
         <div className="text-center mt-12">
-          <Link to="/sanstha/members" className="inline-flex items-center gap-2 text-black border border-black px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-colors">
+          <Link to="/sanstha/members" className="inline-flex items-center gap-2 text-[#a63c06] border border-[#a63c06] px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-[#a63c06] hover:text-white transition-colors">
             View All Members
           </Link>
         </div>

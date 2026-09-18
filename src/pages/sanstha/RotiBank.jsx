@@ -9,13 +9,13 @@ const RotiBank = () => {
   const { language } = useLanguage();
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-transparent min-h-screen">
       {/* Hero Section */}
-      <header className="pt-32 pb-16 md:pt-40 md:pb-20 bg-white">
+      <header className="pt-32 pb-16 md:pt-40 md:pb-20 bg-transparent">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
           <Reveal>
-            <h1 className="text-5xl md:text-6xl font-serif text-brand-charcoal mb-6">The Roti Bank</h1>
-            <p className="text-gray-600 font-sans text-xl max-w-2xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-serif text-[#a63c06] mb-6">The Roti Bank</h1>
+            <p className="text-[#c36f09] font-sans text-xl max-w-2xl mx-auto">
               Eradicating hunger, one meal at a time.
             </p>
           </Reveal>
@@ -93,26 +93,26 @@ const RotiBank = () => {
       <section className="py-20 bg-brand-sand/30 border-y border-brand-sand">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+            <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-[#a63c06]/10 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
               <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
-                <h3 className="text-3xl font-serif text-brand-charcoal mb-4">Immediate Response Needed?</h3>
-                <p className="text-gray-600 font-sans mb-8">
+                <h3 className="text-3xl font-serif text-[#a63c06] mb-4">Immediate Response Needed?</h3>
+                <p className="text-[#c36f09] font-sans mb-8">
                   If you have surplus food from an event, or if you know a community in urgent need, please reach out to our Roti Bank coordinator immediately.
                 </p>
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4 text-brand-charcoal">
+                  <div className="flex items-center gap-4 text-[#a63c06]">
                     <div className="w-10 h-10 rounded-full bg-brand-sand/50 flex items-center justify-center shrink-0">
                       <User size={20} className="text-brand-blue" />
                     </div>
                     <span className="font-semibold font-sans text-lg">Pratik Mishra</span>
                   </div>
-                  <div className="flex items-center gap-4 text-brand-charcoal">
+                  <div className="flex items-center gap-4 text-[#a63c06]">
                     <div className="w-10 h-10 rounded-full bg-brand-sand/50 flex items-center justify-center shrink-0">
                       <PhoneCall size={20} className="text-brand-blue" />
                     </div>
                     <span className="font-semibold font-sans text-lg">8591902050</span>
                   </div>
-                  <div className="flex items-center gap-4 text-brand-charcoal">
+                  <div className="flex items-center gap-4 text-[#a63c06]">
                     <div className="w-10 h-10 rounded-full bg-brand-sand/50 flex items-center justify-center shrink-0">
                       <Mail size={20} className="text-brand-blue" />
                     </div>
@@ -120,17 +120,17 @@ const RotiBank = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full md:w-1/2 bg-brand-charcoal p-10 md:p-16 flex flex-col justify-center items-center text-center">
+              <div className="w-full md:w-1/2 bg-[#6b3112]/90 backdrop-blur-md p-10 md:p-16 flex flex-col justify-center items-center text-center">
                 <h4 className="text-2xl font-serif text-white mb-6">Contact Us Now</h4>
                 <a 
                   href="tel:8591902050" 
-                  className="w-full btn-primary bg-white text-brand-charcoal hover:bg-brand-sand hover:text-brand-charcoal flex items-center justify-center gap-2 mb-4 py-4"
+                  className="w-full btn-primary bg-white text-orange-900 hover:bg-gray-100 flex items-center justify-center gap-2 mb-4 py-4 shadow-md"
                 >
                   <PhoneCall size={20} /> Call Directly
                 </a>
                 <a 
                   href="mailto:saadhviaasthaji@gmail.com" 
-                  className="w-full btn-primary border border-white/30 hover:bg-white/10 flex items-center justify-center gap-2 py-4"
+                  className="w-full btn-primary bg-transparent border border-white text-white hover:bg-white/10 flex items-center justify-center gap-2 py-4 shadow-md"
                 >
                   <Mail size={20} /> Email Us
                 </a>
@@ -141,12 +141,12 @@ const RotiBank = () => {
       </section>
 
       {/* 5. Images from Our Work */}
-      <section className="py-20 bg-brand-lightgrey">
+      <section className="py-20 bg-transparent">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center mb-12">
-              <span className="text-sm uppercase tracking-[2px] font-bold text-[#000000] mb-2 block">Gallery</span>
-              <h2 className="text-3xl md:text-5xl font-serif text-brand-charcoal">Images from Our Work</h2>
+              <span className="text-sm uppercase tracking-[2px] font-bold text-[#a63c06] mb-2 block">Gallery</span>
+              <h2 className="text-3xl md:text-5xl font-serif text-[#a63c06]">Images from Our Work</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <img src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=400&auto=format&fit=crop" loading="lazy" alt="Work" className="w-full h-48 object-cover rounded-xl shadow hover:shadow-lg transition-all hover:scale-105" />

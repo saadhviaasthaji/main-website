@@ -26,10 +26,10 @@ const FloatingBooking = () => {
             repeat: Infinity,
             repeatType: 'loop'
           }}
-          className="bg-brand-blue text-white p-4 rounded-full shadow-2xl hover:bg-brand-charcoal transition-colors flex items-center justify-center group"
+          className="bg-brand-blue text-white p-4 rounded-full shadow-2xl hover:bg-[#a63c06] transition-colors flex items-center justify-center group"
         >
           <CalendarHeart size={28} />
-          <span className="absolute right-full mr-4 bg-white text-brand-charcoal px-4 py-2 rounded shadow-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <span className="absolute right-full mr-4 bg-white text-[#a63c06] px-4 py-2 rounded shadow-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             Invite for Katha
           </span>
         </motion.div>

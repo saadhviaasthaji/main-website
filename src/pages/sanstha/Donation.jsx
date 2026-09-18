@@ -15,11 +15,11 @@ const Donation = () => {
 
   return (
     <div className="pt-24 bg-transparent min-h-screen pb-20">
-      <header className="py-24 md:py-32 bg-white">
+      <header className="py-24 md:py-32 bg-transparent">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
           <Kicker>Support Us</Kicker>
-          <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">Make a Donation</h1>
-          <p className="text-gray-600 font-sans text-lg max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-4">Make a Donation</h1>
+          <p className="text-[#c36f09] font-sans text-lg max-w-2xl mx-auto">
             Donations to Aastha Sevabhavi Sanstha help support and strengthen its ongoing social-service initiatives. Contributions may be utilised towards providing food, ration, clothing, school kits and other essential support to elderly mothers, orphanages, persons with disabilities and other needy and underprivileged sections of society.
           </p>
         </div>
@@ -31,23 +31,23 @@ const Donation = () => {
           {/* Bank Transfer Details */}
           <Reveal>
             <div className="bg-brand-lightgrey p-8 md:p-12 rounded-3xl h-full border border-gray-200">
-              <h2 className="text-2xl font-serif text-brand-charcoal mb-6 border-b border-gray-300 pb-4">Bank Transfer</h2>
-              <div className="space-y-4 font-sans text-gray-700">
+              <h2 className="text-2xl font-serif text-[#a63c06] mb-6 border-b border-gray-300 pb-4">Bank Transfer</h2>
+              <div className="space-y-4 font-sans text-[#c36f09]">
                 <div>
-                  <span className="block text-sm text-gray-500 font-semibold mb-1 uppercase tracking-wider">Account Name</span>
-                  <p className="text-lg font-medium text-brand-charcoal">PRATIK DIVESH MISHRA</p>
+                  <span className="block text-sm text-[#c36f09] font-semibold mb-1 uppercase tracking-wider">Account Name</span>
+                  <p className="text-lg font-medium text-[#a63c06]">PRATIK DIVESH MISHRA</p>
                 </div>
                 <div>
-                  <span className="block text-sm text-gray-500 font-semibold mb-1 uppercase tracking-wider">Account Number</span>
-                  <p className="text-lg font-mono font-medium text-brand-charcoal">9748523529</p>
+                  <span className="block text-sm text-[#c36f09] font-semibold mb-1 uppercase tracking-wider">Account Number</span>
+                  <p className="text-lg font-mono font-medium text-[#a63c06]">9748523529</p>
                 </div>
                 <div>
-                  <span className="block text-sm text-gray-500 font-semibold mb-1 uppercase tracking-wider">IFSC Code</span>
-                  <p className="text-lg font-mono font-medium text-brand-charcoal">KKBK0000627</p>
+                  <span className="block text-sm text-[#c36f09] font-semibold mb-1 uppercase tracking-wider">IFSC Code</span>
+                  <p className="text-lg font-mono font-medium text-[#a63c06]">KKBK0000627</p>
                 </div>
                 <div>
-                  <span className="block text-sm text-gray-500 font-semibold mb-1 uppercase tracking-wider">Bank & Branch</span>
-                  <p className="text-lg font-medium text-brand-charcoal">Kotak Mahindra Bank</p>
+                  <span className="block text-sm text-[#c36f09] font-semibold mb-1 uppercase tracking-wider">Bank & Branch</span>
+                  <p className="text-lg font-medium text-[#a63c06]">Kotak Mahindra Bank</p>
                 </div>
               </div>
             </div>
@@ -55,12 +55,12 @@ const Donation = () => {
 
           {/* QR Code & Online Payment */}
           <Reveal delay={0.2}>
-            <div className="bg-white p-8 md:p-12 rounded-3xl h-full border border-gray-200 shadow-xl flex flex-col items-center justify-center text-center">
-              <h2 className="text-2xl font-serif text-brand-charcoal mb-6">UPI / Scan to Pay</h2>
+            <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-[#a63c06]/10 p-8 md:p-12 rounded-3xl h-full shadow-xl flex flex-col items-center justify-center text-center">
+              <h2 className="text-2xl font-serif text-[#a63c06] mb-6">UPI / Scan to Pay</h2>
               
               <div className="w-48 h-48 bg-gray-100 rounded-xl mb-8 flex items-center justify-center p-4 border-2 border-dashed border-gray-300">
                 {/* Placeholder for actual QR code */}
-                <div className="text-gray-400 font-sans text-sm">
+                <div className="text-[#c36f09] font-sans text-sm">
                   [Place QR Image Here]
                 </div>
               </div>
@@ -68,7 +68,7 @@ const Donation = () => {
               <div className="w-full">
                 <div className="relative flex py-5 items-center">
                   <div className="flex-grow border-t border-gray-300"></div>
-                  <span className="flex-shrink-0 mx-4 text-gray-400 font-sans text-sm uppercase tracking-widest">Or</span>
+                  <span className="flex-shrink-0 mx-4 text-[#c36f09] font-sans text-sm uppercase tracking-widest">Or</span>
                   <div className="flex-grow border-t border-gray-300"></div>
                 </div>
 

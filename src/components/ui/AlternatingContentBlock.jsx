@@ -46,8 +46,8 @@ const AlternatingContentBlock = ({
               {/* Floating Badge */}
               {floatingBadge && (
                 <div className={`absolute ${imageRight ? '-left-6' : '-right-6'} bottom-12 bg-white/90 backdrop-blur-sm p-5 rounded-2xl shadow-xl border border-white/50 max-w-[200px] z-10 hidden sm:block`}>
-                  <p className="font-serif text-2xl text-brand-charcoal font-bold leading-tight mb-1">{floatingBadge.title}</p>
-                  <p className="text-sm font-sans text-gray-600 font-medium">{floatingBadge.subtitle}</p>
+                  <p className="font-serif text-2xl text-[#a63c06] font-bold leading-tight mb-1">{floatingBadge.title}</p>
+                  <p className="text-sm font-sans text-[#c36f09] font-medium">{floatingBadge.subtitle}</p>
                 </div>
               )}
             </Reveal>
@@ -57,11 +57,11 @@ const AlternatingContentBlock = ({
           <div className="w-full md:w-1/2">
             <Reveal delay={0.2} direction={imageRight ? "left" : "right"}>
               {kicker && <Kicker>{kicker}</Kicker>}
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-brand-charcoal mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#a63c06] mb-6 leading-tight">
                 {title}
               </h2>
               
-              <div className="text-gray-600 font-sans space-y-4 text-lg leading-relaxed mb-8">
+              <div className="text-[#c36f09] font-sans space-y-4 text-lg leading-relaxed mb-8">
                 {typeof content === 'string' ? <p>{content}</p> : content}
               </div>
 
@@ -87,7 +87,7 @@ const AlternatingContentBlock = ({
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </span>
-                      <span className="text-gray-700 font-sans text-sm">{bullet}</span>
+                      <span className="text-[#c36f09] font-sans text-sm">{bullet}</span>
                     </li>
                   ))}
                 </ul>

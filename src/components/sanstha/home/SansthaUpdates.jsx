@@ -33,7 +33,7 @@ const SansthaUpdates = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
           <Reveal>
             <Kicker className="mb-2">NEWS & UPDATES</Kicker>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-charcoal">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#a63c06]">
               Official Updates
             </h2>
           </Reveal>
@@ -53,18 +53,18 @@ const SansthaUpdates = () => {
               <div className="flex flex-col h-full group cursor-pointer">
                 {/* Image */}
                 <div className="w-full aspect-[16/9] bg-gray-300 relative overflow-hidden mb-6">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-500 bg-gray-200 group-hover:scale-105 transition-transform duration-500">
+                  <div className="absolute inset-0 flex items-center justify-center text-[#c36f09] bg-gray-200 group-hover:scale-105 transition-transform duration-500">
                     <img src={`https://images.unsplash.com/photo-${index === 0 ? '1488521787991-ed7bbaae773c' : index === 1 ? '1532629345422-7515f3d16bb0' : '1593113563332-f144d2843bb3'}?q=80&w=600&auto=format&fit=crop`} alt="Update" className="w-full h-full object-cover" />
                   </div>
                 </div>
                 
                 {/* Content */}
                 <div className="flex flex-col flex-grow">
-                  <span className="text-gray-500 text-xs mb-3 block">{article.date}</span>
-                  <h3 className="text-xl font-serif font-bold text-brand-charcoal mb-4 leading-snug group-hover:text-gray-600 transition-colors">
+                  <span className="text-[#c36f09] text-xs mb-3 block">{article.date}</span>
+                  <h3 className="text-xl font-serif font-bold text-[#a63c06] mb-4 leading-snug group-hover:text-[#c36f09] transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-gray-600 font-sans text-xs leading-relaxed mb-6 flex-grow">
+                  <p className="text-[#c36f09] font-sans text-xs leading-relaxed mb-6 flex-grow">
                     {article.excerpt}
                   </p>
                   

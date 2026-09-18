@@ -76,21 +76,21 @@ const Booking = () => {
         <Reveal>
           <div className="text-center mb-12">
             <Kicker>Booking</Kicker>
-            <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">Invite for Katha</h1>
-            <p className="text-gray-600 font-sans text-lg max-w-2xl mx-auto">Please fill out this form to request Saadhvi Aastha Ji for a spiritual event, katha, or discourse.</p>
+            <h1 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-4">Invite for Katha</h1>
+            <p className="text-[#c36f09] font-sans text-lg max-w-2xl mx-auto">Please fill out this form to request Saadhvi Aastha Ji for a spiritual event, katha, or discourse.</p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             <div className="lg:col-span-5 space-y-6">
-              <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-brand-charcoal/10 rounded-2xl shadow-xl p-6 lg:p-8">
+              <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-[#a63c06]/10 rounded-2xl shadow-xl p-6 lg:p-8">
                 <div className="flex justify-between items-center cursor-pointer lg:cursor-default" onClick={() => toggleSection('events')}>
-                  <h3 className="font-serif font-bold text-xl text-brand-charcoal">Types of Events Accepted</h3>
+                  <h3 className="font-serif font-bold text-xl text-[#a63c06]">Types of Events Accepted</h3>
                   <div className="lg:hidden text-brand-charcoal/60">
                     {expandedSections.events ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                   </div>
                 </div>
                 <div className={`mt-4 ${expandedSections.events ? 'block' : 'hidden lg:block'}`}>
-                  <ul className="list-disc list-inside text-brand-charcoal/80 font-medium text-sm space-y-3">
+                  <ul className="list-disc list-inside text-[#c36f09] font-medium text-sm space-y-3">
                     <li>Shreemad Bhagwat Katha</li>
                     <li>Shreemad Bhagwat Katha — personal/family gatherings</li>
                     <li>Radha Naam Concerts (Live Events)</li>
@@ -101,15 +101,15 @@ const Booking = () => {
                 </div>
               </div>
 
-              <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-brand-charcoal/10 rounded-2xl shadow-xl p-6 lg:p-8">
+              <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-[#a63c06]/10 rounded-2xl shadow-xl p-6 lg:p-8">
                 <div className="flex justify-between items-center cursor-pointer lg:cursor-default" onClick={() => toggleSection('reqs')}>
-                  <h3 className="font-serif font-bold text-xl text-brand-charcoal">Requirements for Organizers</h3>
+                  <h3 className="font-serif font-bold text-xl text-[#a63c06]">Requirements for Organizers</h3>
                   <div className="lg:hidden text-brand-charcoal/60">
                     {expandedSections.reqs ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                   </div>
                 </div>
                 <div className={`mt-4 ${expandedSections.reqs ? 'block' : 'hidden lg:block'}`}>
-                  <ul className="list-disc list-inside text-brand-charcoal/80 font-medium text-sm space-y-3">
+                  <ul className="list-disc list-inside text-[#c36f09] font-medium text-sm space-y-3">
                     <li>Travel and transportation arrangements/expenses for Saadhvi Aastha Ji and team.</li>
                     <li>Suitable hospitality and accommodation arrangements.</li>
                     <li>Stage, seating, sound and other appropriate event arrangements.</li>
@@ -118,7 +118,7 @@ const Booking = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-7 bg-[#fbf5e6]/70 backdrop-blur-xl border border-brand-charcoal/10 rounded-2xl shadow-xl p-8 md:p-12">
+            <div className="lg:col-span-7 bg-[#fbf5e6]/70 backdrop-blur-xl border border-[#a63c06]/10 rounded-2xl shadow-xl p-8 md:p-12">
               {isSuccess ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-12">
                   <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
@@ -126,8 +126,8 @@ const Booking = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-brand-charcoal mb-4">Invitation request sent successfully!</h3>
-                  <p className="text-gray-600 mb-8">Thank you for your interest. Our official coordinator will review your request and get back to you shortly.</p>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-[#a63c06] mb-4">Invitation request sent successfully!</h3>
+                  <p className="text-[#c36f09] mb-8">Thank you for your interest. Our official coordinator will review your request and get back to you shortly.</p>
                   <button 
                     onClick={() => setIsSuccess(false)}
                     className="btn-primary px-8"
@@ -145,24 +145,24 @@ const Booking = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">Organizer / Organization Name</label>
+                      <label className="block text-sm font-semibold text-[#a63c06] mb-2">Organizer / Organization Name</label>
                       <input 
                         type="text" 
                         name="Organization"
                         value={formData.Organization}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
+                        className="w-full bg-transparent border-b-2 border-[#a63c06]/20 px-2 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">Contact Person Name</label>
+                      <label className="block text-sm font-semibold text-[#a63c06] mb-2">Contact Person Name</label>
                       <input 
                         type="text" 
                         name="ContactName"
                         value={formData.ContactName}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
+                        className="w-full bg-transparent border-b-2 border-[#a63c06]/20 px-2 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
@@ -170,18 +170,18 @@ const Booking = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">Email Address</label>
+                      <label className="block text-sm font-semibold text-[#a63c06] mb-2">Email Address</label>
                       <input 
                         type="email" 
                         name="Email"
                         value={formData.Email}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
+                        className="w-full bg-transparent border-b-2 border-[#a63c06]/20 px-2 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">Phone Number</label>
+                      <label className="block text-sm font-semibold text-[#a63c06] mb-2">Phone Number</label>
                       <input 
                         type="tel" 
                         name="Phone"
@@ -189,7 +189,7 @@ const Booking = () => {
                         onChange={handleChange}
                         pattern="[0-9]{10}"
                         title="Please enter exactly 10 digits"
-                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
+                        className="w-full bg-transparent border-b-2 border-[#a63c06]/20 px-2 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
@@ -197,38 +197,38 @@ const Booking = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">Proposed Event Date</label>
+                      <label className="block text-sm font-semibold text-[#a63c06] mb-2">Proposed Event Date</label>
                       <input 
                         type="date" 
                         name="Date"
                         value={formData.Date}
                         onChange={handleChange}
                         min={new Date().toISOString().split('T')[0]}
-                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
+                        className="w-full bg-transparent border-b-2 border-[#a63c06]/20 px-2 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">Event Location (City, Country)</label>
+                      <label className="block text-sm font-semibold text-[#a63c06] mb-2">Event Location (City, Country)</label>
                       <input 
                         type="text" 
                         name="Location"
                         value={formData.Location}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
+                        className="w-full bg-transparent border-b-2 border-[#a63c06]/20 px-2 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">Event Details & Expectations</label>
+                    <label className="block text-sm font-semibold text-[#a63c06] mb-2">Event Details & Expectations</label>
                     <textarea 
                       rows="5" 
                       name="Details"
                       value={formData.Details}
                       onChange={handleChange}
-                      className="w-full bg-transparent border border-brand-charcoal/20 px-4 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-xl placeholder-brand-charcoal/40 resize-none font-medium" 
+                      className="w-full bg-transparent border border-[#a63c06]/20 px-4 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-xl placeholder-brand-charcoal/40 resize-none font-medium" 
                       placeholder="Provide a brief overview of the event..." 
                       required
                     ></textarea>

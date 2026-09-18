@@ -9,25 +9,25 @@ const Query = () => {
         <Reveal>
           <div className="text-center mb-12">
             <Kicker>Clarify</Kicker>
-            <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">Query & Doubts</h1>
-            <p className="text-gray-600 font-sans text-lg">Seek answers to your spiritual questions directly from the teachings of Saadhvi Aastha Ji.</p>
+            <h1 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-4">Query & Doubts</h1>
+            <p className="text-[#c36f09] font-sans text-lg">Seek answers to your spiritual questions directly from the teachings of Saadhvi Aastha Ji.</p>
           </div>
           
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-brand-charcoal mb-2">Name</label>
+                  <label className="block text-sm font-semibold text-[#a63c06] mb-2">Name</label>
                   <input type="text" className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-brand-charcoal mb-2">Email Address</label>
+                  <label className="block text-sm font-semibold text-[#a63c06] mb-2">Email Address</label>
                   <input type="email" className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" required />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-brand-charcoal mb-2">Your Spiritual Query / Doubt</label>
+                <label className="block text-sm font-semibold text-[#a63c06] mb-2">Your Spiritual Query / Doubt</label>
                 <textarea rows="6" className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors resize-none" placeholder="What would you like to ask?" required></textarea>
               </div>
 

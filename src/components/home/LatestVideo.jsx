@@ -13,10 +13,10 @@ const LatestVideo = () => {
           <div className="w-full lg:w-5/12">
             <Reveal>
               <Kicker className="mb-2">MUSIC VIDEOS BY SAADHVI AASTHA JI</Kicker>
-              <h2 className="text-4xl md:text-5xl font-serif font-extrabold text-brand-charcoal mb-6">
+              <h2 className="text-4xl md:text-5xl font-serif font-extrabold text-[#a63c06] mb-6">
                 Watch The Latest Video
               </h2>
-              <p className="text-gray-600 mb-8 font-sans leading-relaxed text-sm md:text-base pr-0 md:pr-10">
+              <p className="text-[#c36f09] mb-8 font-sans leading-relaxed text-sm md:text-base pr-0 md:pr-10">
                 Keep yourself tuned to her latest music videos, where every composition is a beautiful expression of devotion and inner peace. Discover new releases that soothe the soul, uplift the heart, and deepen your connection with spirituality through music.
               </p>
               <Link to="/videos" className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 text-xs font-bold hover:bg-gray-800 transition-colors">

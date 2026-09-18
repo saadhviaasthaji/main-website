@@ -17,7 +17,7 @@ const SocialMediaBar = () => {
       <div className="max-w-4xl mx-auto px-4 text-center">
         <Reveal>
           <Kicker>Connect</Kicker>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-10">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#a63c06] mb-10">
             Join Our Digital Community
           </h2>
           
@@ -30,12 +30,12 @@ const SocialMediaBar = () => {
                 rel="noreferrer"
                 className="group flex flex-col items-center gap-2 sm:gap-3"
               >
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#fbf5e6] border border-brand-charcoal/10 rounded-full flex items-center justify-center text-brand-charcoal shadow-sm group-hover:bg-brand-charcoal group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#fbf5e6] border border-[#a63c06]/10 rounded-full flex items-center justify-center text-[#a63c06] shadow-sm group-hover:bg-[#a63c06] group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1">
                   <div className="scale-75 sm:scale-100">
                     {social.icon}
                   </div>
                 </div>
-                <span className="font-sans font-medium text-xs sm:text-base text-gray-600 group-hover:text-brand-charcoal transition-colors">
+                <span className="font-sans font-medium text-xs sm:text-base text-[#c36f09] group-hover:text-[#a63c06] transition-colors">
                   {social.name}
                 </span>
               </a>

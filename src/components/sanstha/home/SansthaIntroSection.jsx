@@ -10,7 +10,7 @@ const SansthaIntroSection = () => {
   const { language } = useLanguage();
 
   return (
-    <section className="py-24 md:py-32 relative bg-white overflow-hidden">
+    <section className="py-24 md:py-32 relative bg-transparent overflow-hidden">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative">
         
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center relative">
@@ -19,29 +19,29 @@ const SansthaIntroSection = () => {
           <div className="w-full lg:w-5/12 relative z-20">
             <Reveal direction="up">
               <Kicker className="mb-6 opacity-70">OUR ORGANIZATION</Kicker>
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium mb-8 text-black leading-[1.1] tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium mb-8 text-[#a63c06] leading-[1.1] tracking-tight">
                 <AnimatedText section="sanstha" tKey="heroTitle" />
               </h2>
               
               <div className="w-20 h-1 bg-black mb-10"></div>
 
-              <p className="text-gray-500 mb-8 leading-[1.8] font-sans text-lg font-light max-w-xl">
+              <p className="text-[#c36f09] mb-8 leading-[1.8] font-sans text-lg font-light max-w-xl">
                 <AnimatedText section="sanstha" tKey="introText" />
               </p>
               
               {/* Added Elements: Quick Stats/Tags */}
               <div className="grid grid-cols-2 gap-6 mb-12 border-t border-gray-100 pt-8">
                 <div>
-                  <h4 className="text-3xl font-serif text-black mb-1">10+</h4>
-                  <p className="text-xs tracking-widest text-gray-400 uppercase font-bold">Years of Service</p>
+                  <h4 className="text-3xl font-serif text-[#a63c06] mb-1">10+</h4>
+                  <p className="text-xs tracking-widest text-[#c36f09] uppercase font-bold">Years of Service</p>
                 </div>
                 <div>
-                  <h4 className="text-3xl font-serif text-black mb-1">3</h4>
-                  <p className="text-xs tracking-widest text-gray-400 uppercase font-bold">Core Initiatives</p>
+                  <h4 className="text-3xl font-serif text-[#a63c06] mb-1">3</h4>
+                  <p className="text-xs tracking-widest text-[#c36f09] uppercase font-bold">Core Initiatives</p>
                 </div>
               </div>
 
-              <Link to="/sanstha/about" className="group inline-flex items-center gap-4 text-white bg-black rounded-full px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-gray-800 transition-all duration-300">
+              <Link to="/sanstha/about" className="group inline-flex items-center gap-4 text-white bg-[#a63c06] rounded-full px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-[#c36f09] transition-all duration-300 shadow-xl hover:shadow-2xl">
                 <AnimatedText section="common" tKey="readMore" />
                 <motion.span 
                   initial={{ x: 0 }}
@@ -71,8 +71,8 @@ const SansthaIntroSection = () => {
                   <div className="absolute inset-0 bg-black/5 transition-opacity group-hover:bg-transparent"></div>
                   
                   {/* Floating Tag */}
-                  <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-6 py-3 rounded-full shadow-lg">
-                    <span className="text-sm font-semibold tracking-wide text-black">Compassion in Action</span>
+                  <div className="absolute bottom-6 left-6 bg-[#fbf5e6]/90 backdrop-blur-md border border-brand-charcoal/10 px-6 py-3 rounded-full shadow-lg">
+                    <span className="text-sm font-semibold tracking-wide text-[#a63c06]">Compassion in Action</span>
                   </div>
                 </div>
 
@@ -107,29 +107,23 @@ const SansthaIntroSection = () => {
         {/* Mission and Vision Blocks */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-32 relative z-20">
           
-          <Reveal delay={0.1} direction="up">
-            <div className="bg-[#FAFAFA] border border-gray-100 rounded-3xl p-10 md:p-16 h-full hover:shadow-xl transition-shadow duration-500">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-8">
-                <span className="text-white text-2xl">✦</span>
-              </div>
-              <h3 className="text-3xl md:text-5xl font-serif text-black mb-6">
+          <Reveal delay={0.1} direction="up" className="h-full">
+            <div className="bg-[#6b3112]/90 backdrop-blur-xl border border-white/20 rounded-3xl p-10 md:p-16 h-full hover:shadow-xl transition-shadow duration-500">
+              <h3 className="text-3xl md:text-5xl font-serif text-white mb-6">
                 <AnimatedText section="sanstha" tKey="missionTitle" />
               </h3>
-              <p className="text-gray-500 font-sans text-lg md:text-xl leading-[1.8] font-light">
+              <p className="text-gray-200 font-sans text-lg md:text-xl leading-[1.8] font-light">
                 <AnimatedText section="sanstha" tKey="missionText" />
               </p>
             </div>
           </Reveal>
 
-          <Reveal delay={0.2} direction="up">
-            <div className="bg-brand-charcoal border border-gray-800 rounded-3xl p-10 md:p-16 h-full hover:shadow-2xl transition-shadow duration-500 group">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8">
-                <span className="text-black text-2xl">✧</span>
-              </div>
+          <Reveal delay={0.2} direction="up" className="h-full">
+            <div className="bg-[#8b6508]/90 backdrop-blur-xl border border-white/20 rounded-3xl p-10 md:p-16 h-full hover:shadow-xl transition-shadow duration-500 group">
               <h3 className="text-3xl md:text-5xl font-serif text-white mb-6">
                 <AnimatedText section="sanstha" tKey="visionTitle" />
               </h3>
-              <p className="text-gray-300 font-sans text-lg md:text-xl leading-[1.8] font-light">
+              <p className="text-gray-200 font-sans text-lg md:text-xl leading-[1.8] font-light">
                 <AnimatedText section="sanstha" tKey="visionText" />
               </p>
             </div>

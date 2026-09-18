@@ -5,7 +5,7 @@ import AnimatedText from '../../ui/AnimatedText';
 
 const SansthaAboutCore = () => {
   return (
-    <section className="py-24 md:py-32 bg-white text-black overflow-hidden border-b border-gray-100">
+    <section className="py-24 md:py-32 bg-transparent text-[#a63c06] overflow-hidden border-b border-brand-charcoal/10">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         
         {/* Intro */}
@@ -25,11 +25,11 @@ const SansthaAboutCore = () => {
           </div>
           <div className="w-full md:w-7/12">
             <Reveal direction="right" delay={0.2}>
-              <span className="text-xs uppercase tracking-[0.2em] font-bold text-gray-500 mb-6 block">Introduction</span>
-              <h2 className="text-4xl md:text-6xl font-serif text-black mb-8 tracking-tight leading-tight">
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block">Introduction</span>
+              <h2 className="text-4xl md:text-6xl font-serif text-[#a63c06] mb-8 tracking-tight leading-tight">
                 Who We Are
               </h2>
-              <div className="font-sans text-lg md:text-xl text-gray-600 leading-relaxed font-light space-y-6 max-w-2xl">
+              <div className="font-sans text-lg md:text-xl text-[#c36f09] leading-relaxed font-light space-y-6 max-w-2xl">
                 <p><AnimatedText section="sanstha" tKey="aboutIntro" /></p>
                 <p><AnimatedText section="sanstha" tKey="aboutText1" /></p>
                 <p><AnimatedText section="sanstha" tKey="aboutText2" /></p>
@@ -41,12 +41,12 @@ const SansthaAboutCore = () => {
         {/* Mission (Overlapping Design) */}
         <div className="relative mb-32">
           <Reveal>
-            <div className="w-full md:w-3/4 ml-auto bg-black text-white p-12 md:p-20 rounded-3xl relative z-10 shadow-2xl">
-              <span className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-6 block">Mission</span>
+            <div className="w-full md:w-3/4 ml-auto bg-white/50 backdrop-blur-xl border border-white/20 text-[#a63c06] p-12 md:p-20 rounded-3xl relative z-10 shadow-xl">
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block">Mission</span>
               <h2 className="text-4xl md:text-6xl font-serif mb-8 tracking-tight leading-tight">
                 <AnimatedText section="sanstha" tKey="missionTitle" />
               </h2>
-              <p className="font-sans text-lg md:text-2xl text-gray-300 leading-relaxed font-light max-w-3xl">
+              <p className="font-sans text-lg md:text-2xl text-[#c36f09] leading-relaxed font-light max-w-3xl">
                 <AnimatedText section="sanstha" tKey="missionText" />
               </p>
             </div>
@@ -76,11 +76,11 @@ const SansthaAboutCore = () => {
           </div>
           <div className="w-full md:w-7/12">
             <Reveal direction="left" delay={0.2}>
-              <span className="text-xs uppercase tracking-[0.2em] font-bold text-gray-500 mb-6 block">Vision</span>
-              <h2 className="text-4xl md:text-6xl font-serif text-black mb-8 tracking-tight leading-tight">
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block">Vision</span>
+              <h2 className="text-4xl md:text-6xl font-serif text-[#a63c06] mb-8 tracking-tight leading-tight">
                 <AnimatedText section="sanstha" tKey="visionTitle" />
               </h2>
-              <div className="font-sans text-lg md:text-xl text-gray-600 leading-relaxed font-light max-w-2xl">
+              <div className="font-sans text-lg md:text-xl text-[#c36f09] leading-relaxed font-light max-w-2xl">
                 <AnimatedText section="sanstha" tKey="visionText" />
               </div>
             </Reveal>

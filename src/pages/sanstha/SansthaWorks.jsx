@@ -6,10 +6,10 @@ import Reveal from '../../components/ui/Reveal';
 const SansthaWorks = () => {
   return (
     <div className="pt-24 bg-transparent min-h-screen pb-20">
-      <header className="py-24 md:py-32 bg-white">
+      <header className="py-24 md:py-32 bg-transparent">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-4">Our Works</h1>
-          <p className="text-gray-600 font-sans text-lg">Impacting lives through dedicated service and compassion.</p>
+          <h1 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-4">Our Works</h1>
+          <p className="text-[#c36f09] font-sans text-lg">Impacting lives through dedicated service and compassion.</p>
         </div>
       </header>
 
@@ -25,7 +25,7 @@ const SansthaWorks = () => {
       <section className="py-20 bg-brand-lightgrey">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
+            <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-[#a63c06]/10 rounded-3xl shadow-xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
               <div className="w-full md:w-1/2">
                 <div className="aspect-video bg-gray-200 rounded-xl relative flex items-center justify-center mb-6 overflow-hidden">
                   <div className="absolute inset-0 bg-black/40"></div>
@@ -41,11 +41,11 @@ const SansthaWorks = () => {
               
               <div className="w-full md:w-1/2">
                 <span className="text-sm uppercase tracking-[2px] font-bold text-[#000000] mb-4 block">Spotlight Initiative</span>
-                <h2 className="text-3xl md:text-4xl font-serif text-brand-charcoal mb-6">The Roti Bank</h2>
-                <p className="text-gray-600 font-sans mb-4">
+                <h2 className="text-3xl md:text-4xl font-serif text-[#a63c06] mb-6">The Roti Bank</h2>
+                <p className="text-[#c36f09] font-sans mb-4">
                   Our flagship initiative objective is simple: Eradicate hunger. We collect surplus freshly-cooked food and prepare fresh meals in our central kitchens to feed over 5,000 individuals daily.
                 </p>
-                <ul className="list-disc pl-5 mb-8 text-gray-600 font-sans space-y-2">
+                <ul className="list-disc pl-5 mb-8 text-[#c36f09] font-sans space-y-2">
                   <li><strong>Who Benefits:</strong> Street dwellers, daily wage laborers, and children in slums.</li>
                   <li><strong>How it Works:</strong> A massive network of volunteers and collection vans run daily routes.</li>
                   <li><strong>Social Impact:</strong> Reducing malnourishment and food waste simultaneously.</li>

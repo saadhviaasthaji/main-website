@@ -88,7 +88,7 @@ const SansthaNavbar = () => {
             <div className="flex items-center space-x-2 md:space-x-4">
               <button 
                 onClick={toggleLanguage}
-                className={`flex items-center space-x-1 px-3 py-1.5 rounded-full border transition-all ${!useDarkText ? 'text-white border-white/50 hover:bg-white/10' : 'text-brand-charcoal border-gray-300 hover:bg-gray-100'}`}
+                className={`flex items-center space-x-1 px-3 py-1.5 rounded-full border transition-all ${!useDarkText ? 'text-white border-white/50 hover:bg-white/10' : 'text-[#a63c06] border-gray-300 hover:bg-gray-100'}`}
               >
                 <Globe size={16} />
                 <div className="relative w-4 h-5 flex items-center justify-center overflow-hidden">
@@ -107,13 +107,13 @@ const SansthaNavbar = () => {
                 </div>
               </button>
               <div className="hidden md:block">
-                <Link to="/sanstha/donation" className={`hidden md:flex items-center space-x-2 px-6 py-2.5 font-bold rounded-none transition-all hover:scale-105 transform border ${!useDarkText ? 'bg-[#ff6b35] text-white border-[#ff6b35] hover:bg-white hover:text-[#ff6b35]' : 'bg-[#ff6b35] text-white border-[#ff6b35] hover:bg-[#e85a28]'}`}>
-                  <Heart size={18} />
+                <Link to="/sanstha/donation" className={`hidden md:flex items-center space-x-2 px-6 py-2.5 font-bold transition-all duration-300 transform border rounded shadow-md ${!useDarkText ? 'bg-[#a63c06] text-white border-[#a63c06] hover:bg-white hover:text-[#a63c06]' : 'bg-[#a63c06] text-white border-[#a63c06] hover:bg-transparent hover:text-[#a63c06] hover:border-[#a63c06]'}`}>
+                  <Heart size={18} className="animate-pulse" />
                   <span>{<AnimatedText section="sansthaNav" tKey="donation" />}</span>
                 </Link>
               </div>
               
-              <div className={`transition-colors duration-300 rounded-full ${!useDarkText ? 'hover:bg-white/20' : 'hover:bg-brand-charcoal/10'}`}>
+              <div className={`transition-colors duration-300 rounded-full ${!useDarkText ? 'hover:bg-white/20' : 'hover:bg-[#a63c06]/10'}`}>
                 <Hamburger 
                   toggled={isOpen} 
                   toggle={setIsOpen} 
@@ -143,25 +143,25 @@ const SansthaNavbar = () => {
                   <Link 
                     to={link.path} 
                     onClick={() => setIsOpen(false)} 
-                    className="block text-brand-charcoal font-serif text-3xl md:text-4xl hover:text-black transition-all duration-300 hover:scale-105 transform drop-shadow-sm"
+                    className="block text-[#a63c06] font-serif text-3xl md:text-4xl hover:text-[#a63c06] transition-all duration-300 hover:scale-105 transform drop-shadow-sm"
                   >
                     {link.name}
                   </Link>
                 </div>
               ))}
               <div className="pt-12 w-full max-w-xs flex flex-col items-center gap-6">
-                <Link 
+                <Link
                   to="/sanstha/donation" 
-                  onClick={() => setIsOpen(false)} 
-                  className="w-full flex items-center justify-center space-x-2 py-4 text-lg font-bold bg-[#ff6b35] text-white rounded-none shadow-lg hover:shadow-xl transition-all hover:scale-105 transform"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full flex items-center justify-center space-x-2 py-4 text-lg font-bold bg-[#a63c06] text-white rounded shadow-md border-2 border-[#a63c06] hover:bg-transparent hover:text-[#a63c06] transition-all duration-300 transform"
                 >
-                  <Heart size={20} />
+                  <Heart size={20} className="animate-pulse" />
                   <span>{<AnimatedText section="sansthaNav" tKey="donation" />}</span>
                 </Link>
                 <Link 
                   to="/" 
                   onClick={() => setIsOpen(false)} 
-                  className="text-brand-charcoal hover:text-[#000000] font-sans tracking-widest uppercase text-xs font-bold transition-colors pb-1 border-b-2 border-transparent hover:border-[#000000]"
+                  className="text-[#a63c06] hover:text-[#000000] font-sans tracking-widest uppercase text-xs font-bold transition-colors pb-1 border-b-2 border-transparent hover:border-[#000000]"
                 >
                   Back to Main Site
                 </Link>

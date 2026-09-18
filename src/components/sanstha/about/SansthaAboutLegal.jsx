@@ -5,14 +5,14 @@ import { ShieldCheck, Calendar, FileText } from 'lucide-react';
 
 const SansthaAboutLegal = () => {
   return (
-    <section className="py-24 bg-white text-black border-t border-gray-100">
+    <section className="py-24 bg-transparent text-[#a63c06] border-t border-brand-charcoal/10">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <Reveal>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs uppercase tracking-widest text-gray-500 font-bold mb-4 block">Transparency</span>
-              <h2 className="text-4xl md:text-5xl font-serif mb-6 tracking-tight text-black">Legal & Registration</h2>
-              <p className="text-gray-600 font-sans text-lg mb-8 max-w-xl">
+              <span className="text-xs uppercase tracking-widest text-[#c36f09] font-bold mb-4 block">Transparency</span>
+              <h2 className="text-4xl md:text-5xl font-serif mb-6 tracking-tight text-[#a63c06]">Legal & Registration</h2>
+              <p className="text-[#c36f09] font-sans text-lg mb-8 max-w-xl">
                 We operate with full transparency and are legally registered under the relevant authorities to accept and distribute donations responsibly.
               </p>
             </div>
@@ -20,41 +20,41 @@ const SansthaAboutLegal = () => {
             <div className="space-y-6">
               <motion.div 
                 whileHover={{ x: 10 }}
-                className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-6 transition-transform"
+                className="bg-[#6b3112]/90 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-lg flex items-start gap-6 transition-transform"
               >
-                <div className="bg-black p-4 rounded-full text-white shrink-0 shadow-md">
+                <div className="bg-white/10 p-4 rounded-full text-white shrink-0 shadow-inner border border-white/10">
                   <Calendar size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-500 mb-2">Establishment</h4>
-                  <p className="font-serif text-xl text-black">September 2017</p>
+                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-300 mb-2">Establishment</h4>
+                  <p className="font-serif text-xl text-white">September 2017</p>
                 </div>
               </motion.div>
 
               <motion.div 
                 whileHover={{ x: 10 }}
-                className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-6 transition-transform"
+                className="bg-[#4a2e1b]/90 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-lg flex items-start gap-6 transition-transform"
               >
-                <div className="bg-black p-4 rounded-full text-white shrink-0 shadow-md">
+                <div className="bg-white/10 p-4 rounded-full text-white shrink-0 shadow-inner border border-white/10">
                   <ShieldCheck size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-500 mb-2">Registration Number</h4>
-                  <p className="font-serif text-xl text-black">F/40324/Thane/Mumbai</p>
+                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-300 mb-2">Registration Number</h4>
+                  <p className="font-serif text-xl text-white">F/40324/Thane/Mumbai</p>
                 </div>
               </motion.div>
 
               <motion.div 
                 whileHover={{ x: 10 }}
-                className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-6 transition-transform"
+                className="bg-[#8b6508]/90 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-lg flex items-start gap-6 transition-transform"
               >
-                <div className="bg-black p-4 rounded-full text-white shrink-0 shadow-md">
+                <div className="bg-white/10 p-4 rounded-full text-white shrink-0 shadow-inner border border-white/10">
                   <FileText size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-500 mb-2">Entity Type</h4>
-                  <p className="font-serif text-xl text-black">Society Registration Certificate</p>
-                  <p className="text-gray-500 text-sm mt-1">Under the Societies Registration Act, 1860</p>
+                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-300 mb-2">Entity Type</h4>
+                  <p className="font-serif text-xl text-white">Society Registration Certificate</p>
+                  <p className="text-gray-300 text-sm mt-1">Under the Societies Registration Act, 1860</p>
                 </div>
               </motion.div>
             </div>

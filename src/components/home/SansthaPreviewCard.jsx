@@ -22,13 +22,13 @@ const SansthaPreviewCard = () => {
             {/* Content */}
             <div className="md:w-7/12 p-10 md:p-14 flex flex-col justify-center">
               <Kicker>Aastha Sevabhavi Sanstha</Kicker>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-4">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#a63c06] mb-4">
                 Service to Humanity
               </h2>
               <div className="mb-6 font-sans text-sm text-brand-blue font-semibold tracking-wide">
                 Registration No: F/40324/Thane
               </div>
-              <p className="text-gray-600 font-sans leading-relaxed mb-8 text-lg">
+              <p className="text-[#c36f09] font-sans leading-relaxed mb-8 text-lg">
                 Established with the vision that devotion must manifest as service. Aastha Sevabhavi Sanstha runs multiple sustained initiatives, including the Roti Bank, to ensure no individual goes to sleep hungry and to empower the next generation.
               </p>
               <div>

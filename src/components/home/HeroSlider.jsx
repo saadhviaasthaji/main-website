@@ -62,11 +62,7 @@ const HeroSlider = () => {
         maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)'
       }}
     >
-      {/* Decorative Background Blob/Texture Placeholder */}
-      <div className="absolute inset-0 z-0 opacity-30" style={{ background: 'radial-gradient(circle at 70% 30%, #e6e6e9 0%, transparent 60%), radial-gradient(circle at 30% 70%, #ffffff 0%, transparent 50%)' }}></div>
 
-      {/* Top left white cloud blur effect to highlight logo */}
-      <div className="absolute -top-[10%] -left-[10%] w-[80%] max-w-[600px] h-[40%] max-h-[400px] bg-white rounded-full mix-blend-normal filter blur-[80px] md:blur-[120px] opacity-90 z-40 pointer-events-none"></div>
 
       {/* The solid bottom gradient fade was removed in favor of the CSS mask-image on the wrapper for true transparency blending */}
 
@@ -101,11 +97,11 @@ const HeroSlider = () => {
               {/* Content Box (takes up roughly half the screen on desktop, with right padding to clear the navigation arrow) */}
               <div className="w-full md:w-[60%] flex flex-col items-center md:items-end md:pr-12 lg:pr-20">
                 <Reveal>
-                  <span className="text-sm md:text-base font-bold tracking-widest uppercase text-brand-charcoal mb-4 block">
+                  <span className="text-sm md:text-base font-bold tracking-widest uppercase text-[#a63c06] mb-4 block">
                     {slide.kicker}
                   </span>
 
-                  <p className="text-lg md:text-xl text-gray-800 font-serif max-w-lg ml-auto leading-relaxed drop-shadow-sm">
+                  <p className="text-lg md:text-xl text-[#c36f09] font-serif max-w-lg ml-auto leading-relaxed drop-shadow-sm">
                     {slide.description}
                   </p>
                 </Reveal>
@@ -114,6 +110,14 @@ const HeroSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
+        <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#a63c06] font-extrabold mb-3 opacity-90 drop-shadow-sm">Scroll Up</span>
+        <div className="w-[2px] h-12 md:h-16 bg-[#a63c06]/30 relative overflow-hidden rounded-full shadow-sm">
+          <div className="w-full h-1/2 bg-[#a63c06] absolute top-0 left-0 rounded-full animate-scroll-indicator"></div>
+        </div>
+      </div>
 
       <style>{`
         .custom-swiper .swiper-button-next,
@@ -130,6 +134,15 @@ const HeroSlider = () => {
         .custom-swiper .swiper-button-prev:after {
           font-size: 24px;
           font-weight: bold;
+        }
+        
+        @keyframes scrollDownAnim {
+          0% { transform: translateY(-100%); opacity: 0; }
+          50% { opacity: 1; }
+          100% { transform: translateY(200%); opacity: 0; }
+        }
+        .animate-scroll-indicator {
+          animation: scrollDownAnim 2s ease-in-out infinite;
         }
       `}</style>
     </div>

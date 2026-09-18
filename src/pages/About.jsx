@@ -18,11 +18,11 @@ const About = () => {
               <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-gray-500 mb-4 block">
                 BIO
               </span>
-              <h1 className="text-4xl md:text-6xl font-serif font-bold text-brand-charcoal mb-8">
+              <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#a63c06] mb-8">
                 {<AnimatedText section="home" tKey="heroTitle" />}
               </h1>
               
-              <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
+              <div className="prose prose-lg font-sans text-[#c36f09] leading-relaxed">
                 <p className="mb-6">{<AnimatedText section="about" tKey="bioText1" />}</p>
                 <p className="mb-6">{<AnimatedText section="about" tKey="bioText2" />}</p>
                 <p>{<AnimatedText section="about" tKey="bioText3" />}</p>
@@ -54,10 +54,10 @@ const About = () => {
           
           {/* Purpose & Vision Text (Mobile: 1, Desktop: Right Col, Top) */}
           <Reveal delay={0.1} className="order-1 lg:col-start-2 lg:row-start-1 pt-4 lg:pt-10">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#a63c06] mb-6">
               Her Purpose & Vision
             </h2>
-            <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
+            <div className="prose prose-lg font-sans text-[#c36f09] leading-relaxed">
               <p className="mb-6">{<AnimatedText section="about" tKey="missionText" />}</p>
               <p className="mb-6">{<AnimatedText section="about" tKey="bioText4" />}</p>
               <p>{<AnimatedText section="about" tKey="bioText5" />}</p>
@@ -85,10 +85,10 @@ const About = () => {
 
           {/* Recognition & Honours Text (Mobile: 3, Desktop: Right Col, Bottom) */}
           <Reveal delay={0.3} className="order-3 lg:col-start-2 lg:row-start-2">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#a63c06] mb-6">
               Recognition & Honours
             </h2>
-            <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
+            <div className="prose prose-lg font-sans text-[#c36f09] leading-relaxed">
               <p className="mb-6">{<AnimatedText section="about" tKey="motivationText" />}</p>
               <p className="mb-6">{<AnimatedText section="about" tKey="bioText6" />}</p>
               <p>{<AnimatedText section="about" tKey="bioText7" />}</p>
@@ -104,11 +104,11 @@ const About = () => {
               <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-gray-500 mb-4 block">
                 EDUCATION
               </span>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#a63c06] mb-6">
                 {<AnimatedText section="about" tKey="gurukulTitle" />}
               </h2>
               
-              <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
+              <div className="prose prose-lg font-sans text-[#c36f09] leading-relaxed">
                 <p className="mb-6">{<AnimatedText section="about" tKey="gurukulText1" />}</p>
                 <p>{<AnimatedText section="about" tKey="gurukulText2" />}</p>
               </div>

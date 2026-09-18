@@ -28,15 +28,15 @@ const SansthaTestimonials = () => {
   ];
 
   return (
-    <section className="py-32 bg-white">
+    <section className="py-32 bg-transparent">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         
         {/* Header & Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24">
           <Reveal>
             <Kicker className="mb-4 opacity-70">IMPACT STORIES</Kicker>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium text-black tracking-tight leading-none">
-              Voices of <span className="italic text-gray-400">Change</span>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium text-[#a63c06] tracking-tight leading-none">
+              Voices of <span className="italic text-[#c36f09]">Change</span>
             </h2>
           </Reveal>
           
@@ -75,15 +75,15 @@ const SansthaTestimonials = () => {
                   
                   {/* Content */}
                   <div className="flex-1">
-                    <p className="text-2xl md:text-3xl lg:text-5xl font-serif text-black leading-[1.3] mb-12 tracking-tight">
+                    <p className="text-2xl md:text-3xl lg:text-5xl font-serif text-[#a63c06] leading-[1.3] mb-12 tracking-tight">
                       "{t.text}"
                     </p>
                     
                     <div className="flex items-center gap-6">
                       <div className="w-12 h-[1px] bg-black"></div>
                       <div>
-                        <span className="font-medium text-black text-lg block">{t.name}</span>
-                        <span className="text-xs text-gray-400 uppercase tracking-widest mt-1 block">{t.role} — {t.location}</span>
+                        <span className="font-medium text-[#a63c06] text-lg block">{t.name}</span>
+                        <span className="text-xs text-[#c36f09] uppercase tracking-widest mt-1 block">{t.role} — {t.location}</span>
                       </div>
                     </div>
                   </div>

@@ -33,7 +33,7 @@ const OfficialUpdates = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
           <Reveal>
             <Kicker className="mb-2">PRESS ROOM</Kicker>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-charcoal">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#a63c06]">
               Official Updates
             </h2>
           </Reveal>
@@ -61,10 +61,10 @@ const OfficialUpdates = () => {
                 {/* Content */}
                 <div className="flex flex-col flex-grow">
                   <span className="text-gray-500 text-xs mb-3 block">{article.date}</span>
-                  <h3 className="text-xl font-serif font-bold text-brand-charcoal mb-4 leading-snug group-hover:text-gray-600 transition-colors">
+                  <h3 className="text-xl font-serif font-bold text-[#a63c06] mb-4 leading-snug group-hover:text-[#c36f09] transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-gray-600 font-sans text-xs leading-relaxed mb-6 flex-grow">
+                  <p className="text-[#c36f09] font-sans text-xs leading-relaxed mb-6 flex-grow">
                     {article.excerpt}
                   </p>
                   

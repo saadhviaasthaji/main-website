@@ -14,7 +14,7 @@ const SansthaVideo = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#e6ece9] overflow-hidden">
+    <section className="py-24 bg-transparent overflow-hidden">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
@@ -22,14 +22,14 @@ const SansthaVideo = () => {
           <div className="w-full lg:w-5/12">
             <Reveal direction="left">
               <Kicker className="mb-4">A GLIMPSE INTO OUR WORK</Kicker>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-brand-charcoal mb-8 leading-tight tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-[#a63c06] mb-8 leading-tight tracking-tight">
                 Explore Our Gallery
               </h2>
-              <p className="text-gray-600 mb-10 font-sans leading-relaxed text-lg max-w-lg font-light">
+              <p className="text-[#c36f09] mb-10 font-sans leading-relaxed text-lg max-w-lg font-light">
                 Witness the impact of our initiatives firsthand. From massive food drives by the Roti Bank to educational programs and community support, see how dedication transforms into tangible change.
               </p>
               
-              <Link to="/sanstha/gallery" className="group inline-flex items-center gap-4 text-white bg-black rounded-full px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-gray-800 transition-all duration-300 shadow-xl hover:shadow-2xl">
+              <Link to="/sanstha/gallery" className="group inline-flex items-center gap-4 text-white bg-[#a63c06] rounded-full px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-[#c36f09] transition-all duration-300 shadow-xl hover:shadow-2xl">
                 View Gallery
                 <motion.span 
                   initial={{ x: 0 }}
@@ -70,15 +70,7 @@ const SansthaVideo = () => {
                       className="w-full h-full object-cover filter grayscale-[15%] group-hover:grayscale-0 transition-all duration-500"
                     />
                     
-                    {/* Hover Overlay */}
-                    <motion.div 
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6"
-                    >
-                      <span className="text-white text-sm font-bold tracking-wider uppercase">View Detail</span>
-                    </motion.div>
+
                   </motion.div>
                 ))}
               </div>
