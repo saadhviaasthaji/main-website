@@ -131,21 +131,7 @@ const HeroSlider = () => {
           font-size: 24px;
           font-weight: bold;
         }
-        @keyframes scroll-wheel {
-          0% { transform: translateY(0); opacity: 1; }
-          100% { transform: translateY(12px); opacity: 0; }
-        }
-        .animate-scroll-wheel {
-          animation: scroll-wheel 1.5s infinite;
-        }
       `}</style>
-      
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-40 flex flex-col items-center">
-        <div className="w-6 h-10 border-2 border-brand-charcoal rounded-full flex justify-center p-1 opacity-70">
-          <div className="w-1.5 h-2 bg-brand-charcoal rounded-full animate-scroll-wheel"></div>
-        </div>
-      </div>
     </div>
   );
 };
