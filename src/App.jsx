@@ -45,7 +45,7 @@ const AppContent = () => {
       <Suspense fallback={null}>
         {/* Global Website Background */}
         <div 
-          className="fixed inset-0 z-[-1] bg-[#fbf5e6] bg-cover bg-center bg-no-repeat bg-[url('/assets/pages/background/mandala_mobile.webp')] md:bg-[url('/assets/pages/background/mandala_web.webp')]"
+          className="fixed top-0 left-0 w-full h-[100vh] h-[100dvh] z-[-1] bg-[#fbf5e6] bg-cover bg-center bg-no-repeat bg-[url('/assets/pages/background/mandala_mobile.webp')] md:bg-[url('/assets/pages/background/mandala_web.webp')]"
         />
       </Suspense>
       <ScrollToTop />

@@ -11,7 +11,7 @@
 
 @layer base {
   html, body {
-    @apply font-sans bg-transparent text-gray-700 overflow-x-hidden w-full;
+    @apply font-sans bg-[#fbf5e6] text-gray-700 overflow-x-hidden w-full;
   }
   #root {
     @apply overflow-x-hidden w-full;
