@@ -17,6 +17,7 @@ const Reveal = ({ children, delay = 0, width = '100%', className = '', direction
   return (
     <div style={{ position: 'relative', width }} className={className}>
       <motion.div
+        className={className.includes('h-full') ? 'h-full' : ''}
         variants={getVariants()}
         initial="hidden"
         whileInView="visible"

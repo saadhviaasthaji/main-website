@@ -2,136 +2,138 @@ import React from 'react';
 import Reveal from '../components/ui/Reveal';
 import Kicker from '../components/ui/Kicker';
 import { useLanguage } from '../context/LanguageContext';
-import { Calendar, MapPin } from 'lucide-react';
+import { Calendar, MapPin, Info, Phone, Mail, Globe } from 'lucide-react';
+import { FaInstagram } from 'react-icons/fa';
 import AnimatedText from '../components/ui/AnimatedText';
 
 const Events = () => {
   const { language } = useLanguage();
 
-  const upcomingEvent = {
-    title: <AnimatedText section="events" tKey="event1Title" />,
-    date: "1 Oct 2026",
-    location: "Mathura, UP",
-    image: "https://images.unsplash.com/photo-1604085572501-0498ebdd0d50?q=80&w=800&auto=format&fit=crop",
-    description: <AnimatedText section="events" tKey="event1Desc" />,
-  };
-
-  const pastEvents = [
+  // Add a `registrationLink` to any event to display its "Register Now" button.
+  // Leave it empty or remove the line to hide the button for that specific event.
+  const eventsList = [
     {
       id: 1,
-      title: <AnimatedText section="events" tKey="event2Title" />,
-      date: "15 Aug 2025",
-      location: "Vrindavan, UP",
-      image: "https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=800&auto=format&fit=crop"
+      title: "Sangitmay Ek Diwasi Krishna Katha",
+      date: "October 1, 2026 (Thursday)",
+      location: "Vrindavan, U.P.",
+      occasion: "Saadhvi Aasthaji's Birthday",
+      image: "/assets/pages/events/event1.webp",
+      registrationLink: "/booking" // Shows button
     },
     {
       id: 2,
-      title: <AnimatedText section="events" tKey="event3Title" />,
-      date: "10 Mar 2025",
-      location: "Rishikesh, UK",
-      image: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop"
+      title: "Shrimad Bhagwat Katha",
+      date: "March 2027 (7 Days)",
+      location: "Mathura, U.P.",
+      occasion: "On the occasion of Holi (Exact dates TBA)",
+      image: "/assets/pages/events/event2.webp",
+      registrationLink: "/booking" // Shows button
+    },
+    {
+      id: 3,
+      title: "Shrimad Bhagwat Katha",
+      date: "May 2027 (7 Days)",
+      location: "Varanasi, U.P.",
+      occasion: "",
+      image: "/assets/pages/events/event3.webp",
+      registrationLink: "" // Hides button
+    },
+    {
+      id: 4,
+      title: "Shrimad Bhagwat Katha",
+      date: "June 2027 (7 Days)",
+      location: "Jaunpur, U.P.",
+      occasion: "",
+      image: "/assets/pages/events/event4.webp",
+      registrationLink: "" // Hides button
+    },
+    {
+      id: 5,
+      title: "Shrimad Bhagwat Katha",
+      date: "August 2027 (7 Days)",
+      location: "Nashik, Maharashtra",
+      occasion: "Nashik Mahakumbh 2027",
+      image: "/assets/pages/events/event5.webp",
+      registrationLink: "" // Hides button
+    },
+    {
+      id: 6,
+      title: "Shrimad Bhagwat Katha",
+      date: "December 2027 (7 Days)",
+      location: "Kalyan, Mumbai",
+      occasion: "Organised by Shree Sai Jan Kalyan Seva Sanstha",
+      image: "/assets/pages/events/event6.webp",
+      registrationLink: "" // Hides button
     }
   ];
 
   return (
     <div className="bg-transparent min-h-screen pt-32 pb-24">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
         {/* Header */}
         <div className="text-center mb-20">
           <Reveal>
-            <Kicker className="mb-4">{<AnimatedText section="events" tKey="scheduleKicker" />}</Kicker>
+            <Kicker className="mb-4">Upcoming Schedule</Kicker>
             <h1 className="text-5xl md:text-7xl font-serif font-extrabold text-brand-charcoal mb-6">
-              {<AnimatedText section="events" tKey="title" />}
+              Events
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              {<AnimatedText section="events" tKey="subtitle" />}
+            <p className="text-brand-charcoal/80 max-w-2xl mx-auto text-lg font-sans">
+              Join Saadhvi Aastha Ji in her upcoming spiritual discourses across the country.
             </p>
           </Reveal>
         </div>
 
-        {/* Upcoming Event */}
-        <Reveal delay={0.1}>
-          <div className="mb-24">
-            <h2 className="text-3xl font-serif font-bold text-brand-charcoal mb-8 border-l-4 border-black pl-4">
-              {<AnimatedText section="events" tKey="upcomingTitle" />}
-            </h2>
-            <div className="bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-white/50 group">
-              <Reveal direction="left" className="md:w-1/2">
-                <div className="relative overflow-hidden aspect-[4/3] md:aspect-auto h-full">
-                  <img 
-                    src={upcomingEvent.image} 
-                    alt={upcomingEvent.title} 
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+        {/* Events Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24 items-stretch">
+          {eventsList.map((event, index) => (
+            <Reveal key={event.id} delay={index * 0.1} className="h-full">
+              <div className="bg-[#fbf5e6] overflow-hidden shadow-lg border border-brand-charcoal/10 flex flex-col h-full group hover:shadow-xl transition-shadow duration-300">
+                {/* 1:1 Image */}
+                <div className="w-full aspect-square relative overflow-hidden bg-gray-200">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute top-4 left-4 bg-black text-white px-4 py-1 text-sm font-bold uppercase tracking-wider rounded-full">
-                    {<AnimatedText section="events" tKey="upcomingTag" />}
-                  </div>
                 </div>
-              </Reveal>
-              <Reveal direction="right" className="md:w-1/2">
-                <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center h-full">
-                  <h3 className="text-4xl font-serif font-bold text-brand-charcoal mb-4">
-                    {upcomingEvent.title}
-                  </h3>
-                  <div className="flex flex-col gap-3 mb-6">
-                    <div className="flex items-center text-gray-700 font-medium">
-                      <span className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mr-3 text-black">
-                        <Calendar size={16} strokeWidth={2} />
-                      </span>
-                      {upcomingEvent.date}
-                    </div>
-                    <div className="flex items-center text-gray-700 font-medium">
-                      <span className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mr-3 text-black">
-                        <MapPin size={16} strokeWidth={2} />
-                      </span>
-                      {upcomingEvent.location}
-                    </div>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed mb-8">
-                    {upcomingEvent.description}
-                  </p>
-                  <button className="self-start bg-black text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl">
-                    {<AnimatedText section="common" tKey="registerNow" />}
-                  </button>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </Reveal>
 
-        {/* Past Events */}
-        <Reveal delay={0.2}>
-          <div>
-            <h2 className="text-3xl font-serif font-bold text-brand-charcoal mb-8 border-l-4 border-gray-400 pl-4 text-gray-700">
-              {<AnimatedText section="events" tKey="pastTitle" />}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {pastEvents.map((event) => (
-                <div key={event.id} className="bg-white/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-white/30 group flex flex-col sm:flex-row">
-                  <Reveal direction="left" className="sm:w-2/5 aspect-video sm:aspect-square relative overflow-hidden">
-                    <img 
-                      src={event.image} 
-                      alt={event.title} 
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
-                    />
-                  </Reveal>
-                  <Reveal direction="right" className="sm:w-3/5 p-6 flex flex-col justify-center h-full">
-                    <h4 className="text-xl font-serif font-bold text-brand-charcoal mb-2">
-                      {event.title}
-                    </h4>
-                    <div className="flex items-center text-sm text-gray-500 mb-1">
-                      <Calendar size={14} className="mr-2 text-black" strokeWidth={2} /> {event.date}
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-serif font-bold text-brand-charcoal mb-4 line-clamp-2">
+                    {event.title}
+                  </h3>
+
+                  <div className="flex flex-col gap-3 mb-6 flex-grow">
+                    <div className="flex items-start text-brand-charcoal/80 font-medium text-sm">
+                      <Calendar size={16} strokeWidth={2} className="mr-3 mt-0.5 shrink-0 text-brand-charcoal" />
+                      <span>{event.date}</span>
                     </div>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <MapPin size={14} className="mr-2 text-black" strokeWidth={2} /> {event.location}
+                    <div className="flex items-start text-brand-charcoal/80 font-medium text-sm">
+                      <MapPin size={16} strokeWidth={2} className="mr-3 mt-0.5 shrink-0 text-brand-charcoal" />
+                      <span>{event.location}</span>
                     </div>
-                  </Reveal>
+                    {event.occasion && (
+                      <div className="flex items-start text-brand-charcoal/80 font-medium text-sm">
+                        <Info size={16} strokeWidth={2} className="mr-3 mt-0.5 shrink-0 text-brand-charcoal" />
+                        <span>{event.occasion}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {event.registrationLink && (
+                    <a href={event.registrationLink} className="w-full bg-brand-charcoal text-[#fbf5e6] px-6 py-3 font-bold uppercase tracking-widest text-xs hover:bg-black transition-colors text-center block mt-auto">
+                      Register Now
+                    </a>
+                  )}
                 </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+
 
       </div>
     </div>

@@ -81,45 +81,45 @@ const Contact = () => {
             <p className="text-gray-600 font-sans text-lg mb-6">We would love to hear from you. Please fill out the form below or contact us directly.</p>
             
             <div className="flex flex-col md:flex-row justify-center gap-6 text-sm text-gray-700 font-sans mb-12">
-              <div className="bg-white px-6 py-3 rounded-full shadow-sm">
+              <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-brand-charcoal/10 px-6 py-3 rounded-full shadow-md text-brand-charcoal">
                 <span className="font-bold">Email:</span> saadhviaasthaji@gmail.com
               </div>
-              <div className="bg-white px-6 py-3 rounded-full shadow-sm">
+              <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-brand-charcoal/10 px-6 py-3 rounded-full shadow-md text-brand-charcoal">
                 <span className="font-bold">Phone:</span> 8591902050
               </div>
-              <div className="bg-white px-6 py-3 rounded-full shadow-sm">
+              <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-brand-charcoal/10 px-6 py-3 rounded-full shadow-md text-brand-charcoal">
                 <span className="font-bold">Coordinator:</span> Pratik Mishra
               </div>
             </div>
           </div>
           
-          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+          <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-brand-charcoal/10 rounded-2xl shadow-xl p-8 md:p-12">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-brand-charcoal mb-2">First Name</label>
-                  <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" required />
+                  <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" required />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-brand-charcoal mb-2">Last Name</label>
-                  <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" required />
+                  <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" required />
                 </div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-brand-charcoal mb-2">Email Address</label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" required />
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" required />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-brand-charcoal mb-2">Phone Number</label>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} pattern="\d{10}" maxLength="10" title="Please enter exactly 10 digits" className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" required />
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} pattern="\d{10}" maxLength="10" title="Please enter exactly 10 digits" className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" required />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-semibold text-brand-charcoal mb-2">Message</label>
-                <textarea name="message" value={formData.message} onChange={handleChange} rows="5" className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors resize-none" required></textarea>
+                <textarea name="message" value={formData.message} onChange={handleChange} rows="5" className="w-full bg-transparent border-2 border-brand-charcoal/20 px-4 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-xl placeholder-brand-charcoal/40 resize-none font-medium" required></textarea>
               </div>
 
               {status === 'success' && (

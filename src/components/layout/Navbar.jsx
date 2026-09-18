@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Globe } from 'lucide-react';
+import { ChevronDown, Globe } from 'lucide-react';
+import { Pivot as Hamburger } from 'hamburger-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../context/LanguageContext';
 import AnimatedText from '../ui/AnimatedText';
@@ -69,7 +70,7 @@ const Navbar = () => {
 
   const isHomePage = location.pathname === '/';
   const useDarkText = true; // Always true because the new global background is pale
-  const actuallyVisible = isVisible && (!isIdle || !isScrolled || isOpen);
+  const actuallyVisible = isOpen || (isVisible && (!isIdle || !isScrolled));
   const showBackground = isScrolled;
 
   return (
@@ -120,9 +121,15 @@ const Navbar = () => {
                 </Link>
               </div>
               
-              <button onClick={toggleMenu} className={`p-2 rounded-full transition-colors duration-300 ${!useDarkText ? 'text-white hover:bg-white/20' : 'text-brand-charcoal hover:bg-brand-charcoal/10'}`}>
-                {isOpen ? <X size={28} /> : <Menu size={28} />}
-              </button>
+              <div className={`transition-colors duration-300 rounded-full ${!useDarkText ? 'hover:bg-white/20' : 'hover:bg-brand-charcoal/10'}`}>
+                <Hamburger 
+                  toggled={isOpen} 
+                  toggle={setIsOpen} 
+                  color={!useDarkText ? '#ffffff' : '#1a1a1a'} 
+                  size={26} 
+                  rounded 
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -136,15 +143,8 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-0 bg-white/90 backdrop-blur-3xl z-40 overflow-hidden"
+            className="fixed inset-0 top-0 bg-[#fbf5e6]/80 backdrop-blur-3xl z-40 overflow-hidden"
           >
-            {/* Aurora Effect Background */}
-            <div className="absolute inset-0 z-[-1] pointer-events-none">
-              <div className="absolute top-[10%] left-[20%] w-[30vw] h-[30vw] bg-[#000000]/10 rounded-full mix-blend-multiply filter blur-[80px] animate-pulse"></div>
-              <div className="absolute top-[40%] right-[20%] w-[35vw] h-[35vw] bg-gray-400/20 rounded-full mix-blend-multiply filter blur-[80px] animate-pulse" style={{ animationDelay: '2s' }}></div>
-              <div className="absolute bottom-[20%] left-[40%] w-[25vw] h-[25vw] bg-gray-300/30 rounded-full mix-blend-multiply filter blur-[80px] animate-pulse" style={{ animationDelay: '4s' }}></div>
-            </div>
-
             <div className="flex flex-col items-center justify-start min-h-full pt-28 pb-12 px-4 space-y-6 relative z-10 overflow-y-auto">
               {navLinks.map((link, idx) => (
                 <div key={idx}>
@@ -161,7 +161,7 @@ const Navbar = () => {
                 <Link
                   to="/sanstha"
                   onClick={() => setIsOpen(false)}
-                  className="w-full text-center py-4 text-lg font-bold bg-white text-brand-charcoal rounded-none shadow-lg hover:shadow-xl transition-all hover:scale-105 transform"
+                  className="w-full text-center py-4 text-lg font-bold bg-transparent border-2 border-brand-charcoal text-brand-charcoal rounded-none shadow-sm hover:bg-brand-charcoal hover:text-[#fbf5e6] transition-all hover:scale-105 transform"
                 >
                   {<AnimatedText section="nav" tKey="sansthaWorks" />}
                 </Link>

@@ -21,19 +21,21 @@ const SocialMediaBar = () => {
             Join Our Digital Community
           </h2>
           
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+          <div className="flex flex-nowrap justify-center gap-3 sm:gap-6 md:gap-10">
             {socials.map((social, idx) => (
               <a 
                 key={idx} 
                 href={social.link}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex flex-col items-center gap-3"
+                className="group flex flex-col items-center gap-2 sm:gap-3"
               >
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-brand-charcoal shadow-md group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1">
-                  {social.icon}
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#fbf5e6] border border-brand-charcoal/10 rounded-full flex items-center justify-center text-brand-charcoal shadow-sm group-hover:bg-brand-charcoal group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1">
+                  <div className="scale-75 sm:scale-100">
+                    {social.icon}
+                  </div>
                 </div>
-                <span className="font-sans font-medium text-gray-600 group-hover:text-brand-blue transition-colors">
+                <span className="font-sans font-medium text-xs sm:text-base text-gray-600 group-hover:text-brand-charcoal transition-colors">
                   {social.name}
                 </span>
               </a>

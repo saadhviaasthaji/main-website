@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe, Heart } from 'lucide-react';
+import { Globe, Heart } from 'lucide-react';
+import { Pivot as Hamburger } from 'hamburger-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../context/LanguageContext';
 import AnimatedText from '../ui/AnimatedText';
@@ -64,7 +65,7 @@ const SansthaNavbar = () => {
 
   const isSansthaHomePage = location.pathname === '/sanstha' || location.pathname === '/sanstha/';
   const useDarkText = isScrolled || isOpen || !isSansthaHomePage;
-  const actuallyVisible = isVisible && (!isIdle || !isScrolled || isOpen);
+  const actuallyVisible = isOpen || (isVisible && (!isIdle || !isScrolled));
   const showBackground = isScrolled;
 
   return (
@@ -112,9 +113,15 @@ const SansthaNavbar = () => {
                 </Link>
               </div>
               
-              <button onClick={toggleMenu} className={`p-2 hover:bg-gray-200/50 hover:text-brand-charcoal rounded-full transition-colors ${!useDarkText ? 'text-white' : 'text-brand-charcoal'}`}>
-                {isOpen ? <X size={28} /> : <Menu size={28} />}
-              </button>
+              <div className={`transition-colors duration-300 rounded-full ${!useDarkText ? 'hover:bg-white/20' : 'hover:bg-brand-charcoal/10'}`}>
+                <Hamburger 
+                  toggled={isOpen} 
+                  toggle={setIsOpen} 
+                  color={!useDarkText ? '#ffffff' : '#1a1a1a'} 
+                  size={26} 
+                  rounded 
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -128,15 +135,8 @@ const SansthaNavbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-0 bg-white/90 backdrop-blur-3xl z-40 overflow-hidden"
+            className="fixed inset-0 top-0 bg-[#fbf5e6]/80 backdrop-blur-3xl z-40 overflow-hidden"
           >
-            {/* Aurora Effect Background */}
-            <div className="absolute inset-0 z-[-1] pointer-events-none">
-              <div className="absolute top-[10%] left-[20%] w-[30vw] h-[30vw] bg-[#000000]/10 rounded-full mix-blend-multiply filter blur-[80px] animate-pulse"></div>
-              <div className="absolute top-[40%] right-[20%] w-[35vw] h-[35vw] bg-gray-400/20 rounded-full mix-blend-multiply filter blur-[80px] animate-pulse" style={{ animationDelay: '2s' }}></div>
-              <div className="absolute bottom-[20%] left-[40%] w-[25vw] h-[25vw] bg-gray-300/30 rounded-full mix-blend-multiply filter blur-[80px] animate-pulse" style={{ animationDelay: '4s' }}></div>
-            </div>
-
             <div className="flex flex-col items-center justify-start min-h-full pt-28 pb-12 px-4 space-y-6 relative z-10 overflow-y-auto">
               {navLinks.map((link, idx) => (
                 <div key={idx}>

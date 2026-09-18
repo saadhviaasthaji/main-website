@@ -35,7 +35,7 @@ const EmpoweringSection = () => {
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                   {<AnimatedText section="empowering" tKey="kathaDesc" />}
                 </p>
-                <Link to="/katha" className="inline-flex items-center gap-2 bg-black text-white px-6 py-2 text-xs font-bold hover:bg-gray-800 transition-colors">
+                <Link to="/events" className="inline-flex items-center gap-2 bg-black text-white px-6 py-2 text-xs font-bold hover:bg-gray-800 transition-colors">
                   {<AnimatedText section="common" tKey="knowMore" />}
                   <span className="text-lg">→</span>
                 </Link>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Reveal from '../components/ui/Reveal';
 import Kicker from '../components/ui/Kicker';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const Booking = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,12 @@ const Booking = () => {
     Location: '',
     Details: ''
   });
+
+  const [expandedSections, setExpandedSections] = useState({ events: false, reqs: false });
+  
+  const toggleSection = (section) => {
+    setExpandedSections(prev => ({ ...prev, [section]: !prev[section] }));
+  };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -65,7 +72,7 @@ const Booking = () => {
 
   return (
     <div className="pt-24 bg-transparent min-h-screen pb-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <Reveal>
           <div className="text-center mb-12">
             <Kicker>Booking</Kicker>
@@ -73,31 +80,45 @@ const Booking = () => {
             <p className="text-gray-600 font-sans text-lg max-w-2xl mx-auto">Please fill out this form to request Saadhvi Aastha Ji for a spiritual event, katha, or discourse.</p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-1 space-y-6">
-              <div className="bg-white rounded-3xl shadow p-6">
-                <h3 className="font-serif font-bold text-xl text-brand-charcoal mb-4">Types of Events Accepted</h3>
-                <ul className="list-disc list-inside text-gray-600 text-sm space-y-2">
-                  <li>Shreemad Bhagwat Katha</li>
-                  <li>Shreemad Bhagwat Katha — personal/family gatherings</li>
-                  <li>Radha Naam Concerts (Live Events)</li>
-                  <li>Spiritual and devotional events</li>
-                  <li>Religious programmes</li>
-                  <li>Bhakti and devotional gatherings</li>
-                </ul>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-brand-charcoal/10 rounded-2xl shadow-xl p-6 lg:p-8">
+                <div className="flex justify-between items-center cursor-pointer lg:cursor-default" onClick={() => toggleSection('events')}>
+                  <h3 className="font-serif font-bold text-xl text-brand-charcoal">Types of Events Accepted</h3>
+                  <div className="lg:hidden text-brand-charcoal/60">
+                    {expandedSections.events ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                  </div>
+                </div>
+                <div className={`mt-4 ${expandedSections.events ? 'block' : 'hidden lg:block'}`}>
+                  <ul className="list-disc list-inside text-brand-charcoal/80 font-medium text-sm space-y-3">
+                    <li>Shreemad Bhagwat Katha</li>
+                    <li>Shreemad Bhagwat Katha — personal/family gatherings</li>
+                    <li>Radha Naam Concerts (Live Events)</li>
+                    <li>Spiritual and devotional events</li>
+                    <li>Religious programmes</li>
+                    <li>Bhakti and devotional gatherings</li>
+                  </ul>
+                </div>
               </div>
 
-              <div className="bg-white rounded-3xl shadow p-6">
-                <h3 className="font-serif font-bold text-xl text-brand-charcoal mb-4">Requirements for Organizers</h3>
-                <ul className="list-disc list-inside text-gray-600 text-sm space-y-2">
-                  <li>Travel and transportation arrangements/expenses for Saadhvi Aastha Ji and team.</li>
-                  <li>Suitable hospitality and accommodation arrangements.</li>
-                  <li>Stage, seating, sound and other appropriate event arrangements.</li>
-                </ul>
+              <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-brand-charcoal/10 rounded-2xl shadow-xl p-6 lg:p-8">
+                <div className="flex justify-between items-center cursor-pointer lg:cursor-default" onClick={() => toggleSection('reqs')}>
+                  <h3 className="font-serif font-bold text-xl text-brand-charcoal">Requirements for Organizers</h3>
+                  <div className="lg:hidden text-brand-charcoal/60">
+                    {expandedSections.reqs ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                  </div>
+                </div>
+                <div className={`mt-4 ${expandedSections.reqs ? 'block' : 'hidden lg:block'}`}>
+                  <ul className="list-disc list-inside text-brand-charcoal/80 font-medium text-sm space-y-3">
+                    <li>Travel and transportation arrangements/expenses for Saadhvi Aastha Ji and team.</li>
+                    <li>Suitable hospitality and accommodation arrangements.</li>
+                    <li>Stage, seating, sound and other appropriate event arrangements.</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <div className="lg:col-span-2 bg-white rounded-3xl shadow-xl p-8 md:p-12">
+            <div className="lg:col-span-7 bg-[#fbf5e6]/70 backdrop-blur-xl border border-brand-charcoal/10 rounded-2xl shadow-xl p-8 md:p-12">
               {isSuccess ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-12">
                   <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
@@ -130,7 +151,7 @@ const Booking = () => {
                         name="Organization"
                         value={formData.Organization}
                         onChange={handleChange}
-                        className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" 
+                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
@@ -141,7 +162,7 @@ const Booking = () => {
                         name="ContactName"
                         value={formData.ContactName}
                         onChange={handleChange}
-                        className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" 
+                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
@@ -155,7 +176,7 @@ const Booking = () => {
                         name="Email"
                         value={formData.Email}
                         onChange={handleChange}
-                        className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" 
+                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
@@ -168,7 +189,7 @@ const Booking = () => {
                         onChange={handleChange}
                         pattern="[0-9]{10}"
                         title="Please enter exactly 10 digits"
-                        className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" 
+                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
@@ -183,7 +204,7 @@ const Booking = () => {
                         value={formData.Date}
                         onChange={handleChange}
                         min={new Date().toISOString().split('T')[0]}
-                        className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" 
+                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
@@ -194,7 +215,7 @@ const Booking = () => {
                         name="Location"
                         value={formData.Location}
                         onChange={handleChange}
-                        className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" 
+                        className="w-full bg-transparent border-b-2 border-brand-charcoal/20 px-2 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" 
                         required 
                       />
                     </div>
@@ -207,7 +228,7 @@ const Booking = () => {
                       name="Details"
                       value={formData.Details}
                       onChange={handleChange}
-                      className="w-full bg-brand-lightgrey border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors resize-none" 
+                      className="w-full bg-transparent border border-brand-charcoal/20 px-4 py-3 text-brand-charcoal focus:outline-none focus:border-brand-charcoal transition-colors rounded-xl placeholder-brand-charcoal/40 resize-none font-medium" 
                       placeholder="Provide a brief overview of the event..." 
                       required
                     ></textarea>

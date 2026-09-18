@@ -34,15 +34,15 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4 h-[400px] md:h-[500px]">
               <div className="col-span-1 pt-8 flex flex-col gap-4">
                 <div className="flex-grow rounded-[2rem] overflow-hidden shadow-xl relative group">
-                  <img src="https://images.unsplash.com/photo-1601662528567-526cd06f6582?q=80&w=800&auto=format&fit=crop" alt="Saadhvi Aastha Ji" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <img src="/assets/pages/about/about_s1_l1.webp" alt="Saadhvi Aastha Ji" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
               </div>
               <div className="col-span-1 pb-8 flex flex-col gap-4">
                 <div className="h-1/2 rounded-[2rem] overflow-hidden shadow-xl relative group">
-                  <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop" alt="Spirituality" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <img src="/assets/pages/about/about_s1_r1.webp" alt="Spirituality" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
                 <div className="h-1/2 rounded-[2rem] overflow-hidden shadow-xl relative group">
-                  <img src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=800&auto=format&fit=crop" alt="Devotion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <img src="/assets/pages/home/empowering/katha.webp" alt="Devotion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
               </div>
             </div>
@@ -50,52 +50,51 @@ const About = () => {
         </div>
 
         {/* Section 2: Purpose, Vision & Recognition */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <Reveal delay={0.1} direction="left" className="lg:sticky lg:top-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-20 items-start">
+          
+          {/* Purpose & Vision Text (Mobile: 1, Desktop: Right Col, Top) */}
+          <Reveal delay={0.1} className="order-1 lg:col-start-2 lg:row-start-1 pt-4 lg:pt-10">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6">
+              Her Purpose & Vision
+            </h2>
+            <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
+              <p className="mb-6">{<AnimatedText section="about" tKey="missionText" />}</p>
+              <p className="mb-6">{<AnimatedText section="about" tKey="bioText4" />}</p>
+              <p>{<AnimatedText section="about" tKey="bioText5" />}</p>
+            </div>
+          </Reveal>
+
+          {/* Section 2 Images (Mobile: 2, Desktop: Left Col, Spanning both rows) */}
+          <Reveal delay={0.2} direction="left" className="order-2 lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:sticky lg:top-32">
             <div className="grid grid-cols-2 gap-4 h-[500px] lg:h-[650px]">
               <div className="col-span-1 pb-12 flex flex-col gap-4">
                 <div className="h-2/5 rounded-[2rem] overflow-hidden shadow-xl relative group">
-                  <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" alt="Teaching" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <img src="/assets/pages/about/about_s2_r2.webp" alt="Teaching" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
                 <div className="flex-grow rounded-[2rem] overflow-hidden shadow-xl relative group">
-                  <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=800&auto=format&fit=crop" alt="Community" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <img src="/assets/pages/about/about_s2_r1.webp" alt="Community" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
               </div>
               <div className="col-span-1 pt-12 flex flex-col gap-4">
                 <div className="flex-grow rounded-[2rem] overflow-hidden shadow-xl relative group">
-                  <img src="https://images.unsplash.com/photo-1528642474498-1af0c17fd8c3?q=80&w=800&auto=format&fit=crop" alt="Guidance" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <img src="/assets/pages/about/about_s2_l1.webp" alt="Guidance" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
               </div>
             </div>
           </Reveal>
 
-          <Reveal delay={0.3}>
-            <div className="pt-4 lg:pt-10">
-              {/* Purpose & Vision */}
-              <div className="mb-16">
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6">
-                  Her Purpose & Vision
-                </h2>
-                <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
-                  <p className="mb-6">{<AnimatedText section="about" tKey="missionText" />}</p>
-                  <p className="mb-6">{<AnimatedText section="about" tKey="bioText4" />}</p>
-                  <p>{<AnimatedText section="about" tKey="bioText5" />}</p>
-                </div>
-              </div>
-
-              {/* Recognition & Honours */}
-              <div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6">
-                  Recognition & Honours
-                </h2>
-                <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
-                  <p className="mb-6">{<AnimatedText section="about" tKey="motivationText" />}</p>
-                  <p className="mb-6">{<AnimatedText section="about" tKey="bioText6" />}</p>
-                  <p>{<AnimatedText section="about" tKey="bioText7" />}</p>
-                </div>
-              </div>
+          {/* Recognition & Honours Text (Mobile: 3, Desktop: Right Col, Bottom) */}
+          <Reveal delay={0.3} className="order-3 lg:col-start-2 lg:row-start-2">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-charcoal mb-6">
+              Recognition & Honours
+            </h2>
+            <div className="prose prose-lg font-sans text-gray-600 leading-relaxed">
+              <p className="mb-6">{<AnimatedText section="about" tKey="motivationText" />}</p>
+              <p className="mb-6">{<AnimatedText section="about" tKey="bioText6" />}</p>
+              <p>{<AnimatedText section="about" tKey="bioText7" />}</p>
             </div>
           </Reveal>
+          
         </div>
 
         {/* Section 3: Gurukul Education */}
@@ -120,15 +119,15 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4 h-[400px] md:h-[500px]">
               <div className="col-span-1 pt-8 flex flex-col gap-4">
                 <div className="flex-grow rounded-[2rem] overflow-hidden shadow-xl relative group">
-                  <img src="https://images.unsplash.com/photo-1574681604112-2593d6eefab7?q=80&w=800&auto=format&fit=crop" alt="Gurukul Tradition" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <img src="/assets/pages/about/about_s3_l1.webp" alt="Gurukul Tradition" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
               </div>
               <div className="col-span-1 pb-8 flex flex-col gap-4">
                 <div className="h-1/2 rounded-[2rem] overflow-hidden shadow-xl relative group">
-                  <img src="https://images.unsplash.com/photo-1542838686-37ed7a7ef3f1?q=80&w=800&auto=format&fit=crop" alt="Vedic Knowledge" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <img src="/assets/pages/home/empowering/gurukul.webp" alt="Vedic Knowledge" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
                 <div className="h-1/2 rounded-[2rem] overflow-hidden shadow-xl relative group">
-                  <img src="https://images.unsplash.com/photo-1601662528567-526cd06f6582?q=80&w=800&auto=format&fit=crop" alt="Scriptures" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <img src="/assets/pages/home/bio/bio-3.webp" alt="Scriptures" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
               </div>
             </div>
