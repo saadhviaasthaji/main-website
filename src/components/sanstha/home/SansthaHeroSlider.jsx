@@ -13,12 +13,16 @@ const SansthaHeroSlider = () => {
   const slides = [
     {
       id: 1,
+      webImage: "/assets/pages/sanstha/home/hero1_web.webp",
+      mobileImage: "/assets/pages/sanstha/home/hero1_mobile.webp",
       kicker: "WELCOME TO",
       title: "Aastha Sevabhavi Sanstha",
       description: "Where devotion transforms into service."
     },
     {
       id: 2,
+      webImage: "/assets/pages/sanstha/home/hero2_web.webp",
+      mobileImage: "/assets/pages/sanstha/home/hero2_mobile.webp",
       kicker: "SEVA",
       title: "Service to Humanity",
       description: "Eradicating hunger, one meal at a time."
@@ -48,8 +52,10 @@ const SansthaHeroSlider = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className="absolute inset-0 w-full h-full">
-              <img src={`https://picsum.photos/seed/${slide.id + 10}/1920/1080`} alt="Slide background" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white/90"></div>
+              {/* Mobile Image */}
+              <img src={slide.mobileImage} alt={`Slide ${slide.id} Mobile`} className="w-full h-full object-cover md:hidden" />
+              {/* Web Image */}
+              <img src={slide.webImage} alt={`Slide ${slide.id} Web`} className="w-full h-full object-cover hidden md:block" />
             </div>
 
             <div className="w-full h-full w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center md:items-end text-center md:text-right relative z-10 pt-24 pb-12 md:pb-0">
@@ -62,10 +68,10 @@ const SansthaHeroSlider = () => {
       </Swiper>
       
       {/* Scroll Down Indicator */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
-        <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#a63c06] font-extrabold mb-3 opacity-90 drop-shadow-sm">Scroll Up</span>
-        <div className="w-[2px] h-12 md:h-16 bg-[#a63c06]/30 relative overflow-hidden rounded-full shadow-sm">
-          <div className="w-full h-1/2 bg-[#a63c06] absolute top-0 left-0 rounded-full animate-scroll-indicator"></div>
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
+        <span className="text-[10px] md:text-[12px] uppercase tracking-[0.3em] text-[#4a1a03] font-black mb-3 drop-shadow-md bg-white/60 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/40 shadow-lg">Scroll Down</span>
+        <div className="w-[2px] h-12 md:h-16 bg-white/50 relative overflow-hidden rounded-full shadow-md backdrop-blur-sm border border-white/20">
+          <div className="w-full h-1/2 bg-[#4a1a03] absolute top-0 left-0 rounded-full animate-scroll-indicator"></div>
         </div>
       </div>
 

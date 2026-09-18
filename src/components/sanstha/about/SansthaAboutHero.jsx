@@ -60,14 +60,14 @@ const SansthaAboutHero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
       >
-        <span className="text-[#a63c06] text-[10px] md:text-xs tracking-[0.3em] uppercase mb-4 font-extrabold drop-shadow-sm">Scroll Up</span>
-        <div className="w-[2px] h-12 bg-[#a63c06]/30 overflow-hidden relative rounded-full">
+        <span className="text-[#4a1a03] text-[10px] md:text-[12px] tracking-[0.3em] uppercase mb-3 font-black drop-shadow-md bg-white/60 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/40 shadow-lg">Scroll Down</span>
+        <div className="w-[2px] h-12 md:h-16 bg-white/50 relative overflow-hidden rounded-full shadow-md backdrop-blur-sm border border-white/20">
           <motion.div 
-            animate={{ y: [0, 48, 0] }}
+            animate={{ y: [0, 64, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-            className="w-full h-1/2 bg-[#a63c06] absolute top-0"
+            className="w-full h-1/2 bg-[#4a1a03] absolute top-0 rounded-full"
           />
         </div>
       </motion.div>
