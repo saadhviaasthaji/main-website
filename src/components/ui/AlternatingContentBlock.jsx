@@ -79,15 +79,15 @@ const AlternatingContentBlock = ({
 
               {/* Bullets Grid */}
               {bullets && (
-                <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
                   {bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start bg-gray-50 p-4 rounded-xl">
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-blue/10 flex items-center justify-center mr-3 mt-0.5">
-                        <svg className="w-4 h-4 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <li key={idx} className="flex items-start bg-white/60 backdrop-blur-sm border border-[#a63c06]/10 p-5 rounded-2xl h-full shadow-sm hover:shadow-md transition-shadow">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#a63c06]/10 flex items-center justify-center mr-4 mt-0.5">
+                        <svg className="w-4 h-4 text-[#a63c06]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </span>
-                      <span className="text-[#c36f09] font-sans text-sm">{bullet}</span>
+                      <span className="text-[#c36f09] font-sans text-sm md:text-base leading-relaxed">{bullet}</span>
                     </li>
                   ))}
                 </ul>

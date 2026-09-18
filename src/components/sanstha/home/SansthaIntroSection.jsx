@@ -70,10 +70,6 @@ const SansthaIntroSection = () => {
                   </motion.div>
                   <div className="absolute inset-0 bg-black/5 transition-opacity group-hover:bg-transparent"></div>
                   
-                  {/* Floating Tag */}
-                  <div className="absolute bottom-6 left-6 bg-[#fbf5e6]/90 backdrop-blur-md border border-brand-charcoal/10 px-6 py-3 rounded-full shadow-lg">
-                    <span className="text-sm font-semibold tracking-wide text-[#a63c06]">Compassion in Action</span>
-                  </div>
                 </div>
 
                 {/* Top Right Small Image */}

@@ -112,9 +112,9 @@ const HeroSlider = () => {
       </Swiper>
 
       {/* Scroll Down Indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
-        <span className="text-[10px] md:text-[12px] uppercase tracking-[0.3em] text-[#4a1a03] font-black mb-3 drop-shadow-md bg-white/60 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/40 shadow-lg">Scroll Down</span>
-        <div className="w-[2px] h-12 md:h-16 bg-white/50 relative overflow-hidden rounded-full shadow-md backdrop-blur-sm border border-white/20">
+      <div className="absolute bottom-0 md:-bottom-2 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
+        <span className="text-[10px] md:text-[12px] uppercase tracking-[0.3em] text-[#4a1a03] font-black mb-2 drop-shadow-md bg-white/60 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/40 shadow-lg">Scroll Down</span>
+        <div className="w-[2px] h-8 md:h-12 bg-white/50 relative overflow-hidden rounded-full shadow-md backdrop-blur-sm border border-white/20">
           <div className="w-full h-1/2 bg-[#4a1a03] absolute top-0 left-0 rounded-full animate-scroll-indicator"></div>
         </div>
       </div>

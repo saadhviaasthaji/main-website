@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
 const MembershipModal = ({ isOpen, onClose }) => {
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx7Etx3iSnKTakcHyqTvE_8lzkLat7589ClrOTvKF0W0AqcVDaSCurA8ISIiZWgXO1D/exec";
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -15,26 +17,48 @@ const MembershipModal = ({ isOpen, onClose }) => {
   });
   
   const [status, setStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.fullName || !formData.phone || !formData.reason) {
       setStatus({ type: 'error', message: 'Please fill out all required fields.' });
       return;
     }
     
-    setStatus({ type: 'success', message: 'Your membership application has been submitted successfully.' });
-    setFormData({
-      fullName: '', email: '', phone: '', address: '', city: '', occupation: '', reason: '', message: ''
-    });
-    
-    // Optional: Auto close after success
-    // setTimeout(() => { onClose(); setStatus(null); }, 3000);
+    setIsSubmitting(true);
+    setStatus(null);
+
+    try {
+      if (GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_SCRIPT_URL_HERE") {
+        throw new Error("Please configure the Google Script URL in the code before submitting.");
+      }
+
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Important for Google Scripts to avoid CORS errors on the client
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      // Since we use no-cors, we won't get a readable response back, so we assume success if no error was thrown
+      setStatus({ type: 'success', message: 'Your membership application has been submitted successfully.' });
+      setFormData({
+        fullName: '', email: '', phone: '', address: '', city: '', occupation: '', reason: '', message: ''
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus({ type: 'error', message: error.message || 'Something went wrong. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -65,19 +89,43 @@ const MembershipModal = ({ isOpen, onClose }) => {
               <X size={24} className="text-[#a63c06]" />
             </button>
 
-            <div className="text-center mb-10">
-              <span className="text-xs uppercase tracking-widest text-brand-orange font-bold mb-4 block">Join Us</span>
-              <h2 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-4">Become a Member</h2>
-              <p className="text-[#c36f09] font-sans text-lg max-w-2xl mx-auto">
-                We welcome passionate individuals who wish to dedicate their time, skills, and energy to selfless service. Join our family of volunteers today.
-              </p>
-            </div>
-
-            {status && (
-              <div className={`mb-8 p-4 rounded-xl font-sans text-sm ${status.type === 'error' ? 'bg-red-50 text-red-600 border border-red-200' : 'bg-green-50 text-green-700 border border-green-200'}`}>
-                {status.message}
+            {status?.type === 'success' ? (
+              <div className="text-center py-12">
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8"
+                >
+                  <svg className="w-12 h-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                </motion.div>
+                <h3 className="text-3xl md:text-4xl font-serif text-[#a63c06] mb-4">Successfully Submitted!</h3>
+                <p className="text-[#c36f09] font-sans text-lg mb-10 max-w-lg mx-auto">
+                  Thank you for joining our mission to serve humanity. We have received your application and will be in touch with you shortly.
+                </p>
+                <button 
+                  onClick={onClose}
+                  className="bg-[#a63c06] text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-[#a63c06]/90 transition-all shadow-lg"
+                >
+                  Close Window
+                </button>
               </div>
-            )}
+            ) : (
+              <>
+                <div className="text-center mb-10">
+                  <span className="text-xs uppercase tracking-widest text-brand-orange font-bold mb-4 block">Join Us</span>
+                  <h2 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-4">Become a Member</h2>
+                  <p className="text-[#c36f09] font-sans text-lg max-w-2xl mx-auto">
+                    We welcome passionate individuals who wish to dedicate their time, skills, and energy to selfless service. Join our family of volunteers today.
+                  </p>
+                </div>
+
+                {status && (
+                  <div className={`mb-8 p-4 rounded-xl font-sans text-sm ${status.type === 'error' ? 'bg-red-50 text-red-600 border border-red-200' : 'bg-green-50 text-green-700 border border-green-200'}`}>
+                    {status.message}
+                  </div>
+                )}
 
             <form onSubmit={handleSubmit} className="space-y-6 font-sans">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -130,15 +178,21 @@ const MembershipModal = ({ isOpen, onClose }) => {
                 <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-transparent focus:bg-transparent focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all resize-none"></textarea>
               </div>
 
-              <div className="pt-6">
-                <button type="submit" className="w-full bg-black text-white py-4 rounded-xl font-bold text-lg hover:bg-gray-800 transition-colors shadow-lg">
-                  Submit Application
-                </button>
-                <p className="text-xs text-[#c36f09] text-center mt-4">
-                  Note: Applications are reviewed manually by our team.
-                </p>
-              </div>
-            </form>
+                <div className="pt-6">
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className={`w-full py-4 rounded-xl font-bold text-lg transition-colors shadow-lg ${isSubmitting ? 'bg-gray-400 cursor-not-allowed text-white' : 'bg-black text-white hover:bg-gray-800'}`}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit Application'}
+                  </button>
+                  <p className="text-xs text-[#c36f09] text-center mt-4">
+                    Note: Applications are reviewed manually by our team.
+                  </p>
+                </div>
+              </form>
+            </>
+            )}
           </motion.div>
         </div>
       )}

@@ -140,23 +140,6 @@ const RotiBank = () => {
         </div>
       </section>
 
-      {/* 5. Images from Our Work */}
-      <section className="py-20 bg-transparent">
-        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="text-center mb-12">
-              <span className="text-sm uppercase tracking-[2px] font-bold text-[#a63c06] mb-2 block">Gallery</span>
-              <h2 className="text-3xl md:text-5xl font-serif text-[#a63c06]">Images from Our Work</h2>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <img src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=400&auto=format&fit=crop" loading="lazy" alt="Work" className="w-full h-48 object-cover rounded-xl shadow hover:shadow-lg transition-all hover:scale-105" />
-              <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=400&auto=format&fit=crop" loading="lazy" alt="Work" className="w-full h-48 object-cover rounded-xl shadow hover:shadow-lg transition-all hover:scale-105" />
-              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?q=80&w=400&auto=format&fit=crop" loading="lazy" alt="Work" className="w-full h-48 object-cover rounded-xl shadow hover:shadow-lg transition-all hover:scale-105" />
-              <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=400&auto=format&fit=crop" loading="lazy" alt="Work" className="w-full h-48 object-cover rounded-xl shadow hover:shadow-lg transition-all hover:scale-105" />
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* 6. Impact */}
       <AlternatingContentBlock
