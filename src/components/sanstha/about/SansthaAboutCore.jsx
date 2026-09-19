@@ -25,9 +25,9 @@ const SansthaAboutCore = () => {
           </div>
           <div className="w-full md:w-7/12">
             <Reveal direction="right" delay={0.2}>
-              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block"><AnimatedText section="sansthaAbout" tKey="coreIntro" /></span>
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block">Introduction</span>
               <h2 className="text-4xl md:text-6xl font-serif text-[#a63c06] mb-8 tracking-tight leading-tight">
-                <AnimatedText section="sansthaAbout" tKey="coreWho" />
+                Who We Are
               </h2>
               <div className="font-sans text-lg md:text-xl text-[#c36f09] leading-relaxed font-light space-y-6 max-w-2xl">
                 <p><AnimatedText section="sanstha" tKey="aboutIntro" /></p>
@@ -54,7 +54,7 @@ const SansthaAboutCore = () => {
           </div>
           <div className="w-full md:w-7/12">
             <Reveal direction="left" delay={0.2}>
-              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block"><AnimatedText section="sansthaAbout" tKey="coreMission" /></span>
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block">Mission</span>
               <h2 className="text-4xl md:text-6xl font-serif text-[#a63c06] mb-8 tracking-tight leading-tight">
                 <AnimatedText section="sanstha" tKey="missionTitle" />
               </h2>
@@ -81,7 +81,7 @@ const SansthaAboutCore = () => {
           </div>
           <div className="w-full md:w-7/12">
             <Reveal direction="right" delay={0.2}>
-              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block"><AnimatedText section="sansthaAbout" tKey="coreVision" /></span>
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block">Vision</span>
               <h2 className="text-4xl md:text-6xl font-serif text-[#a63c06] mb-8 tracking-tight leading-tight">
                 <AnimatedText section="sanstha" tKey="visionTitle" />
               </h2>

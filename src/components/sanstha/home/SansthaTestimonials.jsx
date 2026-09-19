@@ -6,7 +6,6 @@ import 'swiper/css/navigation';
 
 import Reveal from '../../ui/Reveal';
 import Kicker from '../../ui/Kicker';
-import AnimatedText from '../../ui/AnimatedText';
 
 const SansthaTestimonials = () => {
   const swiperRef = useRef(null);
@@ -14,17 +13,17 @@ const SansthaTestimonials = () => {
   const testimonials = [
     {
       id: 1,
-      nameKey: "test1Name",
-      locationKey: "test1Loc",
-      roleKey: "test1Role",
-      textKey: "test1Text"
+      name: "Suresh",
+      location: "Mumbai",
+      role: "BENEFICIARY",
+      text: "The Roti Bank has been a lifeline for me and my family during tough times. To receive a freshly cooked meal when you have nothing is a true blessing from God."
     },
     {
       id: 2,
-      nameKey: "test2Name",
-      locationKey: "test2Loc",
-      roleKey: "test2Role",
-      textKey: "test2Text"
+      name: "Pooja Mehta",
+      location: "Volunteer",
+      role: "COMMUNITY VOLUNTEER",
+      text: "Serving with Aastha Sevabhavi Sanstha has changed my perspective on life. The smiles we see when distributing food are the most rewarding part of my week."
     }
   ];
 
@@ -35,9 +34,9 @@ const SansthaTestimonials = () => {
         {/* Header & Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24">
           <Reveal>
-            <Kicker className="mb-4 opacity-70"><AnimatedText section="sansthaHome" tKey="testKicker" /></Kicker>
+            <Kicker className="mb-4 opacity-70">IMPACT STORIES</Kicker>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium text-[#a63c06] tracking-tight leading-none">
-              <AnimatedText section="sansthaHome" tKey="testTitle1" /><span className="italic text-[#c36f09]"><AnimatedText section="sansthaHome" tKey="testTitle2" /></span>
+              Voices of <span className="italic text-[#c36f09]">Change</span>
             </h2>
           </Reveal>
           
@@ -77,14 +76,14 @@ const SansthaTestimonials = () => {
                   {/* Content */}
                   <div className="flex-1">
                     <p className="text-2xl md:text-3xl lg:text-5xl font-serif text-[#a63c06] leading-[1.3] mb-12 tracking-tight">
-                      "<AnimatedText section="sansthaHome" tKey={t.textKey} />"
+                      "{t.text}"
                     </p>
                     
                     <div className="flex items-center gap-6">
                       <div className="w-12 h-[1px] bg-black"></div>
                       <div>
-                        <span className="font-medium text-[#a63c06] text-lg block"><AnimatedText section="sansthaHome" tKey={t.nameKey} /></span>
-                        <span className="text-xs text-[#c36f09] uppercase tracking-widest mt-1 block"><AnimatedText section="sansthaHome" tKey={t.roleKey} /> — <AnimatedText section="sansthaHome" tKey={t.locationKey} /></span>
+                        <span className="font-medium text-[#a63c06] text-lg block">{t.name}</span>
+                        <span className="text-xs text-[#c36f09] uppercase tracking-widest mt-1 block">{t.role} — {t.location}</span>
                       </div>
                     </div>
                   </div>

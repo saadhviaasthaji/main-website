@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Reveal from '../../ui/Reveal';
 import Kicker from '../../ui/Kicker';
-import AnimatedText from '../../ui/AnimatedText';
 
 const SansthaVideo = () => {
   // Array of images for the gallery preview
@@ -22,14 +21,14 @@ const SansthaVideo = () => {
           <Reveal direction="up" className="w-full flex flex-col items-center">
             <Kicker className="mb-4 text-center">A GLIMPSE INTO OUR WORK</Kicker>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-[#a63c06] mb-8 leading-tight tracking-tight">
-              <AnimatedText section="sansthaHome" tKey="galleryTitle" />
+              Explore Our Gallery
             </h2>
             <p className="text-[#c36f09] mb-10 font-sans leading-relaxed text-lg font-light text-center">
-              <AnimatedText section="sansthaHome" tKey="galleryDesc" />
+              Witness the impact of our initiatives firsthand. From massive food drives by the Roti Bank to educational programs and community support, see how dedication transforms into tangible change.
             </p>
             
             <Link to="/sanstha/gallery" className="group inline-flex items-center gap-4 text-white bg-[#a63c06] rounded-full px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-[#c36f09] transition-all duration-300 shadow-xl hover:shadow-2xl">
-              <AnimatedText section="sansthaHome" tKey="galleryBtn" />
+              View Gallery
               <motion.span 
                 initial={{ x: 0 }}
                 whileHover={{ x: 5 }}

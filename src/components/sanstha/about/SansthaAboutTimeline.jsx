@@ -1,33 +1,32 @@
 import React from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Reveal from '../../ui/Reveal';
-import AnimatedText from '../../ui/AnimatedText';
 
 const timelineEvents = [
   {
-    yearKey: "t1Year",
-    titleKey: "t1Title",
-    descKey: "t1Desc"
+    year: "15+ Years Ago",
+    title: "The Beginning",
+    desc: "The Founder's social-service journey began, driven by a deep commitment to helping those in need."
   },
   {
-    yearKey: "t2Year",
-    titleKey: "t2Title",
-    descKey: "t2Desc"
+    year: "2017",
+    title: "Formal Registration",
+    desc: "Formal organizational registration and establishment of the Aastha Sevabhavi Sanstha in Thane, Mumbai."
   },
   {
-    yearKey: "t3Year",
-    titleKey: "t3Title",
-    descKey: "t3Desc"
+    year: "Initiative",
+    title: "Roti Bank",
+    desc: "Development of the Roti Bank initiative to address food insecurity and reduce food waste."
   },
   {
-    yearKey: "t4Year",
-    titleKey: "t4Title",
-    descKey: "t4Desc"
+    year: "Ongoing",
+    title: "Expanded Relief",
+    desc: "Continued food, ration, and clothing distribution activities. Regular service visits to orphanages and other needy communities."
   },
   {
-    yearKey: "t5Year",
-    titleKey: "t5Title",
-    descKey: "t5Desc"
+    year: "Present",
+    title: "Disability Assistance",
+    desc: "Extension of assistance towards persons with disabilities, ensuring holistic support for vulnerable sections."
   }
 ];
 
@@ -50,10 +49,10 @@ const SansthaAboutTimeline = () => {
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-24">
           <Reveal>
-            <span className="text-xs uppercase tracking-widest text-[#a63c06] font-bold mb-4 block"><AnimatedText section="sansthaAbout" tKey="timeKicker" /></span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#a63c06] mb-6 tracking-tight"><AnimatedText section="sansthaAbout" tKey="timeTitle" /></h2>
+            <span className="text-xs uppercase tracking-widest text-[#a63c06] font-bold mb-4 block">Our Journey</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#a63c06] mb-6 tracking-tight">Major Achievements</h2>
             <p className="text-[#c36f09] font-sans text-lg">
-              <AnimatedText section="sansthaAbout" tKey="timeSubtitle" />
+              Our continuous efforts have led to significant milestones in our journey of serving humanity.
             </p>
           </Reveal>
         </div>
@@ -84,9 +83,9 @@ const SansthaAboutTimeline = () => {
                     transition={{ duration: 0.6, type: "spring" }}
                     className="bg-[#FAFAFA] p-12 md:p-16 rounded-[2.5rem] shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
                   >
-                    <span className="text-[#a63c06] font-bold tracking-widest text-sm md:text-base uppercase mb-4 block"><AnimatedText section="sansthaAbout" tKey={event.yearKey} /></span>
-                    <h3 className="text-3xl md:text-4xl font-serif text-[#a63c06] mb-6"><AnimatedText section="sansthaAbout" tKey={event.titleKey} /></h3>
-                    <p className="text-[#c36f09] font-sans text-lg md:text-xl leading-relaxed"><AnimatedText section="sansthaAbout" tKey={event.descKey} /></p>
+                    <span className="text-[#a63c06] font-bold tracking-widest text-sm md:text-base uppercase mb-4 block">{event.year}</span>
+                    <h3 className="text-3xl md:text-4xl font-serif text-[#a63c06] mb-6">{event.title}</h3>
+                    <p className="text-[#c36f09] font-sans text-lg md:text-xl leading-relaxed">{event.desc}</p>
                   </motion.div>
                 </div>
                 

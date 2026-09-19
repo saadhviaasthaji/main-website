@@ -12,7 +12,6 @@ import SocialMediaBar from '../../components/home/SocialMediaBar';
 import SansthaDonationBanner from '../../components/sanstha/home/SansthaDonationBanner';
 import LeadershipGrid from '../../components/sanstha/LeadershipGrid';
 import Reveal from '../../components/ui/Reveal';
-import AnimatedText from '../../components/ui/AnimatedText';
 
 const SansthaHome = () => {
   return (
@@ -38,10 +37,10 @@ const SansthaHome = () => {
       <section className="py-16 bg-transparent relative">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-left mb-12">
           <Reveal>
-            <span className="text-xs uppercase tracking-widest text-[#c36f09] font-bold mb-6 block"><AnimatedText section="sansthaHome" tKey="ldrKicker" /></span>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#a63c06] mb-8 tracking-tight leading-none"><AnimatedText section="sansthaHome" tKey="ldrTitle1" /><br /><span className="italic text-[#c36f09]"><AnimatedText section="sansthaHome" tKey="ldrTitle2" /></span></h2>
+            <span className="text-xs uppercase tracking-widest text-[#c36f09] font-bold mb-6 block">Leadership</span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#a63c06] mb-8 tracking-tight leading-none">Meet the <br /><span className="italic text-[#c36f09]">Visionaries</span></h2>
             <p className="text-[#c36f09] font-sans text-xl font-light leading-[1.8] max-w-2xl">
-              <AnimatedText section="sansthaHome" tKey="ldrDesc" />
+              Guiding our mission with devotion, experience, and a commitment to serving humanity.
             </p>
           </Reveal>
         </div>
@@ -49,7 +48,7 @@ const SansthaHome = () => {
         
         <div className="text-center mt-12">
           <Link to="/sanstha/members" className="inline-flex items-center gap-2 text-[#a63c06] border border-[#a63c06] px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-[#a63c06] hover:text-white transition-colors">
-            <AnimatedText section="sansthaHome" tKey="ldrBtn" />
+            View All Members
           </Link>
         </div>
       </section>

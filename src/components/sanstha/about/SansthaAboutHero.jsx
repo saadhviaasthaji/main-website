@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import AnimatedText from '../../ui/AnimatedText';
 
 const SansthaAboutHero = () => {
   const { scrollY } = useScroll();
@@ -39,11 +38,11 @@ const SansthaAboutHero = () => {
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-serif text-[#a63c06] mb-8 tracking-tighter leading-[0.9]"
+          transition={{ duration: 1, delay: 0.4 }}
+          className="text-5xl md:text-7xl lg:text-8xl font-serif text-[#a63c06] mb-8 tracking-tight leading-none drop-shadow-sm"
         >
-          <AnimatedText section="sansthaAbout" tKey="heroTitle1" /><br />
-          <span className="italic text-[#a63c06]/90"><AnimatedText section="sansthaAbout" tKey="heroTitle2" /></span>
+          Aastha Sevabhavi <br />
+          <span className="italic text-[#a63c06]/90">Sanstha</span>
         </motion.h1>
         
         <motion.p 
@@ -52,7 +51,7 @@ const SansthaAboutHero = () => {
           transition={{ duration: 1, delay: 0.8 }}
           className="text-[#c36f09] font-sans text-xl md:text-2xl font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-sm"
         >
-          <AnimatedText section="sansthaAbout" tKey="heroSubtitle" />
+          Understanding our roots, vision, and the driving force behind our initiatives.
         </motion.p>
       </motion.div>
 
@@ -63,7 +62,7 @@ const SansthaAboutHero = () => {
         transition={{ duration: 1, delay: 1.5 }}
         className="absolute bottom-0 md:-bottom-2 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
       >
-        <span className="text-[#4a1a03] text-[10px] md:text-[12px] tracking-[0.3em] uppercase mb-2 font-black drop-shadow-md bg-white/60 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/40 shadow-lg"><AnimatedText section="sansthaAbout" tKey="scrollDown" /></span>
+        <span className="text-[#4a1a03] text-[10px] md:text-[12px] tracking-[0.3em] uppercase mb-2 font-black drop-shadow-md bg-white/60 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/40 shadow-lg">Scroll Down</span>
         <div className="w-[2px] h-8 md:h-12 bg-white/50 relative overflow-hidden rounded-full shadow-md backdrop-blur-sm border border-white/20">
           <motion.div 
             animate={{ y: [0, 48, 0] }}
