@@ -57,15 +57,15 @@ const SansthaIntroSection = () => {
           {/* Right Image Collage */}
           <div className="w-full lg:w-7/12 relative">
             <Reveal direction="left" delay={0.2} className="h-full">
-              <div className="grid grid-cols-12 gap-4 md:gap-6 h-[60vh] lg:h-[80vh]">
+              <div className="grid grid-cols-12 gap-3 md:gap-6 h-[60vh] lg:h-[80vh]">
                 
                 {/* Main Large Image */}
-                <div className="col-span-12 md:col-span-8 row-span-2 relative rounded-3xl overflow-hidden group shadow-2xl h-full">
+                <div className="col-span-7 md:col-span-8 row-span-2 relative rounded-[1.5rem] md:rounded-3xl overflow-hidden group shadow-2xl h-full">
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 1.5, ease: "easeOut" }} className="absolute inset-0">
                     <img 
-                      src="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=2000&auto=format&fit=crop" 
+                      src="/assets/pages/sanstha/home/org/portrait1.webp" 
                       alt="Sanstha Seva" 
-                      className="w-full h-full object-cover filter grayscale-[10%]" 
+                      className="w-full h-full object-cover object-top filter grayscale-[10%]" 
                     />
                   </motion.div>
                   <div className="absolute inset-0 bg-black/5 transition-opacity group-hover:bg-transparent"></div>
@@ -73,10 +73,10 @@ const SansthaIntroSection = () => {
                 </div>
 
                 {/* Top Right Small Image */}
-                <div className="col-span-6 md:col-span-4 relative rounded-3xl overflow-hidden group shadow-lg h-full">
+                <div className="col-span-5 md:col-span-4 relative rounded-[1rem] md:rounded-3xl overflow-hidden group shadow-lg h-full">
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 1.5, ease: "easeOut" }} className="absolute inset-0">
                     <img 
-                      src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" 
+                      src="/assets/pages/sanstha/home/org/portrait2.webp" 
                       alt="Roti Bank" 
                       className="w-full h-full object-cover filter grayscale-[30%]" 
                     />
@@ -84,10 +84,10 @@ const SansthaIntroSection = () => {
                 </div>
 
                 {/* Bottom Right Small Image */}
-                <div className="col-span-6 md:col-span-4 relative rounded-3xl overflow-hidden group shadow-lg h-full hidden md:block">
+                <div className="col-span-5 md:col-span-4 relative rounded-[1rem] md:rounded-3xl overflow-hidden group shadow-lg h-full">
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 1.5, ease: "easeOut" }} className="absolute inset-0">
                     <img 
-                      src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop" 
+                      src="/assets/pages/sanstha/home/org/portrait3.webp" 
                       alt="Elderly Care" 
                       className="w-full h-full object-cover filter grayscale-[20%]" 
                     />

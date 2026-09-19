@@ -13,8 +13,8 @@ const SansthaHeroSlider = () => {
   const slides = [
     {
       id: 1,
-      webImage: "/assets/pages/sanstha/home/hero1_web.webp",
-      mobileImage: "/assets/pages/sanstha/home/hero1_mobile.webp",
+      webImage: "/assets/pages/sanstha/home/hero/hero1_web.webp",
+      mobileImage: "/assets/pages/sanstha/home/hero/hero1_mobile.webp",
       kicker: "WELCOME TO",
       title: "Aastha Sevabhavi Sanstha",
       description: "Where devotion transforms into service."

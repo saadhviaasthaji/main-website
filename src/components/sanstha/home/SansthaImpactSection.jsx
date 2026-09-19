@@ -33,14 +33,14 @@ const SansthaImpactSection = () => {
           
           {/* Card 1: Roti Bank (Large, spans 8 cols) */}
           <Reveal delay={0.1} direction="up" className="md:col-span-12 lg:col-span-8 h-full">
-            <div className="relative w-full h-full min-h-[400px] rounded-[2rem] overflow-hidden group bg-[#6b3112]/90 backdrop-blur-xl border border-white/20 flex flex-col justify-end p-8 md:p-12 transition-shadow hover:shadow-xl">
+            <div className="relative w-full h-full min-h-[400px] rounded-[2rem] overflow-hidden group bg-[#6b3112]/70 backdrop-blur-xl border border-white/20 flex flex-col justify-end p-8 md:p-12 transition-shadow hover:shadow-xl">
               <div className="absolute inset-0 overflow-hidden">
                 <motion.img 
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 1.5, ease: "easeOut" }}
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop" 
+                  src="/assets/pages/sanstha/home/initiative/rotibank.webp" 
                   alt="Roti Bank" 
-                  className="w-full h-full object-cover opacity-20 mix-blend-overlay filter grayscale" 
+                  className="w-full h-full object-cover opacity-40 mix-blend-overlay filter grayscale-[30%]" 
                 />
               </div>
               
@@ -70,7 +70,7 @@ const SansthaImpactSection = () => {
                 <motion.img 
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 1.5, ease: "easeOut" }}
-                  src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=600&auto=format&fit=crop" 
+                  src="/assets/pages/sanstha/home/initiative/Support&Care.webp" 
                   alt="Support" 
                   className="w-full h-full object-cover grayscale-[20%]" 
                 />
@@ -80,14 +80,14 @@ const SansthaImpactSection = () => {
 
           {/* Card 3: Education & Orphanages (Wide, spans 7 cols) */}
           <Reveal delay={0.3} direction="up" className="md:col-span-12 lg:col-span-7 h-full">
-            <div className="relative w-full h-full min-h-[400px] rounded-[2rem] overflow-hidden group bg-[#8b6508]/90 backdrop-blur-xl border border-white/20 flex flex-col md:flex-row items-center transition-shadow hover:shadow-xl">
+            <div className="relative w-full h-full min-h-[400px] rounded-[2rem] overflow-hidden group bg-[#8b6508]/70 backdrop-blur-xl border border-white/20 flex flex-col md:flex-row items-center transition-shadow hover:shadow-xl">
               <div className="w-full md:w-1/2 h-64 md:h-full overflow-hidden relative">
                 <motion.img 
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 1.5, ease: "easeOut" }}
-                  src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?q=80&w=800&auto=format&fit=crop" 
+                  src="/assets/pages/sanstha/home/initiative/education&Oraphanages.webp" 
                   alt="Education" 
-                  className="w-full h-full object-cover grayscale-[10%] opacity-40 mix-blend-overlay" 
+                  className="w-full h-full object-cover grayscale-[10%] opacity-70 mix-blend-overlay" 
                 />
               </div>
               <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-transparent z-10">
@@ -104,34 +104,26 @@ const SansthaImpactSection = () => {
 
           {/* Card 4: Vriddha Ashram (spans 5 cols) */}
           <Reveal delay={0.4} direction="up" className="md:col-span-6 lg:col-span-5 h-full">
-            <div className="relative w-full h-full min-h-[400px] rounded-[2rem] overflow-hidden group bg-[#3e2723]/90 backdrop-blur-xl border border-white/20 flex flex-col p-8 md:p-10 transition-shadow hover:shadow-xl">
+            <div className="relative w-full h-full min-h-[400px] rounded-[2rem] overflow-hidden group bg-[#3e2723]/90 backdrop-blur-xl border border-white/20 flex flex-col justify-center p-8 md:p-10 transition-shadow hover:shadow-xl">
               <h3 className="text-3xl font-serif font-medium text-white mb-4">Elderly Care</h3>
               <p className="text-gray-200 text-sm mb-8 leading-relaxed font-light">
                 Providing dedicated support, compassion, and a safe haven for vulnerable and elderly mothers in our community.
               </p>
               
-              <div className="mt-auto w-full h-48 rounded-xl overflow-hidden relative">
-                <motion.img 
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 1.5, ease: "easeOut" }}
-                  src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800&auto=format&fit=crop" 
-                  alt="Elderly Care" 
-                  className="w-full h-full object-cover filter grayscale opacity-80 group-hover:grayscale-0 transition-all duration-500" 
-                />
-              </div>
+
             </div>
           </Reveal>
 
           {/* Card 5: Gaushala (Wide, spans 12 cols) */}
           <Reveal delay={0.5} direction="up" className="md:col-span-12 h-full lg:h-[350px]">
-            <div className="relative w-full h-full min-h-[350px] rounded-[2rem] overflow-hidden group bg-[#5c4033]/90 backdrop-blur-xl border border-white/20 flex flex-col justify-center items-center text-center p-8 md:p-16 transition-shadow hover:shadow-xl">
+            <div className="relative w-full h-full min-h-[350px] rounded-[2rem] overflow-hidden group bg-[#5c4033]/70 backdrop-blur-xl border border-white/20 flex flex-col justify-center items-center text-center p-8 md:p-16 transition-shadow hover:shadow-xl">
               <div className="absolute inset-0 overflow-hidden">
                 <motion.img 
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 1.5, ease: "easeOut" }}
-                  src="https://images.unsplash.com/photo-1596443326162-8e104e7c3b2e?q=80&w=1600&auto=format&fit=crop" 
+                  src="/assets/pages/sanstha/home/initiative/GauSeva.webp" 
                   alt="Gau Seva" 
-                  className="w-full h-full object-cover opacity-20 mix-blend-overlay filter grayscale" 
+                  className="w-full h-full object-cover opacity-40 mix-blend-overlay filter grayscale-[30%]" 
                 />
               </div>
               

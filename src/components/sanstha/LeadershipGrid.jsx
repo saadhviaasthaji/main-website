@@ -9,7 +9,8 @@ const LeadershipCard = ({ person, onClick, bgColor }) => {
     <motion.div
       layoutId={`card-${person.id}`}
       onClick={onClick}
-      className={`cursor-pointer group relative overflow-hidden w-full aspect-[3/4] md:aspect-square backdrop-blur-xl border border-white/20 hover:border-white/50 rounded-3xl transition-shadow duration-500 shadow-lg hover:shadow-xl`}
+      className={`cursor-pointer group relative overflow-hidden w-full aspect-[3/4] md:aspect-square border border-[#a63c06]/20 hover:border-[#a63c06]/50 rounded-3xl transition-shadow duration-500 shadow-lg hover:shadow-xl`}
+      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
       whileHover={{ y: -5 }}
       whileTap={{ scale: 0.98 }}
       tabIndex={0}
@@ -21,7 +22,7 @@ const LeadershipCard = ({ person, onClick, bgColor }) => {
       }}
     >
       {/* Background Image */}
-      <motion.div layoutId={`image-container-${person.id}`} className="absolute inset-0 w-full h-full">
+      <motion.div className="absolute inset-0 w-full h-full">
         <img
           src={person.photo}
           alt={person.name}
@@ -33,7 +34,7 @@ const LeadershipCard = ({ person, onClick, bgColor }) => {
       <div 
         className="absolute inset-0 z-10 transition-opacity duration-500"
         style={{
-          background: `linear-gradient(to bottom, transparent 0%, ${bgColor}99 50%, ${bgColor} 100%)`
+          background: `linear-gradient(to bottom, transparent 0%, transparent 60%, ${bgColor}ee 100%)`
         }}
       />
       
@@ -63,19 +64,20 @@ const ExpandedProfile = ({ person, onClose }) => {
       {/* Expanded Modal Content */}
       <motion.div
         layoutId={`card-${person.id}`}
-        className="relative bg-[#fbf5e6] w-full max-w-6xl max-h-full overflow-hidden rounded-[2rem] border border-[#a63c06]/20 shadow-2xl flex flex-col md:flex-row z-10"
+        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        className="relative bg-[#fbf5e6] w-full max-w-6xl max-h-[90vh] md:max-h-full overflow-hidden rounded-[2rem] border border-[#a63c06]/20 shadow-2xl flex flex-col md:flex-row z-10"
         role="dialog"
         aria-modal="true"
       >
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-20 p-4 bg-gray-100/80 backdrop-blur-lg rounded-full hover:bg-gray-200 transition-colors"
+          className="absolute top-4 right-4 md:top-6 md:right-6 z-20 p-3 md:p-4 bg-white/90 shadow-md rounded-full hover:bg-gray-100 transition-colors"
           aria-label="Close"
         >
           <X size={20} className="text-[#a63c06]" />
         </button>
 
-        <motion.div layoutId={`image-container-${person.id}`} className="w-full md:w-2/5 h-[300px] md:h-auto relative shrink-0 overflow-hidden bg-[#fbf5e6]">
+        <motion.div className="w-full md:w-2/5 h-[250px] md:h-auto relative shrink-0 overflow-hidden bg-[#fbf5e6]">
           <img
             src={person.photo}
             alt={person.name}
@@ -160,7 +162,7 @@ const LeadershipGrid = ({ showCoreTeam = true }) => {
                   <div 
                     className="absolute inset-0 z-10 transition-opacity duration-500"
                     style={{
-                      background: `linear-gradient(to bottom, transparent 0%, ${hexColor}aa 50%, ${hexColor} 100%)`
+                      background: `linear-gradient(to bottom, transparent 0%, transparent 65%, ${hexColor}ee 100%)`
                     }}
                   />
                   

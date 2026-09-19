@@ -3,7 +3,7 @@ export const leadershipData = {
     id: "founder",
     name: "Dr. Divesh Ramashankar Mishra",
     designation: "Founder",
-    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop", // Placeholder
+    photo: "/assets/pages/sanstha/members/founder.webp", // Placeholder
     intro: "Dr. Divesh Ramashankar Mishra is the Founder of Aastha Sevabhavi Sanstha.",
     background: "Born and brought up in Mumbai, Dr. Mishra has been actively contributing to social service alongside his professional journey. His experience in journalism, reporting and various business fields has given him an opportunity to understand the real needs and challenges faced by society.",
     occupation: "Business - Real Estate",
@@ -25,7 +25,7 @@ export const leadershipData = {
     id: "president",
     name: "Mr. Pratik Divesh Mishra",
     designation: "President",
-    photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop", // Placeholder
+    photo: "/assets/pages/sanstha/members/president.webp", // Placeholder
     intro: "Mr. Pratik Divesh Mishra is a young Engineer, Entrepreneur, Business Professional and Social Service Leader.",
     background: "Born and brought up in Mumbai, Pratik pursued Computer Science Engineering and began his entrepreneurial journey at a young age. He founded PM Talents Production House at 19.",
     occupation: "Business - PM Talents, Sales Manager",
@@ -45,22 +45,22 @@ export const leadershipData = {
     {
       name: "Adv. Om Maurya",
       designation: "General Secretary",
-      photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop"
+      photo: "/assets/pages/sanstha/members/gs.webp"
     },
     {
       name: "Mr. Bhavesh Dubey",
       designation: "Treasurer",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop"
+      photo: "/assets/pages/sanstha/members/treasurer.webp"
     },
     {
       name: "Mr. Shivam Vishwakarma",
       designation: "Program Coordinator",
-      photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop"
+      photo: "/assets/pages/sanstha/members/Program Coordinator.webp"
     },
     {
       name: "PM Talents",
       designation: "Media and Communication Coordinator",
-      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop"
+      photo: "/assets/pages/sanstha/members/mediahouse.webp"
     }
   ]
 };
