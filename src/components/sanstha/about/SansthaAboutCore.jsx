@@ -14,7 +14,7 @@ const SansthaAboutCore = () => {
             <Reveal direction="left">
               <div className="aspect-[3/4] overflow-hidden rounded-2xl relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=2070&auto=format&fit=crop" 
+                  src="/assets/pages/sanstha/home/org/portrait1.webp" 
                   alt="Who We Are"
                   className="w-full h-full object-cover filter grayscale opacity-90 transition-transform duration-1000 hover:scale-105 hover:opacity-100"
                 />
@@ -53,7 +53,7 @@ const SansthaAboutCore = () => {
           </Reveal>
           <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/3 aspect-square overflow-hidden rounded-3xl hidden lg:block z-0 shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1593113580327-0248408f65d6?q=80&w=2070&auto=format&fit=crop" 
+              src="/assets/pages/sanstha/home/initiative/Support&Care.webp" 
               alt="Mission"
               className="w-full h-full object-cover filter grayscale opacity-60"
             />
@@ -66,7 +66,7 @@ const SansthaAboutCore = () => {
             <Reveal direction="right">
               <div className="aspect-[4/3] overflow-hidden rounded-2xl relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
+                  src="/assets/pages/sanstha/home/initiative/rotibank.webp" 
                   alt="Vision"
                   className="w-full h-full object-cover filter grayscale opacity-90 transition-transform duration-1000 hover:scale-105 hover:opacity-100"
                 />
