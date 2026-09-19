@@ -20,7 +20,7 @@ const AnimatedText = ({ section, tKey, uppercase = false, className = "" }) => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -25, opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="inline-block"
+          className={`inline-block ${language === 'hi' ? 'text-[1.1em] leading-relaxed' : ''}`}
         >
           {text}
         </motion.span>

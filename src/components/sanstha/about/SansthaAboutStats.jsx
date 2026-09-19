@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Reveal from '../../ui/Reveal';
+import AnimatedText from '../../ui/AnimatedText';
 
 const stats = [
-  { value: "15+", label: "Years of Service" },
-  { value: "10k+", label: "Meals Served" },
-  { value: "50+", label: "Active Volunteers" },
-  { value: "5+", label: "Core Initiatives" }
+  { value: "15+", labelKey: "statYears" },
+  { value: "10k+", labelKey: "statMeals" },
+  { value: "50+", labelKey: "statVols" },
+  { value: "5+", labelKey: "statInits" }
 ];
 
 const SansthaAboutStats = () => {
@@ -30,7 +31,7 @@ const SansthaAboutStats = () => {
                   {stat.value}
                 </motion.h3>
                 <p className="text-sm md:text-base tracking-widest uppercase font-bold text-[#c36f09]">
-                  {stat.label}
+                  <AnimatedText section="sansthaAbout" tKey={stat.labelKey} />
                 </p>
               </div>
             ))}

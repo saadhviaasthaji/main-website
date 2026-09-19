@@ -2,11 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Reveal from '../../ui/Reveal';
 import { Heart, Users, HandHeart, Shield, BookOpen, Utensils } from 'lucide-react';
+import AnimatedText from '../../ui/AnimatedText';
 
 const objectives = [
   {
-    title: "Food Security",
-    desc: "Providing food and essential necessities to people facing hardship through the Roti Bank initiative.",
+    titleKey: "obj1Title",
+    descKey: "obj1Desc",
     image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop",
     colSpan: "md:col-span-2",
     color: "#4a2e1b",
@@ -14,8 +15,8 @@ const objectives = [
     number: "01"
   },
   {
-    title: "Elderly Care",
-    desc: "Supporting elderly and vulnerable mothers with dignity.",
+    titleKey: "obj2Title",
+    descKey: "obj2Desc",
     image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800&auto=format&fit=crop",
     colSpan: "md:col-span-1",
     color: "#8b6508",
@@ -23,8 +24,8 @@ const objectives = [
     number: "02"
   },
   {
-    title: "Child Welfare",
-    desc: "Providing assistance to orphanages and children in need.",
+    titleKey: "obj3Title",
+    descKey: "obj3Desc",
     image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?q=80&w=800&auto=format&fit=crop",
     colSpan: "md:col-span-1",
     color: "#3e2723",
@@ -32,8 +33,8 @@ const objectives = [
     number: "03"
   },
   {
-    title: "Essential Supplies",
-    desc: "Distributing clothing, ration, school kits and other essential materials.",
+    titleKey: "obj4Title",
+    descKey: "obj4Desc",
     image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop",
     colSpan: "md:col-span-2",
     color: "#6b3112",
@@ -41,8 +42,8 @@ const objectives = [
     number: "04"
   },
   {
-    title: "Future Ashrams",
-    desc: "Establishing Anath Ashram, Vriddha Ashram and Gaushala in Kashi, Ayodhya, and Mathura.",
+    titleKey: "obj5Title",
+    descKey: "obj5Desc",
     image: "https://images.unsplash.com/photo-1596443326162-8e104e7c3b2e?q=80&w=1600&auto=format&fit=crop",
     colSpan: "md:col-span-3",
     color: "#5c4033",
@@ -57,10 +58,10 @@ const SansthaAboutBento = () => {
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <Reveal>
           <div className="mb-16 text-center max-w-3xl mx-auto">
-            <span className="text-xs uppercase tracking-widest text-[#a63c06] font-bold mb-4 block">Our Focus</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-6 tracking-tight">Social Objectives</h2>
+            <span className="text-xs uppercase tracking-widest text-[#a63c06] font-bold mb-4 block"><AnimatedText section="sansthaAbout" tKey="bentoKicker" /></span>
+            <h2 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-6 tracking-tight"><AnimatedText section="sansthaAbout" tKey="bentoTitle" /></h2>
             <p className="text-[#c36f09] font-sans text-lg">
-              The Sanstha works towards providing holistic support to vulnerable sections of society through targeted, impactful initiatives.
+              <AnimatedText section="sansthaAbout" tKey="bentoSubtitle" />
             </p>
           </div>
         </Reveal>
@@ -96,9 +97,9 @@ const SansthaAboutBento = () => {
 
               {/* Content */}
               <div className="relative z-20 p-8 md:p-10 mt-auto">
-                <h3 className={`text-2xl md:text-3xl font-serif mb-4 text-white drop-shadow-md`}>{obj.title}</h3>
+                <h3 className={`text-2xl md:text-3xl font-serif mb-4 text-white drop-shadow-md`}><AnimatedText section="sansthaAbout" tKey={obj.titleKey} /></h3>
                 <p className={`font-sans text-base md:text-lg leading-relaxed text-gray-200 drop-shadow-sm`}>
-                  {obj.desc}
+                  <AnimatedText section="sansthaAbout" tKey={obj.descKey} />
                 </p>
               </div>
               

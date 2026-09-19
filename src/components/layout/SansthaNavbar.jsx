@@ -60,7 +60,7 @@ const SansthaNavbar = () => {
     { name: <AnimatedText section="sansthaNav" tKey="about" />, path: '/sanstha/about' },
     { name: <AnimatedText section="sansthaNav" tKey="rotiBank" />, path: '/sanstha/roti-bank' },
     { name: <AnimatedText section="sansthaNav" tKey="gallery" />, path: '/sanstha/gallery' },
-    { name: "Members", path: '/sanstha/members' }
+    { name: <AnimatedText section="sansthaNav" tKey="members" />, path: '/sanstha/members' }
   ];
 
   const isSansthaHomePage = location.pathname === '/sanstha' || location.pathname === '/sanstha/';
@@ -163,7 +163,7 @@ const SansthaNavbar = () => {
                   onClick={() => setIsOpen(false)} 
                   className="text-[#a63c06] hover:text-[#000000] font-sans tracking-widest uppercase text-xs font-bold transition-colors pb-1 border-b-2 border-transparent hover:border-[#000000]"
                 >
-                  Back to Main Site
+                  <AnimatedText section="sansthaNav" tKey="backToMain" />
                 </Link>
               </div>
             </div>

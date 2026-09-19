@@ -77,10 +77,10 @@ const Events = () => {
           <Reveal>
             <Kicker className="mb-4">Upcoming Schedule</Kicker>
             <h1 className="text-5xl md:text-7xl font-serif font-extrabold text-[#a63c06] mb-6">
-              Events
+              <AnimatedText section="events" tKey="mainTitle" />
             </h1>
             <p className="text-[#c36f09] max-w-2xl mx-auto text-lg font-sans">
-              Join Saadhvi Aastha Ji in her upcoming spiritual discourses across the country.
+              <AnimatedText section="events" tKey="mainSubtitle" />
             </p>
           </Reveal>
         </div>

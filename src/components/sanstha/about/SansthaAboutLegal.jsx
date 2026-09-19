@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Reveal from '../../ui/Reveal';
 import { ShieldCheck, Calendar, FileText } from 'lucide-react';
+import AnimatedText from '../../ui/AnimatedText';
 
 const SansthaAboutLegal = () => {
   return (
@@ -10,10 +11,10 @@ const SansthaAboutLegal = () => {
         <Reveal>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs uppercase tracking-widest text-[#c36f09] font-bold mb-4 block">Transparency</span>
-              <h2 className="text-4xl md:text-5xl font-serif mb-6 tracking-tight text-[#a63c06]">Legal & Registration</h2>
+              <span className="text-xs uppercase tracking-widest text-[#c36f09] font-bold mb-4 block"><AnimatedText section="sansthaAbout" tKey="legalKicker" /></span>
+              <h2 className="text-4xl md:text-5xl font-serif mb-6 tracking-tight text-[#a63c06]"><AnimatedText section="sansthaAbout" tKey="legalTitle" /></h2>
               <p className="text-[#c36f09] font-sans text-lg mb-8 max-w-xl">
-                We operate with full transparency and are legally registered under the relevant authorities to accept and distribute donations responsibly.
+                <AnimatedText section="sansthaAbout" tKey="legalSubtitle" />
               </p>
             </div>
 
@@ -26,8 +27,8 @@ const SansthaAboutLegal = () => {
                   <Calendar size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-300 mb-2">Establishment</h4>
-                  <p className="font-serif text-xl text-white">September 2017</p>
+                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-300 mb-2"><AnimatedText section="sansthaAbout" tKey="legalEst" /></h4>
+                  <p className="font-serif text-xl text-white"><AnimatedText section="sansthaAbout" tKey="legalEstVal" /></p>
                 </div>
               </motion.div>
 
@@ -39,8 +40,8 @@ const SansthaAboutLegal = () => {
                   <ShieldCheck size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-300 mb-2">Registration Number</h4>
-                  <p className="font-serif text-xl text-white">F/40324/Thane/Mumbai</p>
+                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-300 mb-2"><AnimatedText section="sansthaAbout" tKey="legalReg" /></h4>
+                  <p className="font-serif text-xl text-white"><AnimatedText section="sansthaAbout" tKey="legalRegVal" /></p>
                 </div>
               </motion.div>
 
@@ -52,9 +53,9 @@ const SansthaAboutLegal = () => {
                   <FileText size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-300 mb-2">Entity Type</h4>
-                  <p className="font-serif text-xl text-white">Society Registration Certificate</p>
-                  <p className="text-gray-300 text-sm mt-1">Under the Societies Registration Act, 1860</p>
+                  <h4 className="font-bold uppercase tracking-widest text-xs text-gray-300 mb-2"><AnimatedText section="sansthaAbout" tKey="legalType" /></h4>
+                  <p className="font-serif text-xl text-white"><AnimatedText section="sansthaAbout" tKey="legalTypeVal1" /></p>
+                  <p className="text-gray-300 text-sm mt-1"><AnimatedText section="sansthaAbout" tKey="legalTypeVal2" /></p>
                 </div>
               </motion.div>
             </div>

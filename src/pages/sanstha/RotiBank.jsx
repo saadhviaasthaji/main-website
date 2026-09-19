@@ -51,7 +51,7 @@ const RotiBank = () => {
         imageRight={true}
         imageSrc="https://images.unsplash.com/photo-1593113563332-f144d2843bb3?q=80&w=800&auto=format&fit=crop"
         imageAlt="Providing food to the needy"
-        cta={{ text: "Join the Initiative", link: "/contact" }}
+        cta={{ text: "Join the Initiative", link: "/sanstha/members#join-section" }}
       />
 
       {/* 3. How We Help */}

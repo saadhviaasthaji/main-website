@@ -15,15 +15,15 @@ const SansthaImpactSection = () => {
         {/* Header */}
         <div className="mb-16 md:flex justify-between items-end">
           <Reveal>
-            <Kicker className="mb-4">OUR INITIATIVES</Kicker>
+            <Kicker className="mb-4"><AnimatedText section="sansthaHome" tKey="impactKicker" /></Kicker>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium text-[#a63c06] tracking-tight leading-none">
-              Empowering <br />
-              <span className="text-[#c36f09] italic">Communities</span>
+              <AnimatedText section="sansthaHome" tKey="impactTitle1" /><br />
+              <span className="text-[#c36f09] italic"><AnimatedText section="sansthaHome" tKey="impactTitle2" /></span>
             </h2>
           </Reveal>
           <Reveal delay={0.2} className="mt-8 md:mt-0">
             <Link to="/sanstha/about" className="inline-flex items-center gap-2 border border-gray-300 rounded-full px-6 py-3 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300">
-              View All Initiatives →
+              <AnimatedText section="sansthaHome" tKey="impactBtn" />
             </Link>
           </Reveal>
         </div>
@@ -61,9 +61,9 @@ const SansthaImpactSection = () => {
           {/* Card 2: Support & Care (Square, spans 4 cols) */}
           <Reveal delay={0.2} direction="up" className="md:col-span-6 lg:col-span-4 h-full">
             <div className="relative w-full h-full min-h-[400px] rounded-[2rem] overflow-hidden group bg-[#4a2e1b]/90 backdrop-blur-xl border border-white/20 flex flex-col p-8 md:p-10 transition-shadow hover:shadow-xl">
-              <h3 className="text-3xl font-serif font-medium text-white mb-4">Support & Care</h3>
+              <h3 className="text-3xl font-serif font-medium text-white mb-4"><AnimatedText section="sansthaHome" tKey="supportTitle" /></h3>
               <p className="text-gray-200 text-sm mb-8 leading-relaxed font-light">
-                Extending a helping hand through regular distribution of rations, clothing, and essential materials for vulnerable mothers and families.
+                <AnimatedText section="sansthaHome" tKey="supportDesc" />
               </p>
               
               <div className="mt-auto w-full aspect-[4/3] rounded-xl overflow-hidden relative">
@@ -91,12 +91,12 @@ const SansthaImpactSection = () => {
                 />
               </div>
               <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-transparent z-10">
-                <h3 className="text-3xl font-serif font-medium mb-4 text-white">Education & Orphanages</h3>
+                <h3 className="text-3xl font-serif font-medium mb-4 text-white"><AnimatedText section="sansthaHome" tKey="eduTitle" /></h3>
                 <p className="text-gray-200 text-sm mb-8 leading-relaxed font-light">
-                  Regular service visits to orphanages, distributing school kits, and ensuring children in need get the foundational support required for a brighter future.
+                  <AnimatedText section="sansthaHome" tKey="eduDesc" />
                 </p>
                 <Link to="/sanstha/about" className="inline-flex items-center gap-2 text-white text-sm font-semibold tracking-widest uppercase hover:gap-4 transition-all duration-300">
-                  Learn More <span>→</span>
+                  <AnimatedText section="sansthaHome" tKey="eduBtn" />
                 </Link>
               </div>
             </div>
@@ -105,9 +105,9 @@ const SansthaImpactSection = () => {
           {/* Card 4: Vriddha Ashram (spans 5 cols) */}
           <Reveal delay={0.4} direction="up" className="md:col-span-6 lg:col-span-5 h-full">
             <div className="relative w-full h-full min-h-[400px] rounded-[2rem] overflow-hidden group bg-[#3e2723]/90 backdrop-blur-xl border border-white/20 flex flex-col justify-center p-8 md:p-10 transition-shadow hover:shadow-xl">
-              <h3 className="text-3xl font-serif font-medium text-white mb-4">Elderly Care</h3>
+              <h3 className="text-3xl font-serif font-medium text-white mb-4"><AnimatedText section="sansthaHome" tKey="elderlyTitle" /></h3>
               <p className="text-gray-200 text-sm mb-8 leading-relaxed font-light">
-                Providing dedicated support, compassion, and a safe haven for vulnerable and elderly mothers in our community.
+                <AnimatedText section="sansthaHome" tKey="elderlyDesc" />
               </p>
               
 
@@ -128,13 +128,13 @@ const SansthaImpactSection = () => {
               </div>
               
               <div className="relative z-10 max-w-3xl">
-                <span className="text-xs uppercase tracking-widest text-gray-300 font-bold mb-4 block">Future Vision</span>
-                <h3 className="text-4xl md:text-5xl font-serif font-medium text-white mb-6">Gau Seva & Animal Welfare</h3>
+                <span className="text-xs uppercase tracking-widest text-gray-300 font-bold mb-4 block"><AnimatedText section="sansthaHome" tKey="gauVision" /></span>
+                <h3 className="text-4xl md:text-5xl font-serif font-medium text-white mb-6"><AnimatedText section="sansthaHome" tKey="gauTitle" /></h3>
                 <p className="text-gray-200 text-base md:text-lg mb-8 leading-relaxed font-light">
-                  Working towards our long-term vision of establishing sustainable spaces, including a Gaushala (cow shelter), dedicated to the ethical care and protection of animals.
+                  <AnimatedText section="sansthaHome" tKey="gauDesc" />
                 </p>
                 <Link to="/sanstha/about" className="inline-flex items-center gap-2 bg-transparent border border-white text-white rounded-full px-8 py-3 text-sm font-medium hover:bg-white hover:text-amber-900 transition-colors">
-                  Our Vision
+                  <AnimatedText section="sansthaHome" tKey="gauBtn" />
                 </Link>
               </div>
             </div>

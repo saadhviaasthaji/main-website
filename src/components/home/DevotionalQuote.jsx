@@ -1,5 +1,6 @@
 import React from 'react';
 import Reveal from '../ui/Reveal';
+import AnimatedText from '../ui/AnimatedText';
 
 const DevotionalQuote = () => {
   const quotes = [
@@ -25,8 +26,8 @@ const DevotionalQuote = () => {
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#a63c06]">
-              Saadhvi Aastha Ji Quotes
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#a63c06] mb-12 text-center">
+              <AnimatedText section="home" tKey="quotesTitle" />
             </h2>
           </div>
           

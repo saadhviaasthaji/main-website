@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import Reveal from '../components/ui/Reveal';
 import Kicker from '../components/ui/Kicker';
+import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedText from '../components/ui/AnimatedText';
+import { useLanguage } from '../context/LanguageContext';
+import { getTranslation } from '../data/translations';
 
 // IMPORTANT: Replace this with your deployed Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbygXHrn3y_43wJkLFNls4gnkxCOJAfV6ivKkmt8pC9tDd9LDXkNRkCXHB-LNOPiA9fysQ/exec';
 
 const Contact = () => {
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -77,8 +82,8 @@ const Contact = () => {
         <Reveal>
           <div className="text-center mb-12">
             <Kicker>Get in Touch</Kicker>
-            <h1 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-4">Contact Us</h1>
-            <p className="text-[#c36f09] font-sans text-lg mb-6">We would love to hear from you. Please fill out the form below or contact us directly.</p>
+            <h1 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-4"><AnimatedText section="contact" tKey="title" /></h1>
+            <p className="text-[#c36f09] font-sans text-lg mb-6"><AnimatedText section="contact" tKey="subtitle" /></p>
             
             <div className="flex flex-col md:flex-row justify-center gap-6 text-sm text-[#c36f09] font-sans mb-12">
               <div className="bg-[#fbf5e6]/70 backdrop-blur-xl border border-[#a63c06]/10 px-6 py-3 rounded-full shadow-md text-[#a63c06]">
@@ -97,45 +102,59 @@ const Contact = () => {
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-[#a63c06] mb-2">First Name</label>
+                  <label className="block text-sm font-semibold text-[#a63c06] mb-2">{getTranslation(language, 'contact', 'formFirst')}</label>
                   <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="w-full bg-transparent border-b-2 border-[#a63c06]/20 px-2 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-[#a63c06] mb-2">Last Name</label>
+                  <label className="block text-sm font-semibold text-[#a63c06] mb-2">{getTranslation(language, 'contact', 'formLast')}</label>
                   <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full bg-transparent border-b-2 border-[#a63c06]/20 px-2 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" required />
                 </div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-[#a63c06] mb-2">Email Address</label>
+                  <label className="block text-sm font-semibold text-[#a63c06] mb-2">{getTranslation(language, 'contact', 'formEmail')}</label>
                   <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full bg-transparent border-b-2 border-[#a63c06]/20 px-2 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-[#a63c06] mb-2">Phone Number</label>
+                  <label className="block text-sm font-semibold text-[#a63c06] mb-2">{getTranslation(language, 'contact', 'formPhone')}</label>
                   <input type="tel" name="phone" value={formData.phone} onChange={handleChange} pattern="\d{10}" maxLength="10" title="Please enter exactly 10 digits" className="w-full bg-transparent border-b-2 border-[#a63c06]/20 px-2 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-none placeholder-brand-charcoal/40 font-medium" required />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-[#a63c06] mb-2">Message</label>
+                <label className="block text-sm font-semibold text-[#a63c06] mb-2">{getTranslation(language, 'contact', 'formMsg')}</label>
                 <textarea name="message" value={formData.message} onChange={handleChange} rows="5" className="w-full bg-transparent border-2 border-[#a63c06]/20 px-4 py-3 text-[#a63c06] focus:outline-none focus:border-[#a63c06] transition-colors rounded-xl placeholder-brand-charcoal/40 resize-none font-medium" required></textarea>
               </div>
 
-              {status === 'success' && (
-                <div className="bg-green-50 text-green-700 p-4 rounded-lg text-sm font-medium">
-                  Thank you! Your message has been sent successfully.
-                </div>
-              )}
-              {status === 'error' && (
-                <div className="bg-red-50 text-red-700 p-4 rounded-lg text-sm font-medium">
-                  {errorMessage}
-                </div>
-              )}
+              <AnimatePresence mode="wait">
+                {status === 'success' && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-green-50/80 backdrop-blur-sm border border-green-200 text-green-800 p-4 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 shadow-sm"
+                  >
+                    <span className="text-lg">✓</span> <AnimatedText section="contact" tKey="successMsg" />
+                  </motion.div>
+                )}
+                {status === 'error' && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-red-50/80 backdrop-blur-sm border border-red-200 text-red-800 p-4 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 shadow-sm"
+                  >
+                    <span className="text-lg">⚠</span> {errorMessage}
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               <div className="pt-4 text-center">
-                <button type="submit" disabled={status === 'submitting'} className={`btn-primary w-full md:w-auto px-12 ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}>
-                  {status === 'submitting' ? 'Sending...' : 'Send Message'}
+                <button type="submit" disabled={status === 'submitting'} className={`w-full md:w-auto px-12 py-4 bg-[#a63c06] text-white font-bold uppercase tracking-widest text-sm rounded-full shadow-lg hover:shadow-xl hover:bg-[#c36f09] hover:scale-105 transition-all ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}>
+                  {status === 'submitting' ? getTranslation(language, 'contact', 'sendingBtn') : getTranslation(language, 'contact', 'submitBtn')}
                 </button>
               </div>
             </form>

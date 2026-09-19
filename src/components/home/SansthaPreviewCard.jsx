@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../ui/Reveal';
 import Kicker from '../ui/Kicker';
+import AnimatedText from '../ui/AnimatedText';
 
 const SansthaPreviewCard = () => {
   return (
@@ -21,19 +22,19 @@ const SansthaPreviewCard = () => {
 
             {/* Content */}
             <div className="md:w-7/12 p-10 md:p-14 flex flex-col justify-center">
-              <Kicker>Aastha Sevabhavi Sanstha</Kicker>
+              <Kicker><AnimatedText section="home" tKey="sansthaPreviewKicker" /></Kicker>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#a63c06] mb-4">
-                Service to Humanity
+                <AnimatedText section="home" tKey="sansthaPreviewTitle" />
               </h2>
               <div className="mb-6 font-sans text-sm text-brand-blue font-semibold tracking-wide">
-                Registration No: F/40324/Thane
+                <AnimatedText section="home" tKey="sansthaPreviewReg" />
               </div>
               <p className="text-[#c36f09] font-sans leading-relaxed mb-8 text-lg">
-                Established with the vision that devotion must manifest as service. Aastha Sevabhavi Sanstha runs multiple sustained initiatives, including the Roti Bank, to ensure no individual goes to sleep hungry and to empower the next generation.
+                <AnimatedText section="home" tKey="sansthaPreviewDesc" />
               </p>
               <div>
                 <Link to="/sanstha" className="btn-outline">
-                  Know More About Our Sanstha &rarr;
+                  <AnimatedText section="home" tKey="sansthaPreviewBtn" /> &rarr;
                 </Link>
               </div>
             </div>

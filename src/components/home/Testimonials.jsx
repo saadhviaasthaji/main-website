@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 
 import Reveal from '../ui/Reveal';
 import Kicker from '../ui/Kicker';
+import AnimatedText from '../ui/AnimatedText';
 
 const Testimonials = () => {
   const swiperRef = useRef(null);
@@ -36,14 +37,17 @@ const Testimonials = () => {
 
   return (
     <section className="py-12 md:py-20 bg-transparent">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         
         {/* Header & Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-4 md:mb-12">
           <Reveal>
             <Kicker className="mb-1 md:mb-3 text-xs font-semibold tracking-widest text-gray-500 uppercase">IMPACT STORIES</Kicker>
-            <h2 className="text-4xl md:text-7xl font-serif text-[#a63c06] leading-tight">
-              Voices of <span className="italic text-slate-400">Change</span>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium text-[#a63c06] tracking-tight leading-none">
+              <AnimatedText section="home" tKey="testimonialsTitle1" />
+              <span className="italic text-[#c36f09] ml-2 md:ml-3">
+                <AnimatedText section="home" tKey="testimonialsTitle2" />
+              </span>
             </h2>
           </Reveal>
           

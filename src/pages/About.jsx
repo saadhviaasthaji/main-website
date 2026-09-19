@@ -55,7 +55,7 @@ const About = () => {
           {/* Purpose & Vision Text (Mobile: 1, Desktop: Right Col, Top) */}
           <Reveal delay={0.1} className="order-1 lg:col-start-2 lg:row-start-1 pt-4 lg:pt-10">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#a63c06] mb-6">
-              Her Purpose & Vision
+              <AnimatedText section="about" tKey="purposeTitle" />
             </h2>
             <div className="prose prose-lg font-sans text-[#c36f09] leading-relaxed">
               <p className="mb-6">{<AnimatedText section="about" tKey="missionText" />}</p>
@@ -86,7 +86,7 @@ const About = () => {
           {/* Recognition & Honours Text (Mobile: 3, Desktop: Right Col, Bottom) */}
           <Reveal delay={0.3} className="order-3 lg:col-start-2 lg:row-start-2">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#a63c06] mb-6">
-              Recognition & Honours
+              <AnimatedText section="about" tKey="recognitionTitle" />
             </h2>
             <div className="prose prose-lg font-sans text-[#c36f09] leading-relaxed">
               <p className="mb-6">{<AnimatedText section="about" tKey="motivationText" />}</p>

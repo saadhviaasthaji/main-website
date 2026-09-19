@@ -27,7 +27,7 @@ const BioSection = () => {
                   {<AnimatedText section="home" tKey="introText" />}
                 </p>
                 
-                <Link to="/about" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-gray-800 transition-all hover:scale-105 rounded-full shadow-lg hover:shadow-xl">
+                <Link to="/about" className="inline-flex items-center gap-3 bg-[#a63c06] text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-[#c36f09] transition-all hover:scale-105 rounded-full shadow-lg hover:shadow-xl">
                   {<AnimatedText section="common" tKey="readMore" />}
                   <span className="text-xl">→</span>
                 </Link>

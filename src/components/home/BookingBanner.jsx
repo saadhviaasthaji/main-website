@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../ui/Reveal';
+import AnimatedText from '../ui/AnimatedText';
 
 const BookingBanner = () => {
   return (
@@ -27,9 +28,9 @@ const BookingBanner = () => {
             {/* Title Block */}
             <div className="text-center md:text-left mb-8 md:mb-12">
               <h2 className="font-serif text-[#E8C881] drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-                <span className="block text-2xl md:text-3xl tracking-[0.2em] uppercase mb-2">Invite</span>
-                <span className="block text-5xl md:text-7xl lg:text-[5.5rem] leading-none mb-2" style={{ fontVariant: 'small-caps' }}>Saadhvi Aastha Ji</span>
-                <span className="block text-2xl md:text-3xl tracking-[0.2em] uppercase">For Katha</span>
+                <span className="block text-2xl md:text-3xl tracking-[0.2em] uppercase mb-2"><AnimatedText section="home" tKey="inviteTitle" /></span>
+                <span className="block text-5xl md:text-7xl lg:text-[5.5rem] leading-none mb-2" style={{ fontVariant: 'small-caps' }}><AnimatedText section="home" tKey="inviteName" /></span>
+                <span className="block text-2xl md:text-3xl tracking-[0.2em] uppercase"><AnimatedText section="home" tKey="inviteForKatha" /></span>
               </h2>
             </div>
             
@@ -46,7 +47,7 @@ const BookingBanner = () => {
               <div className="absolute -bottom-1.5 right-12 w-4 h-4 rounded-full border border-[#C5A059] bg-[#2A1104] hidden md:block" />
               
               <p className="text-xl md:text-3xl font-serif text-[#FDF4E3] leading-relaxed text-center drop-shadow-sm">
-                “Bring the profound teachings and peaceful aura of Saadhvi Aastha Ji to your community, organization, or special event.”
+                <AnimatedText section="home" tKey="inviteQuote" />
               </p>
             </div>
           </Reveal>
@@ -64,7 +65,7 @@ const BookingBanner = () => {
                 }}
               >
                 <span className="relative z-10 font-bold text-2xl md:text-3xl tracking-widest font-sans drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
-                  BOOK NOW
+                  <AnimatedText section="home" tKey="bookNow" />
                 </span>
                 
                 {/* Inner button border detail */}

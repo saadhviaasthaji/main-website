@@ -3,8 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { leadershipData } from '../../data/leadership';
 import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
+import { getTranslation } from '../../data/translations';
+import AnimatedText from '../ui/AnimatedText';
 
 const LeadershipCard = ({ person, onClick, bgColor }) => {
+  const { language } = useLanguage();
+  const tPrefix = person.id === 'founder' ? 'fnd' : 'pres';
+  const name = getTranslation(language, 'sansthaHome', tPrefix + 'Name') || person.name;
+  const designation = getTranslation(language, 'sansthaHome', tPrefix + 'Desig') || person.designation;
   return (
     <motion.div
       layoutId={`card-${person.id}`}
@@ -41,15 +48,24 @@ const LeadershipCard = ({ person, onClick, bgColor }) => {
       {/* Content */}
       <div className="absolute bottom-0 left-0 right-0 p-3 md:p-8 text-left z-20">
         <span className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-200 mb-1 md:mb-2 block drop-shadow-sm">
-          {person.designation}
+          {designation}
         </span>
-        <h3 className="font-serif text-[13px] sm:text-base md:text-4xl text-white leading-tight tracking-tight drop-shadow-md">{person.name}</h3>
+        <h3 className="font-serif text-[13px] sm:text-base md:text-4xl text-white leading-tight tracking-tight drop-shadow-md">{name}</h3>
       </div>
     </motion.div>
   );
 };
 
 const ExpandedProfile = ({ person, onClose }) => {
+  const { language } = useLanguage();
+  const tPrefix = person.id === 'founder' ? 'fnd' : 'pres';
+  const name = getTranslation(language, 'sansthaHome', tPrefix + 'Name') || person.name;
+  const designation = getTranslation(language, 'sansthaHome', tPrefix + 'Desig') || person.designation;
+  const intro = getTranslation(language, 'sansthaHome', tPrefix + 'Intro') || person.intro;
+  const bg = getTranslation(language, 'sansthaHome', tPrefix + 'Bg') || person.background;
+  const role = getTranslation(language, 'sansthaHome', tPrefix + 'Role') || person.role;
+  const journey = getTranslation(language, 'sansthaHome', tPrefix + 'Journey') || person.journey;
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-12">
       {/* Background Overlay */}
@@ -95,15 +111,15 @@ const ExpandedProfile = ({ person, onClose }) => {
           className="p-6 md:p-16 w-full flex flex-col justify-start overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           <span className="text-sm uppercase tracking-widest font-bold text-[#c36f09] mb-4 block">
-            {person.designation}
+            {designation}
           </span>
-          <h2 className="text-4xl md:text-6xl font-serif text-[#a63c06] mb-10 tracking-tight leading-none">{person.name}</h2>
+          <h2 className="text-4xl md:text-6xl font-serif text-[#a63c06] mb-10 tracking-tight leading-none">{name}</h2>
           
           <div className="prose prose-lg font-sans text-[#c36f09] mb-12 max-w-none font-light leading-[1.8]">
-            <p className="font-normal text-[#a63c06] text-xl mb-6 leading-relaxed">{person.intro}</p>
-            <p className="mb-6">{person.background}</p>
-            <p className="mb-6"><strong className="text-[#a63c06] font-medium">Role:</strong> {person.role}</p>
-            <p className="mb-6"><strong className="text-[#a63c06] font-medium">Journey:</strong> {person.journey}</p>
+            <p className="font-normal text-[#a63c06] text-xl mb-6 leading-relaxed">{intro}</p>
+            <p className="mb-6">{bg}</p>
+            <p className="mb-6"><strong className="text-[#a63c06] font-medium">Role:</strong> {role}</p>
+            <p className="mb-6"><strong className="text-[#a63c06] font-medium">Journey:</strong> {journey}</p>
           </div>
 
         </motion.div>
@@ -113,6 +129,7 @@ const ExpandedProfile = ({ person, onClose }) => {
 };
 
 const LeadershipGrid = ({ showCoreTeam = true }) => {
+  const { language } = useLanguage();
   const [selectedId, setSelectedId] = useState(null);
 
   const bgHexColors = ['#4a2e1b', '#8b6508', '#3e2723', '#6b3112', '#5c4033'];
@@ -145,11 +162,13 @@ const LeadershipGrid = ({ showCoreTeam = true }) => {
       {showCoreTeam && leadershipData.members && leadershipData.members.length > 0 && (
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 mt-24">
           <div className="flex items-end justify-between mb-16 border-b border-gray-200 pb-6">
-            <h3 className="text-3xl md:text-5xl font-serif text-[#a63c06] tracking-tight">Our Core Team</h3>
+            <h3 className="text-3xl md:text-5xl font-serif text-[#a63c06] tracking-tight"><AnimatedText section="sansthaHome" tKey="memTitle" /></h3>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {leadershipData.members.map((member, idx) => {
               const hexColor = bgHexColors[(idx + 2) % bgHexColors.length];
+              const memName = getTranslation(language, 'sansthaHome', `mem${idx + 1}Name`) || member.name;
+              const memDesig = getTranslation(language, 'sansthaHome', `mem${idx + 1}Desig`) || member.designation;
               return (
                 <div key={idx} className="group relative aspect-[3/4] overflow-hidden backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-white/20 hover:border-white/50 cursor-default">
                   
@@ -167,8 +186,8 @@ const LeadershipGrid = ({ showCoreTeam = true }) => {
                   />
                   
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 z-20">
-                    <span className="text-[10px] md:text-xs font-bold text-gray-200 uppercase tracking-widest drop-shadow-sm mb-1 block">{member.designation}</span>
-                    <h4 className="font-serif text-lg md:text-xl text-white drop-shadow-md">{member.name}</h4>
+                    <span className="text-[10px] md:text-xs font-bold text-gray-200 uppercase tracking-widest drop-shadow-sm mb-1 block">{memDesig}</span>
+                    <h4 className="font-serif text-lg md:text-xl text-white drop-shadow-md">{memName}</h4>
                   </div>
                 </div>
               );

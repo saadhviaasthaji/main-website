@@ -25,9 +25,9 @@ const SansthaAboutCore = () => {
           </div>
           <div className="w-full md:w-7/12">
             <Reveal direction="right" delay={0.2}>
-              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block">Introduction</span>
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block"><AnimatedText section="sansthaAbout" tKey="coreIntro" /></span>
               <h2 className="text-4xl md:text-6xl font-serif text-[#a63c06] mb-8 tracking-tight leading-tight">
-                Who We Are
+                <AnimatedText section="sansthaAbout" tKey="coreWho" />
               </h2>
               <div className="font-sans text-lg md:text-xl text-[#c36f09] leading-relaxed font-light space-y-6 max-w-2xl">
                 <p><AnimatedText section="sanstha" tKey="aboutIntro" /></p>
@@ -38,32 +38,37 @@ const SansthaAboutCore = () => {
           </div>
         </div>
 
-        {/* Mission (Overlapping Design) */}
-        <div className="relative mb-32">
-          <Reveal>
-            <div className="w-full md:w-3/4 ml-auto bg-white/50 backdrop-blur-xl border border-white/20 text-[#a63c06] p-12 md:p-20 rounded-3xl relative z-10 shadow-xl">
-              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block">Mission</span>
-              <h2 className="text-4xl md:text-6xl font-serif mb-8 tracking-tight leading-tight">
+        {/* Mission */}
+        <div className="flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-24 mb-32">
+          <div className="w-full md:w-5/12 relative">
+            <Reveal direction="right">
+              <div className="aspect-[4/3] overflow-hidden rounded-2xl relative">
+                <img 
+                  src="/assets/pages/sanstha/home/initiative/Support&Care.webp" 
+                  alt="Mission"
+                  className="w-full h-full object-cover filter grayscale opacity-90 transition-transform duration-1000 hover:scale-105 hover:opacity-100"
+                />
+              </div>
+              <div className="absolute top-8 -right-8 w-32 h-32 bg-gray-100 rounded-full -z-10 hidden md:block"></div>
+            </Reveal>
+          </div>
+          <div className="w-full md:w-7/12">
+            <Reveal direction="left" delay={0.2}>
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block"><AnimatedText section="sansthaAbout" tKey="coreMission" /></span>
+              <h2 className="text-4xl md:text-6xl font-serif text-[#a63c06] mb-8 tracking-tight leading-tight">
                 <AnimatedText section="sanstha" tKey="missionTitle" />
               </h2>
-              <p className="font-sans text-lg md:text-2xl text-[#c36f09] leading-relaxed font-light max-w-3xl">
-                <AnimatedText section="sanstha" tKey="missionText" />
-              </p>
-            </div>
-          </Reveal>
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/3 aspect-square overflow-hidden rounded-3xl hidden lg:block z-0 shadow-lg">
-            <img 
-              src="/assets/pages/sanstha/home/initiative/Support&Care.webp" 
-              alt="Mission"
-              className="w-full h-full object-cover filter grayscale opacity-60"
-            />
+              <div className="font-sans text-lg md:text-xl text-[#c36f09] leading-relaxed font-light max-w-2xl">
+                <p><AnimatedText section="sanstha" tKey="missionText" /></p>
+              </div>
+            </Reveal>
           </div>
         </div>
 
         {/* Vision */}
-        <div className="flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-24">
+        <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
           <div className="w-full md:w-5/12 relative">
-            <Reveal direction="right">
+            <Reveal direction="left">
               <div className="aspect-[4/3] overflow-hidden rounded-2xl relative">
                 <img 
                   src="/assets/pages/sanstha/home/initiative/rotibank.webp" 
@@ -71,12 +76,12 @@ const SansthaAboutCore = () => {
                   className="w-full h-full object-cover filter grayscale opacity-90 transition-transform duration-1000 hover:scale-105 hover:opacity-100"
                 />
               </div>
-              <div className="absolute -top-8 -left-8 w-32 h-32 bg-gray-100 rounded-full -z-10 hidden md:block"></div>
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 border border-black/10 rounded-full -z-10 hidden md:block"></div>
             </Reveal>
           </div>
           <div className="w-full md:w-7/12">
-            <Reveal direction="left" delay={0.2}>
-              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block">Vision</span>
+            <Reveal direction="right" delay={0.2}>
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#c36f09] mb-6 block"><AnimatedText section="sansthaAbout" tKey="coreVision" /></span>
               <h2 className="text-4xl md:text-6xl font-serif text-[#a63c06] mb-8 tracking-tight leading-tight">
                 <AnimatedText section="sanstha" tKey="visionTitle" />
               </h2>

@@ -23,7 +23,7 @@ const Members = () => {
       </section>
 
       {/* Membership Button Section */}
-      <section className="py-24 bg-transparent text-center">
+      <section id="join-section" className="py-24 bg-transparent text-center scroll-mt-24">
         <Reveal>
           <h2 className="text-4xl md:text-5xl font-serif text-[#a63c06] mb-6">Become a Part of Our Family</h2>
           <p className="text-[#c36f09] font-sans text-lg max-w-2xl mx-auto mb-10">
