@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Samarkan';
+  src: url('/assets/fonts/SAMAN___.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  html, body {
+    @apply font-sans bg-[#fbf5e6] text-gray-700 overflow-x-hidden w-full;
+  }
+  #root {
+    @apply overflow-x-hidden w-full;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-[#2D3748];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#000000] text-white px-6 py-3 rounded-none font-sans font-medium hover:bg-[#2D3748] transition-colors duration-300 inline-block text-center;
+  }
+  .btn-outline {
+    @apply border border-[#000000] text-[#000000] px-6 py-3 rounded-none font-sans font-medium hover:bg-[#000000] hover:text-white transition-colors duration-300 inline-block text-center;
+  }
+}
+
+@layer utilities {
+  .ink-flow-text {
+    background: linear-gradient(
+      110deg,
+      #e5e7eb 0%,
+      #e5e7eb 40%,
+      #000000 50%,
+      #000000 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: inkFlowAnim 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes inkFlowAnim {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+/* Global Scrollbar Hide */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
