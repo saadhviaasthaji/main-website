@@ -35,6 +35,13 @@ const LoadingFallback = () => (
   </div>
 );
 
+const ExternalRedirect = () => {
+  useEffect(() => {
+    window.location.href = "https://saadhviaasthaji.in/";
+  }, []);
+  return null;
+};
+
 const AppContent = () => {
   const location = useLocation();
   const isSanstha = location.pathname.startsWith('/sanstha');
@@ -68,6 +75,9 @@ const AppContent = () => {
             <Route path="/sanstha/gallery" element={<Gallery />} />
             <Route path="/sanstha/members" element={<Members />} />
             <Route path="/sanstha/donation" element={<Donation />} />
+            
+            {/* 404 Catch-All Redirect */}
+            <Route path="*" element={<ExternalRedirect />} />
           </Routes>
         </Suspense>
       </main>

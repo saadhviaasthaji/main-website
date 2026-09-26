@@ -5,7 +5,7 @@ import AnimatedText from '../../components/ui/AnimatedText';
 
 const Donation = () => {
   const handleOnlinePayment = () => {
-    window.location.href = "upi://pay?pa=paytm.s2xzr9j@pty&pn=Aastha%20Sevabhavi%20Sanstha";
+    window.location.href = "upi://pay?pa=97485235529@KKBK0000958.ifsc.npci&pn=Aastha%20Sevabhavi%20Sanstha";
   };
 
   return (
@@ -54,7 +54,7 @@ const Donation = () => {
               <h2 className="text-2xl font-serif text-[#a63c06] mb-6"><AnimatedText section="sansthaDonation" tKey="upiTitle" /></h2>
               
               <a 
-                href="upi://pay?pa=paytm.s2xzr9j@pty&pn=Aastha%20Sevabhavi%20Sanstha"
+                href="upi://pay?pa=97485235529@KKBK0000958.ifsc.npci&pn=Aastha%20Sevabhavi%20Sanstha"
                 className="w-48 h-48 rounded-xl mb-8 flex items-center justify-center overflow-hidden shadow-sm bg-white p-2 hover:shadow-md transition-shadow cursor-pointer block"
               >
                 <img 
