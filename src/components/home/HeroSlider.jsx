@@ -86,7 +86,7 @@ const HeroSlider = () => {
                   src={slide.mobileImage}
                   alt="Slide background"
                   className="w-full h-full object-cover"
-                  fetchpriority={slide.id === 1 ? "high" : "auto"}
+                  fetchPriority={slide.id === 1 ? "high" : "auto"}
                   loading={slide.id === 1 ? "eager" : "lazy"}
                   decoding="async"
                 />
